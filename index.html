@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shawal Latif — AI/ML Engineer</title>
+<meta name="description" content="AI/ML Engineer building end-to-end production LLM systems — RAG, fine-tuning, inference & MLOps. Researcher in AI for social impact & maternal-health LLMs. Founder of SYNQ.">
+<meta name="author" content="Shawal Latif">
+<meta name="theme-color" content="#EB008B">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://shawalkhan1.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shawalkhan1.github.io/">
+<meta property="og:title" content="Shawal Latif — AI/ML Engineer & Researcher">
+<meta property="og:description" content="End-to-end production LLM systems · AI for social impact · 3 papers in submission (ACL/CHI/FAccT 2027) · Founder, SYNQ.">
+<meta property="og:image" content="https://shawalkhan1.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shawal Latif — AI/ML Engineer & Researcher">
+<meta name="twitter:description" content="End-to-end production LLM systems · AI for social impact · Founder, SYNQ.">
+<meta name="twitter:image" content="https://shawalkhan1.github.io/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1A1820; --ink-soft:#5C5765; --ink-faint:#938E9C;
+    --paper:#F3F2F5; --card:#FFFFFF; --line:#EAE8EF; --line-strong:#DDD9E5;
+    --magenta:#EB008B; --magenta-ink:#A8005F; --tint:#FBE9F2; --tint-soft:#FBF4F9;
+    --ok:#0E9F6E;
+    --shadow:0 1px 2px rgba(20,18,26,.04), 0 10px 30px -20px rgba(20,18,26,.22);
+    --shadow-lift:0 6px 14px rgba(20,18,26,.06), 0 22px 48px -24px rgba(20,18,26,.30);
+    --radius:16px; --maxw:920px;
+    --display:"Space Grotesk",system-ui,sans-serif;
+    --body:"Inter",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  a{color:inherit;}
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--magenta);z-index:120;transition:width .08s linear;}
+
+  nav{position:sticky;top:0;z-index:100;background:rgba(243,242,245,.78);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:20px;}
+  .brand{font-family:var(--display);font-weight:700;font-size:1.02rem;letter-spacing:-.01em;margin-right:auto;}
+  .brand .dot{color:var(--magenta);}
+  .nav-links{display:flex;gap:20px;}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;position:relative;padding:4px 0;transition:color .2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--ink);}
+  .nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--magenta);}
+  .pdf-btn{font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;text-transform:uppercase;border:1px solid var(--ink);background:var(--ink);color:#fff;text-decoration:none;padding:7px 14px;border-radius:999px;transition:all .2s;white-space:nowrap;}
+  .pdf-btn:hover{background:var(--magenta);border-color:var(--magenta);}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  section{scroll-margin-top:80px;}
+
+  .hero{padding:78px 0 30px;}
+  .eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--magenta-ink);margin:0 0 18px;}
+  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.8rem,7.5vw,5rem);line-height:1;letter-spacing:-.03em;margin:0 0 16px;}
+  .role{font-family:var(--display);font-weight:500;font-size:clamp(1.1rem,2.6vw,1.55rem);margin:0 0 18px;}
+  .role .pipe{color:var(--magenta);}
+  .lede{font-size:1.12rem;color:var(--ink-soft);max-width:62ch;margin:0 0 28px;}
+  .lede b{color:var(--ink);font-weight:600;}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-family:var(--mono);font-size:.8rem;color:var(--ink);border:1px solid var(--line-strong);border-radius:999px;padding:7px 13px;background:var(--card);transition:border-color .2s,transform .2s;}
+  .chip:hover{border-color:var(--magenta);transform:translateY(-1px);}
+  .chip svg{width:14px;height:14px;}
+
+  .tldr{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:38px;background:var(--card);}
+  .tldr div{padding:18px 20px;border-right:1px solid var(--line);}
+  .tldr div:last-child{border-right:0;}
+  .tldr .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--magenta-ink);margin-bottom:7px;}
+  .tldr .v{font-size:.94rem;color:var(--ink);line-height:1.45;}
+  .tldr .v b{font-family:var(--display);font-weight:600;}
+
+  .block{padding:40px 0;border-bottom:1px solid var(--line);}
+  .block-head{display:flex;align-items:baseline;gap:14px;margin-bottom:22px;}
+  .block-head .idx{font-family:var(--mono);font-size:.74rem;color:var(--magenta-ink);letter-spacing:.1em;}
+  .block-head h2{font-family:var(--display);font-weight:600;font-size:1.6rem;letter-spacing:-.02em;margin:0;}
+  .sub-note{font-family:var(--mono);font-size:.72rem;color:var(--ink-faint);margin:-12px 0 20px;}
+
+  .metric-toggle{display:inline-flex;border:1px solid var(--line-strong);border-radius:999px;padding:2px;background:var(--card);margin-bottom:22px;}
+  .metric-toggle button{font-family:var(--mono);font-size:.72rem;border:0;background:transparent;color:var(--ink-soft);padding:6px 14px;border-radius:999px;cursor:pointer;transition:all .22s;}
+  .metric-toggle button[aria-pressed="true"]{background:var(--ink);color:#fff;}
+  .metric-toggle button:focus-visible{outline:2px solid var(--magenta);outline-offset:2px;}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .metric{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:var(--card);}
+  .metric .num{font-family:var(--display);font-weight:600;font-size:2.1rem;line-height:1;letter-spacing:-.02em;}
+  .metric .num .suf{color:var(--magenta);}
+  .metric .lab{font-size:.84rem;color:var(--ink-soft);margin-top:8px;line-height:1.4;}
+  .bar{height:5px;border-radius:5px;background:var(--line);margin-top:14px;overflow:hidden;}
+  .bar > span{display:block;height:100%;width:0;background:var(--magenta);border-radius:5px;transition:width 1s cubic-bezier(.22,1,.36,1);}
+
+  .entry-top{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap;}
+  .entry-title{font-family:var(--display);font-weight:600;font-size:1.1rem;letter-spacing:-.01em;}
+  .entry-title .org{color:var(--magenta-ink);}
+  .entry-date{font-family:var(--mono);font-size:.78rem;color:var(--ink-faint);white-space:nowrap;}
+  .entry-sub{font-size:.92rem;color:var(--ink-soft);font-style:italic;margin:2px 0 12px;}
+  ul.dash{list-style:none;margin:0;padding:0;}
+  ul.dash li{position:relative;padding-left:20px;margin-bottom:8px;color:var(--ink-soft);}
+  ul.dash li::before{content:"";position:absolute;left:2px;top:.66em;width:7px;height:1.6px;background:var(--magenta);}
+  ul.dash li b{color:var(--ink);font-weight:600;}
+
+  .flagship{border:1px solid var(--line-strong);border-radius:18px;overflow:hidden;background:var(--card);}
+  .flagship-head{background:var(--ink);color:#fff;padding:24px;}
+  .flagship-head .kicker{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta);margin:0 0 8px;}
+  .flagship-head h3{font-family:var(--display);font-weight:600;font-size:1.3rem;margin:0 0 8px;letter-spacing:-.01em;}
+  .flagship-head p{margin:0;color:#D7D2DE;font-size:.95rem;}
+  .flagship-body{padding:22px 24px;}
+  .stack{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+  .tag{font-family:var(--mono);font-size:.74rem;color:var(--ink);background:var(--paper);border:1px solid var(--line-strong);border-radius:7px;padding:4px 9px;}
+
+  .rag{border:1px solid var(--line-strong);border-radius:18px;background:var(--card);overflow:hidden;}
+  .rag-top{padding:20px 22px;border-bottom:1px solid var(--line);}
+  .rag-top .badge{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ok);border:1px solid var(--ok);border-radius:999px;padding:3px 9px;display:inline-block;margin-bottom:10px;}
+  .rag-top p{margin:0;color:var(--ink-soft);font-size:.9rem;}
+  .rag-input{display:flex;gap:8px;padding:18px 22px 8px;}
+  .rag-input input{flex:1;font-family:var(--body);font-size:.95rem;padding:11px 14px;border:1px solid var(--line-strong);border-radius:10px;background:var(--paper);color:var(--ink);}
+  .rag-input input:focus{outline:2px solid var(--magenta);outline-offset:0;border-color:transparent;}
+  .rag-input button{font-family:var(--mono);font-size:.78rem;border:0;background:var(--ink);color:#fff;border-radius:10px;padding:0 18px;cursor:pointer;transition:background .2s;}
+  .rag-input button:hover{background:var(--magenta);}
+  .rag-suggest{display:flex;flex-wrap:wrap;gap:7px;padding:6px 22px 18px;}
+  .rag-suggest button{font-family:var(--mono);font-size:.74rem;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line-strong);border-radius:999px;padding:5px 11px;cursor:pointer;transition:all .2s;}
+  .rag-suggest button:hover{color:var(--ink);border-color:var(--magenta);}
+  .pipeline{display:flex;gap:8px;padding:0 22px 16px;flex-wrap:wrap;}
+  .stage{flex:1;min-width:120px;font-family:var(--mono);font-size:.68rem;color:var(--ink-faint);border:1px solid var(--line);border-radius:9px;padding:9px 11px;background:var(--paper);transition:all .3s;}
+  .stage.on{color:var(--ink);border-color:var(--magenta);background:var(--tint-soft);}
+  .stage .s-num{color:var(--magenta-ink);}
+  .rag-out{padding:0 22px 22px;display:none;}
+  .rag-out.show{display:block;}
+  .retrieved{margin-bottom:16px;}
+  .retrieved h4,.answer h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--magenta-ink);margin:0 0 9px;}
+  .doc{border:1px solid var(--line);border-left:3px solid var(--magenta);border-radius:8px;padding:10px 13px;margin-bottom:8px;background:var(--paper);font-size:.86rem;color:var(--ink-soft);}
+  .doc .score{font-family:var(--mono);font-size:.66rem;color:var(--ink-faint);float:right;}
+  .answer p{margin:0;font-size:.96rem;color:var(--ink);background:var(--tint-soft);border:1px solid var(--tint);border-radius:10px;padding:14px 16px;min-height:1.2em;}
+  .caret{display:inline-block;width:8px;background:var(--magenta);margin-left:1px;animation:blink 1s steps(2) infinite;}
+  @keyframes blink{0%,50%{opacity:1}50.01%,100%{opacity:0}}
+
+  .skill-filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+  .skill-filter button{font-family:var(--mono);font-size:.74rem;color:var(--ink-soft);background:var(--card);border:1px solid var(--line-strong);border-radius:999px;padding:6px 13px;cursor:pointer;transition:all .2s;}
+  .skill-filter button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:8px;}
+  .skill-tags .tag{transition:opacity .25s,transform .25s;}
+  .skill-tags .tag.dim{opacity:.22;}
+
+  .timeline{position:relative;margin-left:8px;padding-left:28px;}
+  .timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line);}
+  .tl-fill{position:absolute;left:6px;top:6px;width:2px;height:0;background:var(--magenta);transition:height .2s linear;}
+  .tl-item{position:relative;padding:0 0 26px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-dot{position:absolute;left:-28px;top:3px;width:14px;height:14px;border-radius:50%;background:var(--card);border:2px solid var(--line-strong);transition:all .3s;}
+  .tl-item.in .tl-dot{border-color:var(--magenta);background:var(--magenta);}
+  .tl-when{font-family:var(--mono);font-size:.72rem;color:var(--magenta-ink);letter-spacing:.04em;}
+  .tl-title{font-family:var(--display);font-weight:600;font-size:1.02rem;margin:3px 0 4px;letter-spacing:-.01em;}
+  .tl-venue{font-family:var(--mono);font-size:.7rem;color:#fff;background:var(--ink);border-radius:999px;padding:3px 9px;margin-left:8px;white-space:nowrap;}
+  .tl-venue .tier{color:var(--magenta);}
+  .tl-desc{font-size:.9rem;color:var(--ink-soft);margin:0;}
+
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;}
+  .proj{border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;background:var(--card);transition:box-shadow .25s,transform .25s,border-color .25s;}
+  .proj:hover{box-shadow:0 14px 32px -22px rgba(21,19,26,.5);transform:translateY(-3px);border-color:var(--line-strong);}
+  .proj h3{font-family:var(--display);font-weight:600;font-size:1rem;margin:0 0 4px;letter-spacing:-.01em;}
+  .proj .pstack{font-family:var(--mono);font-size:.7rem;color:var(--magenta-ink);margin:0 0 10px;}
+  .proj p{margin:0;font-size:.88rem;color:var(--ink-soft);}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+  ul.ach{list-style:none;margin:0;padding:0;}
+  ul.ach li{position:relative;padding-left:22px;color:var(--ink);font-size:.9rem;margin-bottom:8px;}
+  ul.ach li::before{content:"★";position:absolute;left:0;top:0;color:var(--magenta);font-size:.78rem;}
+
+  footer{padding:40px 0 60px;text-align:center;color:var(--ink-faint);font-family:var(--mono);font-size:.78rem;}
+  footer a{color:var(--magenta-ink);}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media (max-width:720px){
+    .nav-links{display:none;}
+    .tldr{grid-template-columns:1fr;}
+    .tldr div{border-right:0;border-bottom:1px solid var(--line);}
+    .tldr div:last-child{border-bottom:0;}
+    .metrics{grid-template-columns:repeat(2,1fr);}
+    .focus-grid{grid-template-columns:1fr;}
+    .v-cats{grid-template-columns:repeat(2,1fr);}
+    .v-head h3{font-size:1.6rem;}
+    .v-ask{flex-direction:column;align-items:flex-start;}
+    .twocol{grid-template-columns:1fr;gap:24px;}
+    .wrap{padding:0 16px;}
+    .nav-inner{padding:10px 16px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
+    .proj{transition:none;}
+  }
+  /* focus areas */
+  .focus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .focus-card{border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;background:var(--card);transition:border-color .25s,transform .25s;}
+  .focus-card:hover{border-color:var(--magenta);transform:translateY(-2px);}
+  .focus-card .fi{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--magenta-ink);margin-bottom:8px;}
+  .focus-card h3{font-family:var(--display);font-weight:600;font-size:1.05rem;margin:0 0 6px;letter-spacing:-.01em;}
+  .focus-card p{margin:0;font-size:.9rem;color:var(--ink-soft);}
+
+  /* institution logos */
+  .org-logos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:2px 0 18px;}
+  .org-logo{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-strong);border-radius:11px;padding:6px 13px 6px 6px;background:var(--card);}
+  .org-logo .chip{height:32px;min-width:32px;padding:0 8px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:-.01em;overflow:hidden;}
+  .org-logo .chip img{max-height:24px;max-width:60px;object-fit:contain;display:none;}
+  .org-logo .name{font-family:var(--mono);font-size:.76rem;color:var(--ink);line-height:1.25;}
+  .org-logo .name small{display:block;color:var(--ink-faint);font-size:.64rem;}
+
+  /* venture / SYNQ */
+  .venture{border:1px solid var(--line-strong);border-radius:20px;overflow:hidden;background:var(--card);}
+  .v-head{position:relative;background:var(--ink);color:#fff;padding:26px 26px 24px;overflow:hidden;}
+  .v-head::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(235,0,139,.5),transparent 70%);}
+  .v-head .kicker{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta);margin:0 0 10px;position:relative;}
+  .v-head h3{font-family:var(--display);font-weight:700;font-size:2rem;letter-spacing:-.02em;margin:0 0 6px;position:relative;}
+  .v-head .vsub{margin:0;color:#D7D2DE;font-size:1rem;position:relative;}
+  .v-body{padding:24px 26px;}
+  .v-insight{border-left:3px solid var(--magenta);background:var(--tint-soft);border-radius:0 10px 10px 0;padding:14px 16px;margin:0 0 22px;font-size:1rem;color:var(--ink);}
+  .v-insight b{font-weight:600;}
+  .v-cats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+  .v-cat{border:1px solid var(--line);border-radius:11px;padding:13px 14px;background:var(--paper);}
+  .v-cat.me{border-color:var(--magenta);background:var(--tint-soft);}
+  .v-cat .co{font-family:var(--mono);font-size:.72rem;color:var(--ink-faint);}
+  .v-cat .gr{font-family:var(--display);font-weight:600;font-size:.95rem;margin-top:3px;letter-spacing:-.01em;}
+  .v-cat.me .gr{color:var(--magenta-ink);}
+  .layers-label,.roadmap-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--magenta-ink);margin:0 0 11px;}
+  .layers{display:flex;flex-direction:column;gap:7px;margin-bottom:24px;}
+  .layer{border:1px solid var(--line);border-radius:10px;background:var(--paper);overflow:hidden;}
+  .layer-btn{width:100%;display:flex;align-items:center;gap:12px;padding:11px 14px;background:transparent;border:0;cursor:pointer;text-align:left;font-family:var(--body);color:var(--ink);}
+  .layer-btn:hover{background:var(--tint-soft);}
+  .layer-btn .ln{font-family:var(--mono);font-size:.72rem;color:var(--magenta-ink);width:22px;flex:none;}
+  .layer-btn .lt{font-family:var(--display);font-weight:600;font-size:.98rem;letter-spacing:-.01em;flex:1;}
+  .layer-btn .lx{font-family:var(--mono);font-size:1.1rem;color:var(--ink-faint);transition:transform .25s;}
+  .layer.open .lx{transform:rotate(45deg);}
+  .layer-desc{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .layer.open .layer-desc{max-height:160px;}
+  .layer-desc p{margin:0;padding:0 14px 13px 48px;font-size:.88rem;color:var(--ink-soft);}
+  .roadmap{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+  .phase{font-family:var(--mono);font-size:.73rem;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line-strong);border-radius:999px;padding:6px 12px;}
+  .phase b{color:var(--magenta-ink);}
+  .v-ask{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:20px;}
+  .v-ask .raise{font-family:var(--display);font-weight:600;font-size:1.05rem;letter-spacing:-.01em;}
+  .v-ask .raise small{display:block;font-family:var(--mono);font-weight:400;font-size:.74rem;color:var(--ink-faint);margin-top:3px;letter-spacing:.02em;}
+  .v-cta{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;background:var(--magenta);color:#fff;border:0;text-decoration:none;padding:12px 20px;border-radius:999px;transition:background .2s,transform .2s;white-space:nowrap;}
+  .v-cta:hover{background:var(--magenta-ink);transform:translateY(-1px);}
+  .honest-chip{display:inline-block;font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;color:var(--ok);border:1px solid var(--ok);border-radius:999px;padding:4px 11px;margin-bottom:18px;}
+
+  /* ---- minimalist refinement pass ---- */
+  .block{padding:54px 0;}
+  .block-head{margin-bottom:26px;}
+  .hero{padding:100px 0 44px;}
+  .metric,.focus-card,.proj,.skill-card,.flagship,.venture,.rag,.org-logo,.tldr{box-shadow:var(--shadow);}
+  .metric,.focus-card,.proj,.skill-card{border-color:transparent;}
+  .focus-card:hover,.proj:hover{box-shadow:var(--shadow-lift);}
+  .tldr{border-color:transparent;}
+  .flagship,.venture,.rag{border-color:var(--line);}
+
+  /* SYNQ — problem stats */
+  .v-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:0 0 24px;}
+  .v-stat{background:var(--paper);border-radius:12px;padding:14px;text-align:center;}
+  .v-stat .n{font-family:var(--display);font-weight:600;font-size:1.7rem;line-height:1;letter-spacing:-.02em;}
+  .v-stat .n .s{color:var(--magenta);}
+  .v-stat .l{font-family:var(--mono);font-size:.6rem;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-faint);margin-top:8px;line-height:1.35;}
+
+  /* SYNQ — three innovations */
+  .v-three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;}
+  .v-inv{border:1px solid var(--line);border-radius:13px;padding:16px 17px;background:var(--paper);}
+  .v-inv .step{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;color:var(--magenta-ink);}
+  .v-inv h4{font-family:var(--display);font-weight:600;font-size:1rem;margin:6px 0 7px;letter-spacing:-.01em;}
+  .v-inv p{margin:0;font-size:.84rem;color:var(--ink-soft);line-height:1.5;}
+
+  /* SYNQ — market */
+  .v-market{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;}
+  .v-tier{flex:1;min-width:120px;border:1px solid var(--line);border-radius:13px;padding:15px 16px;background:var(--paper);}
+  .v-tier .t{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;color:var(--ink-faint);}
+  .v-tier .a{font-family:var(--display);font-weight:600;font-size:1.5rem;letter-spacing:-.02em;margin:4px 0 4px;}
+  .v-tier.som .a{color:var(--magenta-ink);}
+  .v-tier .d{font-size:.78rem;color:var(--ink-soft);line-height:1.4;}
+
+  /* SYNQ — competitive table */
+  .v-table{width:100%;border-collapse:collapse;margin-bottom:24px;font-size:.84rem;}
+  .v-table th,.v-table td{padding:9px 10px;text-align:center;border-bottom:1px solid var(--line);}
+  .v-table th{font-family:var(--mono);font-size:.62rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;}
+  .v-table td:first-child,.v-table th:first-child{text-align:left;font-family:var(--mono);font-size:.78rem;color:var(--ink);}
+  .v-table .yes{color:var(--ok);font-weight:700;}
+  .v-table .no{color:var(--ink-faint);}
+  .v-table tr.synq td{background:var(--tint-soft);font-weight:600;}
+  .v-table tr.synq td:first-child{color:var(--magenta-ink);}
+
+  /* SYNQ — ethics chips */
+  .v-ethics{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+  .v-eth{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 12px;}
+  .v-eth b{color:var(--ink);font-weight:600;}
+
+  @media (max-width:720px){
+    .v-stats{grid-template-columns:repeat(2,1fr);}
+    .v-three{grid-template-columns:1fr;}
+    .v-table{font-size:.74rem;}
+    .v-table th,.v-table td{padding:7px 5px;}
+  }
+
+  @media print{nav,#progress,.rag,.metric-toggle,.skill-filter,.pdf-btn{display:none!important;}.reveal{opacity:1!important;transform:none!important;}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<nav>
+  <div class="nav-inner">
+    <span class="brand">Shawal Latif<span class="dot">.</span></span>
+    <div class="nav-links">
+      <a href="#focus">Focus</a>
+      <a href="#experience">Experience</a>
+      <a href="#venture">Venture</a>
+      <a href="#research">Research</a>
+    </div>
+    <a class="pdf-btn" href="Shawal_Latif_Resume.pdf" download>Download CV</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <p class="eyebrow reveal">End-to-End Production LLM Engineering</p>
+  <h1 class="reveal">Shawal Latif</h1>
+  <p class="role reveal">AI / ML Engineer <span class="pipe">·</span> LLM Systems</p>
+  <p class="lede reveal">I ship <b>production LLM systems end-to-end</b> — data engineering, fine-tuning, RAG, inference optimization, and cloud deployment with full MLOps/LLMOps — and research how frontier models can serve <b>women excluded from AI</b>.</p>
+  <div class="chips reveal">
+    <a class="chip" href="mailto:shawalkhan418@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>shawalkhan418@gmail.com</a>
+    <a class="chip" href="https://github.com/shawalkhan1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.3-1.1.6-1.4-2.2-.3-4.6-1.2-4.6-5.1 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9 9 0 0 1 4.9 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.8-4.6 5.1.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2Z"/></svg>github.com/shawalkhan1</a>
+    <span class="chip" style="cursor:default"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Lahore, Pakistan</span>
+  </div>
+
+  <div class="tldr reveal">
+    <div><div class="k">Now</div><div class="v"><b>Full-Stack AI Engineer</b> on a Gates Foundation–funded LLM health platform at LUMS.</div></div>
+    <div><div class="k">Builds</div><div class="v">End-to-end LLM stacks: <b>RAG · fine-tuning · inference · AWS deploy</b>.</div></div>
+    <div><div class="k">Researches</div><div class="v"><b>3 papers</b> in submission — ACL, CHI &amp; FAccT 2027.</div></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="block reveal" id="metrics">
+    <div class="block-head"><span class="idx">01</span><h2>By the numbers</h2></div>
+    <div class="metric-toggle" role="group" aria-label="Switch metric set">
+      <button data-set="eng" aria-pressed="true">Engineering</button>
+      <button data-set="res" aria-pressed="false">Research</button>
+    </div>
+    <div class="metrics" id="metric-grid"></div>
+  </section>
+
+  <section class="block reveal" id="focus">
+    <div class="block-head"><span class="idx">02</span><h2>What I work on</h2></div>
+    <div class="focus-grid">
+      <div class="focus-card"><div class="fi">AI for Social Impact</div><h3>Serving the underserved</h3><p>Building AI for communities the field forgets — starting with maternal health for low-literacy women in the Global South.</p></div>
+      <div class="focus-card"><div class="fi">Human-Centered AI · HCI</div><h3>Designing for real lives</h3><p>Voice-first interfaces, trust calibration, and field research with first-time AI users making high-stakes decisions.</p></div>
+      <div class="focus-card"><div class="fi">Responsible &amp; Fair AI</div><h3>Auditing the frontier</h3><p>Clinical fairness audits of state-of-the-art LLMs and new metrics for safety and equity in low-resource settings.</p></div>
+      <div class="focus-card"><div class="fi">Production LLM Systems</div><h3>Shipping, not slideware</h3><p>End-to-end RAG, fine-tuning, inference optimization, and MLOps/LLMOps that actually run in production.</p></div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="experience">
+    <div class="block-head"><span class="idx">03</span><h2>Experience</h2></div>
+    <div class="entry-top">
+      <span class="entry-title">Full-Stack AI Engineer @ <span class="org">Awaaz-e-Sehat</span></span>
+      <span class="entry-date">Jan 2025 — Present</span>
+    </div>
+    <p class="entry-sub">Supervisor: Dr. Maryam Mustafa · Bill &amp; Melinda Gates Foundation Collaboration, LUMS</p>
+    <div class="org-logos">
+      <span class="org-logo"><span class="chip"><img src="logos/awaaz.png" alt="Awaaz-e-Sehat" onload="this.style.display='block';this.nextElementSibling.style.display='none'"><span>AeS</span></span><span class="name">Awaaz-e-Sehat<small>Voice-first MNCH assistant</small></span></span>
+      <span class="org-logo"><span class="chip"><img src="logos/gates.png" alt="Gates Foundation" onload="this.style.display='block';this.nextElementSibling.style.display='none'"><span>BMGF</span></span><span class="name">Gates Foundation<small>Funding partner</small></span></span>
+      <span class="org-logo"><span class="chip"><img src="logos/aihub.png" alt="National AI Hub" onload="this.style.display='block';this.nextElementSibling.style.display='none'"><span>AIH</span></span><span class="name">National AI Hub<small>Pakistan's first AI platform for MNCH</small></span></span>
+      <span class="org-logo"><span class="chip"><img src="logos/lums.png" alt="LUMS" onload="this.style.display='block';this.nextElementSibling.style.display='none'"><span>LUMS</span></span><span class="name">LUMS<small>Host institution</small></span></span>
+    </div>
+    <ul class="dash">
+      <li>Engineering the <b>end-to-end system architecture</b> — speech, LLM, and RAG pipelines through backend services — for Pakistan's first voice-first LLM maternal-healthcare assistant for low-literacy women.</li>
+      <li>Part of the Gates Foundation–funded National AI Hub at LUMS — Pakistan's first AI platform for Maternal, Newborn &amp; Child Health (MNCH).</li>
+      <li>Drove iterative field testing and LLM evaluation with rural users, translating literacy, device-sharing, and cultural findings directly into model and system design.</li>
+      <li>Mentoring junior engineers and students on LLM evaluation, system design, and responsible AI.</li>
+    </ul>
+  </section>
+
+  <section class="block reveal" id="product">
+    <div class="block-head"><span class="idx">04</span><h2>Flagship build</h2></div>
+    <div class="flagship">
+      <div class="flagship-head">
+        <p class="kicker">Production LLM system · the engine behind SYNQ</p>
+        <h3>LLM Twin — End-to-End Production LLM Platform</h3>
+        <p>A complete LLM product from data ingestion to cloud deployment, built on full MLOps/LLMOps best practices — and the technical foundation for the venture below.</p>
+      </div>
+      <div class="flagship-body">
+        <div class="stack">
+          <span class="tag">FTI Pipeline</span><span class="tag">ZenML</span><span class="tag">RAG</span><span class="tag">Qdrant</span><span class="tag">Llama 3.1 8B</span><span class="tag">QLoRA/LoRA</span><span class="tag">DPO/RLHF</span><span class="tag">vLLM</span><span class="tag">TGI</span><span class="tag">TensorRT-LLM</span><span class="tag">AWS SageMaker</span><span class="tag">FastAPI</span><span class="tag">LangGraph</span><span class="tag">Docker</span><span class="tag">CI/CD/CT</span>
+        </div>
+        <ul class="dash">
+          <li>Production-grade, cloud-native platform on the <b>Feature/Training/Inference (FTI)</b> pattern, orchestrated with ZenML into independently deployable, scalable microservices.</li>
+          <li>Multi-source ETL (GitHub, Medium, web) → Qdrant <b>RAG</b> with query expansion, self-querying, hybrid search &amp; cross-encoder reranking, kept fresh via CDC + Bytewax streaming.</li>
+          <li>Fine-tuned <b>Llama 3.1 8B</b> with QLoRA/LoRA (TRL, Unsloth), aligned with DPO/RLHF; evaluated via LLM-as-a-judge &amp; RAGAS in Comet ML.</li>
+          <li>Inference optimization (GPTQ/AWQ/GGUF, speculative decoding, Flash Attention, KV-cache, continuous batching); benchmarked vLLM / TGI / TensorRT-LLM.</li>
+          <li>Deployed as an <b>AWS SageMaker</b> endpoint behind a FastAPI microservice with a LangGraph agentic RAG pipeline; full CI/CD/CT via GitHub Actions, Opik observability &amp; drift detection.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="venture">
+    <div class="block-head"><span class="idx">05</span><h2>Venture — founder</h2></div>
+    <div class="venture">
+      <div class="v-head">
+        <p class="kicker">Founder · Idea-stage → early MVP · LCE Incubation</p>
+        <h3>SYNQ</h3>
+        <p class="vsub">“Before people meet, their minds already have.”</p>
+      </div>
+      <div class="v-body">
+        <span class="honest-chip">● Compatibility infrastructure — not a dating app, social network, or AI companion</span>
+        <div class="v-insight">SYNQ is an <b>AI-powered social compatibility &amp; relationship-orchestration platform</b>. Every user trains a high-fidelity <b>AI Clone</b> of themselves; these autonomous agents meet, converse, and probe values across the network, so a <b>compatibility-intelligence layer</b> surfaces high-probability human connections <b>before a single human word is exchanged</b> — across dating, friendship, mentorship, hiring, and co-founder discovery.</div>
+
+        <div class="v-stats">
+          <div class="v-stat"><div class="n">78<span class="s">%</span></div><div class="l">Dating-app users emotionally exhausted</div></div>
+          <div class="v-stat"><div class="n">84<span class="s">%</span></div><div class="l">Ghosted after long chats</div></div>
+          <div class="v-stat"><div class="n">80<span class="s">%</span></div><div class="l">Gen Z lonely (past year)</div></div>
+          <div class="v-stat"><div class="n">8<span class="s">%</span></div><div class="l">Cold-outreach response rate</div></div>
+          <div class="v-stat"><div class="n">0</div><div class="l">AI-to-AI pre-interaction platforms</div></div>
+        </div>
+
+        <p class="layers-label">How it works — Clone → Agents → Orchestrator</p>
+        <div class="v-three">
+          <div class="v-inv"><div class="step">01 · Identity</div><h4>The SYNQ Clone</h4><p>A behavioral model fusing a structured interview, psychometrics, values surveys, and opt-in social signals into a five-layer <b>personality embedding</b> — communication style, ethics, emotional intelligence, cognition, social energy.</p></div>
+          <div class="v-inv"><div class="step">02 · Simulation</div><h4>Autonomous Agents</h4><p>Live LLM agents meet asynchronously through curiosity probes, value-negotiation dialogues, and conflict simulations — a persistent <b>synthetic-social-interaction</b> environment that surfaces authentic resonance.</p></div>
+          <div class="v-inv"><div class="step">03 · Intelligence</div><h4>The Orchestrator</h4><p>A meta-level engine that observes, scores, and surfaces — flow symmetry, sentiment trajectory, healthy-debate vs. friction, vulnerability signals — then delivers a <b>Compatibility Report</b> only on bilateral consent.</p></div>
+        </div>
+
+        <p class="layers-label">Market</p>
+        <div class="v-market">
+          <div class="v-tier"><div class="t">TAM</div><div class="a">$47B+</div><div class="d">AI consumer &amp; social platforms by 2030</div></div>
+          <div class="v-tier"><div class="t">SAM</div><div class="a">$5.8B</div><div class="d">South Asia &amp; English-first digital natives (~200M)</div></div>
+          <div class="v-tier som"><div class="t">SOM</div><div class="a">$58M</div><div class="d">1% SAM by Yr 3 · ~3M premium subscribers</div></div>
+        </div>
+
+        <p class="layers-label">Why it's defensible</p>
+        <table class="v-table">
+          <thead><tr><th>Platform</th><th>AI&nbsp;agents</th><th>Pre-interaction</th><th>Personality</th><th>Multi-domain</th><th>Orchestration</th></tr></thead>
+          <tbody>
+            <tr><td>Tinder / Bumble</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr>
+            <tr><td>LinkedIn</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr>
+            <tr><td>Replika / Character.AI</td><td class="no">~</td><td class="no">—</td><td class="no">~</td><td class="no">—</td><td class="no">—</td></tr>
+            <tr class="synq"><td>SYNQ</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          </tbody>
+        </table>
+
+        <p class="layers-label">Ethics by design</p>
+        <div class="v-ethics">
+          <span class="v-eth"><b>Bilateral consent</b> · always opt-in</span>
+          <span class="v-eth"><b>You own</b> your Clone</span>
+          <span class="v-eth"><b>Emotional-safety</b> layer · manipulation auto-flagged</span>
+          <span class="v-eth"><b>Differential privacy</b> · AES-256 · GDPR + PDPB</span>
+          <span class="v-eth">AI-to-AI only · <b>no impersonation</b></span>
+        </div>
+
+        <div class="stack">
+          <span class="tag">LangGraph</span><span class="tag">CrewAI</span><span class="tag">Multi-Agent Systems</span><span class="tag">Personality Embeddings</span><span class="tag">Affective Computing</span><span class="tag">RLHF</span><span class="tag">Pinecone</span><span class="tag">Semantic Memory</span><span class="tag">FastAPI</span><span class="tag">Next.js</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">Privacy-Preserving AI</span>
+        </div>
+
+        <p class="roadmap-label">Roadmap</p>
+        <div class="roadmap">
+          <span class="phase"><b>Q3 '26</b> · Intake + Clone MVP</span>
+          <span class="phase">Q4 '26 · Live Orchestrator</span>
+          <span class="phase">Q1 '27 · Mobile app</span>
+          <span class="phase">Q2 '27 · Professional mode</span>
+          <span class="phase">Q3 '27 · Urdu support</span>
+          <span class="phase">2028 · API + Series A</span>
+          <span class="phase">2029 · 1M users</span>
+        </div>
+
+        <div class="v-ask">
+          <div class="raise">Building Pakistan's first AI-native compatibility venture<small>LCE Idea Launch · seeking mentors, design partners &amp; seed investors post-MVP</small></div>
+          <a class="v-cta" href="mailto:shawalkhan418@gmail.com?subject=SYNQ%20%E2%80%94%20investor%2Fpartner%20intro&body=Hi%20Shawal%2C%20I'd%20love%20to%20learn%20more%20about%20SYNQ.">Request the deck →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="demo">
+    <div class="block-head"><span class="idx">06</span><h2>Ask my work</h2></div>
+    <p class="sub-note">A working RAG pipeline that runs entirely in your browser — retrieval over a small corpus of my own experience. No API, no server.</p>
+    <div class="rag">
+      <div class="rag-top">
+        <span class="badge">● Client-side RAG</span>
+        <p>Type a recruiter-style question. Watch it embed → retrieve → rerank → compose an answer from my background.</p>
+      </div>
+      <div class="rag-input">
+        <input id="rag-q" type="text" placeholder="e.g. How do you deploy LLMs to production?" aria-label="Ask a question">
+        <button id="rag-go">Ask</button>
+      </div>
+      <div class="rag-suggest" id="rag-suggest"></div>
+      <div class="pipeline" id="pipeline">
+        <div class="stage" data-i="0"><span class="s-num">1 ·</span> Embed query</div>
+        <div class="stage" data-i="1"><span class="s-num">2 ·</span> Retrieve top-k</div>
+        <div class="stage" data-i="2"><span class="s-num">3 ·</span> Rerank</div>
+        <div class="stage" data-i="3"><span class="s-num">4 ·</span> Compose answer</div>
+      </div>
+      <div class="rag-out" id="rag-out">
+        <div class="retrieved"><h4>Retrieved context</h4><div id="rag-docs"></div></div>
+        <div class="answer"><h4>Composed answer</h4><p id="rag-answer"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="skills">
+    <div class="block-head"><span class="idx">07</span><h2>Skills</h2></div>
+    <div class="skill-filter" id="skill-filter"></div>
+    <div class="skill-tags" id="skill-tags"></div>
+  </section>
+
+  <section class="block reveal" id="research">
+    <div class="block-head"><span class="idx">08</span><h2>Research &amp; publications</h2></div>
+    <p class="sub-note">Manuscripts in submission, targeting top-tier venues.</p>
+    <div class="timeline" id="timeline">
+      <div class="tl-fill" id="tl-fill"></div>
+
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-when">Aug 2024</div>
+        <div class="tl-title">M.S. Artificial Intelligence — LUMS</div>
+        <p class="tl-desc">CGPA 3.65. Coursework: AI for Social Impact, Topics in LLMs, Human-Centered AI.</p>
+      </div>
+
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-when">Jan 2025</div>
+        <div class="tl-title">Awaaz-e-Sehat — engineering begins</div>
+        <p class="tl-desc">End-to-end voice-first maternal-health LLM assistant; Gates Foundation–funded National AI Hub at LUMS.</p>
+      </div>
+
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-when">Target 2027 <span class="tl-venue">Target · <span class="tier">ACL 2027</span></span></div>
+        <div class="tl-title">BenchMaterna</div>
+        <p class="tl-desc">First large-scale, clinician-validated benchmark evaluating 30+ LLMs on maternal healthcare for Global South women — co-built with 30 clinical experts across regional languages, scored on six dimensions.</p>
+      </div>
+
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-when">Target 2027 <span class="tl-venue">Target · <span class="tier">CHI 2027</span></span></div>
+        <div class="tl-title">Awaaz-e-Sehat (system paper)</div>
+        <p class="tl-desc">Architecture, clinicians-in-the-loop design, and longitudinal deployment with rural women; trust calibration and over-reliance in first-time AI users making high-stakes clinical decisions.</p>
+      </div>
+
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-when">Target 2027 <span class="tl-venue">Target · <span class="tier">FAccT 2027</span></span></div>
+        <div class="tl-title">Clinical Fairness Auditing of Frontier LLMs</div>
+        <p class="tl-desc">Perturbation benchmarks across Roman Urdu, code-mixed language &amp; intersectional profiles; new fairness metrics — Reduced Care Rate, Reduced Care Error Rate, Triage Threshold Shift.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="projects">
+    <div class="block-head"><span class="idx">09</span><h2>Selected projects</h2></div>
+    <div class="proj-grid">
+      <div class="proj"><h3>NBA-3D</h3><p class="pstack">PyTorch</p><p>3D reconstruction of NBA players from multi-view RGB video; camera-pose estimation via a differentiable renderer.</p></div>
+      <div class="proj"><h3>Basketball-RL</h3><p class="pstack">PyTorch</p><p>Custom differentiable 2D basketball RL env; behavior-cloned from real NBA data, then reward-fine-tuned.</p></div>
+      <div class="proj"><h3>Audio Source Separation</h3><p class="pstack">PyTorch · GAN</p><p>U-Net CNN GAN separating noisy/clean spectrograms, with the GAN as a segmentation loss.</p></div>
+      <div class="proj"><h3>Rocky Bot</h3><p class="pstack">LangChain · OpenAI</p><p>News research tool: paste URLs, get grounded answers retrieved from the sources.</p></div>
+      <div class="proj"><h3>AtliQ Tees — Text-to-SQL</h3><p class="pstack">GooglePalm · LangChain</p><p>Natural-language interface to MySQL — converts questions to SQL and returns results.</p></div>
+      <div class="proj"><h3>From-Scratch Reimplementations</h3><p class="pstack">PyTorch · Java</p><p>AlphaZero (Connect4); NN+backprop at 95% MNIST; NEAT solving CartPole &amp; FlappyBird.</p></div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="more">
+    <div class="twocol">
+      <div>
+        <div class="block-head"><span class="idx">10</span><h2>Education</h2></div>
+        <div class="org-logos">
+          <span class="org-logo"><span class="chip"><img src="logos/lums.png" alt="LUMS" onload="this.style.display='block';this.nextElementSibling.style.display='none'"><span>LUMS</span></span><span class="name">LUMS<small>M.S. Artificial Intelligence</small></span></span>
+          <span class="org-logo"><span class="chip"><img src="logos/comsats.png" alt="COMSATS" onload="this.style.display='block';this.nextElementSibling.style.display='none'"><span>CUI</span></span><span class="name">COMSATS<small>B.S. Electrical Engineering</small></span></span>
+        </div>
+        <div class="entry-top"><span class="entry-title">M.S. Artificial Intelligence — LUMS</span></div>
+        <p class="entry-sub">Aug 2024 — 2026 · CGPA 3.65</p>
+        <div class="entry-top" style="margin-top:14px"><span class="entry-title">B.S. Electrical Engineering — COMSATS</span></div>
+        <p class="entry-sub">Sep 2017 — Jun 2021 · CGPA 3.07 · TA for OOP, Linear Algebra, Power Electronics</p>
+      </div>
+      <div>
+        <div class="block-head"><span class="idx">11</span><h2>Achievements</h2></div>
+        <ul class="ach">
+          <li>Top 5% of batch, ECE Department (FA17).</li>
+          <li>Raised 1M PKR for Abda Foundation via social campaigns.</li>
+          <li>KIEDO-funded Final Year Research Project (Rs 75,000).</li>
+          <li>Featured on national television for foundation work.</li>
+          <li>Battle of Thetas Winner, PION '18 · P.M. Laptop Scheme award.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Shawal Latif · <a href="mailto:shawalkhan418@gmail.com">shawalkhan418@gmail.com</a> · <a href="https://github.com/shawalkhan1" target="_blank" rel="noopener">github.com/shawalkhan1</a></p>
+</footer>
+
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  var prog=document.getElementById('progress');
+  function onScroll(){var h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';}
+  document.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  if(!reduce&&'IntersectionObserver'in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+
+  var METRICS={
+    eng:[
+      {n:6,suf:'/6',pct:100,lab:'LLM lifecycle stages owned — data to deploy'},
+      {n:3,suf:'',pct:75,lab:'Serving stacks benchmarked (vLLM · TGI · TensorRT-LLM)'},
+      {n:3,suf:'',pct:75,lab:'Quantization formats shipped (GPTQ · AWQ · GGUF)'},
+      {n:8,suf:'B',pct:80,lab:'Params fine-tuned — Llama 3.1 8B (QLoRA + DPO)'}
+    ],
+    res:[
+      {n:3,suf:'',pct:60,lab:'Papers in submission — ACL · CHI · FAccT 2027'},
+      {n:30,suf:'+',pct:90,lab:'LLMs evaluated for maternal healthcare'},
+      {n:30,suf:'',pct:90,lab:'Clinical experts in the annotation loop'},
+      {n:6,suf:'',pct:75,lab:'Evaluation dimensions in BenchMaterna'}
+    ]
+  };
+  var grid=document.getElementById('metric-grid');
+  function renderMetrics(set,animate){
+    grid.innerHTML='';
+    METRICS[set].forEach(function(m){
+      var d=document.createElement('div');d.className='metric';
+      d.innerHTML='<div class="num" data-t="'+m.n+'" data-suf="'+m.suf+'">0<span class="suf">'+m.suf+'</span></div><div class="lab">'+m.lab+'</div><div class="bar"><span data-p="'+m.pct+'"></span></div>';
+      grid.appendChild(d);
+    });
+    if(animate)runMetricAnim();
+  }
+  function runMetricAnim(){
+    grid.querySelectorAll('.num').forEach(function(el){
+      var t=parseFloat(el.getAttribute('data-t')),suf=el.getAttribute('data-suf')||'';
+      if(reduce){el.innerHTML=t+'<span class="suf">'+suf+'</span>';return;}
+      var start=null;function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/900,1);var v=Math.round(t*(1-Math.pow(1-p,3)));el.innerHTML=v+'<span class="suf">'+suf+'</span>';if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);
+    });
+    setTimeout(function(){grid.querySelectorAll('.bar > span').forEach(function(b){b.style.width=b.getAttribute('data-p')+'%';});},80);
+  }
+  renderMetrics('eng',false);
+  document.querySelectorAll('.metric-toggle button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.metric-toggle button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      renderMetrics(b.getAttribute('data-set'),true);
+    });
+  });
+  var mSec=document.getElementById('metrics');
+  if('IntersectionObserver'in window){var mo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){runMetricAnim();mo.disconnect();}});},{threshold:.3});mo.observe(mSec);}else{runMetricAnim();}
+
+  var SKILLS=[
+    {t:'Python',c:'Languages'},{t:'SQL',c:'Languages'},{t:'C',c:'Languages'},{t:'JavaScript',c:'Languages'},{t:'MATLAB',c:'Languages'},
+    {t:'PyTorch',c:'ML / LLM'},{t:'Hugging Face',c:'ML / LLM'},{t:'TRL',c:'ML / LLM'},{t:'Unsloth',c:'ML / LLM'},{t:'LangChain',c:'ML / LLM'},{t:'LangGraph',c:'ML / LLM'},{t:'TensorFlow',c:'ML / LLM'},{t:'Scikit-learn',c:'ML / LLM'},
+    {t:'RAG',c:'LLM Techniques'},{t:'QLoRA/LoRA',c:'LLM Techniques'},{t:'DPO/RLHF',c:'LLM Techniques'},{t:'Quantization',c:'LLM Techniques'},{t:'Prompt Eng.',c:'LLM Techniques'},{t:'LLM Eval',c:'LLM Techniques'},
+    {t:'vLLM',c:'Serving / MLOps'},{t:'TGI',c:'Serving / MLOps'},{t:'TensorRT-LLM',c:'Serving / MLOps'},{t:'FastAPI',c:'Serving / MLOps'},{t:'ZenML',c:'Serving / MLOps'},{t:'Docker',c:'Serving / MLOps'},{t:'GitHub Actions',c:'Serving / MLOps'},{t:'Comet ML',c:'Serving / MLOps'},
+    {t:'AWS SageMaker',c:'Cloud / Data'},{t:'Qdrant',c:'Cloud / Data'},{t:'MongoDB',c:'Cloud / Data'},{t:'Bytewax',c:'Cloud / Data'},{t:'ETL / CDC',c:'Cloud / Data'},
+    {t:'Power BI',c:'Analytics'},{t:'Tableau',c:'Analytics'},{t:'Pandas',c:'Analytics'},{t:'NumPy',c:'Analytics'}
+  ];
+  var cats=['All'];SKILLS.forEach(function(s){if(cats.indexOf(s.c)<0)cats.push(s.c);});
+  var sf=document.getElementById('skill-filter'),st=document.getElementById('skill-tags');
+  cats.forEach(function(c,i){var b=document.createElement('button');b.textContent=c;b.setAttribute('aria-pressed',i===0?'true':'false');b.addEventListener('click',function(){sf.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});filterSkills(c);});sf.appendChild(b);});
+  SKILLS.forEach(function(s){var span=document.createElement('span');span.className='tag';span.textContent=s.t;span.setAttribute('data-c',s.c);st.appendChild(span);});
+  function filterSkills(c){st.querySelectorAll('.tag').forEach(function(t){t.classList.toggle('dim',!(c==='All'||t.getAttribute('data-c')===c));});}
+
+  var tl=document.getElementById('timeline'),fill=document.getElementById('tl-fill'),items=tl.querySelectorAll('.tl-item');
+  function tlUpdate(){
+    var r=tl.getBoundingClientRect(),vh=window.innerHeight;
+    var p=Math.max(0,Math.min(1,(vh*0.6-r.top)/(r.height)));
+    fill.style.height=(p*100)+'%';
+    items.forEach(function(it){var ir=it.getBoundingClientRect();if(ir.top<vh*0.7)it.classList.add('in');});
+  }
+  document.addEventListener('scroll',tlUpdate,{passive:true});window.addEventListener('resize',tlUpdate);tlUpdate();
+
+  var CORPUS=[
+    {id:'deploy',tags:'deploy production sagemaker fastapi endpoint serve serving ship cloud aws docker',text:'I deploy fine-tuned models as real-time AWS SageMaker endpoints behind a FastAPI microservice, containerized with Docker (ECR, S3, CloudFormation, IAM), with a LangGraph agentic RAG pipeline serving requests.'},
+    {id:'serving',tags:'inference optimization latency throughput vllm tgi tensorrt quantization gptq awq gguf speculative flash attention kv cache batching speed fast',text:'For inference I use quantization (GPTQ, AWQ, GGUF), speculative decoding, Flash Attention, KV-cache optimization and continuous batching, and I benchmark vLLM, TGI and TensorRT-LLM to pick the fastest serving stack.'},
+    {id:'finetune',tags:'fine-tuning finetune training qlora lora dpo rlhf alignment llama trl unsloth dataset instruction tune',text:'I fine-tune models like Llama 3.1 8B with QLoRA/LoRA using PyTorch, Hugging Face Transformers, TRL and Unsloth on custom instruction datasets, then align them with Direct Preference Optimization (DPO/RLHF).'},
+    {id:'rag',tags:'rag retrieval augmented generation qdrant vector database reranking hybrid search query expansion self-querying embeddings context cdc bytewax',text:'My RAG pipelines use a Qdrant vector database with advanced retrieval — query expansion, self-querying, hybrid search and cross-encoder reranking — kept fresh in real time via Change Data Capture and Bytewax streaming.'},
+    {id:'mlops',tags:'mlops llmops pipeline zenml ci cd ct github actions monitoring observability drift opik retraining automation fti',text:'I build on the Feature/Training/Inference (FTI) pipeline pattern orchestrated with ZenML, automate CI/CD/CT with GitHub Actions (testing, image builds, retraining), and add observability with Opik plus data and concept drift detection.'},
+    {id:'eval',tags:'evaluation eval ragas llm-as-a-judge metrics benchmark quality measure comet',text:'I evaluate LLMs with LLM-as-a-judge and RAGAS metrics tracked in Comet ML, and for research I build clinician-validated benchmarks scoring models on clinical correctness, fairness, and helpfulness.'},
+    {id:'role',tags:'job role work current awaaz sehat maternal health gates foundation lums voice experience now do',text:'I am a Full-Stack AI Engineer on Awaaz-e-Sehat, Pakistan\u2019s first voice-first LLM maternal-healthcare assistant for low-literacy women, part of the Gates Foundation-funded National AI Hub at LUMS, where I own the end-to-end speech + LLM + RAG architecture.'},
+    {id:'research',tags:'research phd publications papers acl chi facct benchmark fairness maternal global south study academic researching',text:'My research has three papers in submission: BenchMaterna (ACL 2027), a benchmark of 30+ LLMs on maternal health; the Awaaz-e-Sehat system paper (CHI 2027); and a clinical fairness audit of frontier LLMs (FAccT 2027).'},
+    {id:'fairness',tags:'fairness bias equity auditing rcr rcer triage roman urdu code-mixed demographic intersectional safety',text:'I audit clinical fairness of frontier LLMs using perturbation benchmarks across Roman Urdu, code-mixed language and intersectional demographics, and developed metrics like Reduced Care Rate, Reduced Care Error Rate and Triage Threshold Shift.'},
+    {id:'edu',tags:'education degree study masters ms ai lums comsats electrical engineering gpa background',text:'I hold an M.S. in Artificial Intelligence from LUMS (CGPA 3.65) and a B.S. in Electrical Engineering from COMSATS (CGPA 3.07), where I was a teaching assistant for several courses.'},
+    {id:'projects',tags:'projects portfolio nba basketball gan audio rocky bot text-to-sql alphazero neat side build',text:'My projects span 3D NBA reconstruction, a differentiable basketball RL environment, GAN audio source separation, a LangChain news bot, a text-to-SQL system, and from-scratch reimplementations of AlphaZero and NEAT.'},
+    {id:'stack',tags:'skills stack tools languages python pytorch frameworks technologies use know',text:'My core stack is Python and PyTorch with the Hugging Face ecosystem, LangChain/LangGraph, Qdrant, ZenML, Docker, FastAPI and AWS — plus SQL, MongoDB and streaming tools for data.'},
+    {id:'synq',tags:'synq startup venture founder company building compatibility dating matching social product idea business clone agent orchestrator funding investor seed',text:'I am the founder of SYNQ, an AI-powered social compatibility and relationship-orchestration platform. Each user trains a high-fidelity AI Clone whose autonomous agents meet and probe values across the network, while an Orchestrator scores compatibility and surfaces high-probability connections before humans ever talk. It is idea-stage at the LUMS Centre for Entrepreneurship, built on multi-agent LLMs (LangGraph, CrewAI), personality embeddings and affective computing, and I am seeking mentors, design partners and seed investors post-MVP.'}
+  ];
+  var STOP={the:1,a:1,an:1,is:1,are:1,do:1,you:1,your:1,me:1,my:1,of:1,to:1,for:1,in:1,on:1,and:1,what:1,how:1,with:1,about:1,tell:1,whats:1,can:1,have:1,that:1,this:1,it:1};
+  function tokenize(q){return q.toLowerCase().replace(/[^a-z0-9\s-]/g,' ').split(/\s+/).filter(function(w){return w&&!STOP[w]&&w.length>1;});}
+  function retrieve(q){
+    var toks=tokenize(q);
+    var scored=CORPUS.map(function(d){
+      var hay=(d.tags+' '+d.text).toLowerCase();var s=0;
+      toks.forEach(function(t){if(d.tags.indexOf(t)>-1)s+=2;else if(hay.indexOf(t)>-1)s+=1;});
+      return {d:d,s:s};
+    }).filter(function(x){return x.s>0;}).sort(function(a,b){return b.s-a.s;});
+    return scored.slice(0,3);
+  }
+  function compose(hits){
+    if(!hits.length)return null;
+    return 'Here\u2019s what\u2019s in my background: '+hits.map(function(h){return h.d.text;}).join(' ');
+  }
+  var out=document.getElementById('rag-out'),docsEl=document.getElementById('rag-docs'),ansEl=document.getElementById('rag-answer'),stages=document.querySelectorAll('#pipeline .stage'),input=document.getElementById('rag-q');
+  var typing=null;
+  function setStage(i){stages.forEach(function(s,k){s.classList.toggle('on',k<=i);});}
+  function typeOut(text){
+    if(typing)clearInterval(typing);
+    if(reduce){ansEl.textContent=text;return;}
+    var i=0;ansEl.innerHTML='<span class="caret">&nbsp;</span>';
+    typing=setInterval(function(){
+      i+=2;ansEl.innerHTML=text.slice(0,i)+'<span class="caret">&nbsp;</span>';
+      if(i>=text.length){clearInterval(typing);ansEl.textContent=text;}
+    },12);
+  }
+  function ask(q){
+    if(!q.trim())return;
+    out.classList.add('show');docsEl.innerHTML='';ansEl.textContent='';setStage(-1);
+    var hits=retrieve(q);
+    var delays=reduce?[0,0,0,0]:[250,650,1050,1450];
+    setTimeout(function(){setStage(0);},delays[0]);
+    setTimeout(function(){setStage(1);
+      if(!hits.length){docsEl.innerHTML='<div class="doc">No matching context found.</div>';}
+      else hits.forEach(function(h){var d=document.createElement('div');d.className='doc';d.innerHTML='<span class="score">score '+h.s+'</span>'+h.d.text;docsEl.appendChild(d);});
+    },delays[1]);
+    setTimeout(function(){setStage(2);},delays[2]);
+    setTimeout(function(){setStage(3);
+      var a=compose(hits);
+      typeOut(a||'I couldn\u2019t find that in my corpus yet — try asking about deployment, fine-tuning, RAG, inference optimization, MLOps, or my maternal-health research.');
+    },delays[3]);
+  }
+  document.getElementById('rag-go').addEventListener('click',function(){ask(input.value);});
+  input.addEventListener('keydown',function(e){if(e.key==='Enter')ask(input.value);});
+  var SUGGEST=['How do you deploy LLMs to production?','What\u2019s your fine-tuning experience?','Tell me about your RAG work','What is SYNQ?','What are you researching?'];
+  var sg=document.getElementById('rag-suggest');
+  SUGGEST.forEach(function(q){var b=document.createElement('button');b.textContent=q;b.addEventListener('click',function(){input.value=q;ask(q);});sg.appendChild(b);});
+
+  // SYNQ layer stack
+  var layersEl=document.getElementById('layers');
+  if(layersEl){
+    layersEl.querySelectorAll('.layer-btn').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var layer=btn.parentElement;
+        var open=layer.classList.contains('open');
+        layersEl.querySelectorAll('.layer').forEach(function(l){l.classList.remove('open');});
+        if(!open)layer.classList.add('open');
+      });
+    });
+  }
+
+  var links=Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  var watch=['focus','experience','venture','research'].map(function(id){return document.getElementById(id);}).filter(Boolean);
+  if('IntersectionObserver'in window){
+    var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id);});}});},{rootMargin:'-40% 0px -55% 0px'});
+    watch.forEach(function(s){spy.observe(s);});
+  }
+})();
+</script>
+</body>
+</html>
