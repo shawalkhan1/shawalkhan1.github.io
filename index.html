@@ -444,6 +444,28 @@
   .sys-summary{color:var(--soft);margin:0 0 20px;font-size:1.04rem;}
   .sys-prose{color:var(--ink);margin:0 0 20px;}
 
+  /* live-demo call-to-action button */
+  .sys-cta{
+    display:inline-flex;align-items:center;gap:9px;margin:0 0 22px;position:relative;overflow:hidden;
+    font-family:var(--sans);font-size:.92rem;font-weight:600;
+    color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:9px 18px;
+    transition:transform .22s var(--ease), background .22s var(--ease), border-color .22s var(--ease), box-shadow .22s var(--ease);
+  }
+  .sys-cta:hover{
+    background:var(--accent-dark);border-color:var(--accent-dark);color:#fff;
+    text-decoration:none;transform:translateY(-2px);box-shadow:var(--shadow-lift);
+  }
+  .sys-cta .live{width:8px;height:8px;border-radius:50%;background:#2ea043;flex:none;
+    box-shadow:0 0 0 0 rgba(46,160,67,.6);animation:pulse 2.4s infinite;}
+  .sys-cta svg{width:16px;height:16px;flex:none;transition:transform .22s var(--ease);}
+  .sys-cta:hover svg{transform:translate(2px,-2px);}
+  .sys-cta::before{
+    content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;pointer-events:none;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);
+    transform:skewX(-18deg);transition:left .6s var(--ease);
+  }
+  .sys-cta:hover::before{left:170%;}
+
   .sys-tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px;}
   .sys-tags span{
     font-family:var(--mono);font-size:.72rem;letter-spacing:.01em;color:var(--soft);
@@ -802,8 +824,7 @@
         <h1 class="reveal">Shawal Latif</h1>
         <p class="intro-tag reveal d1"><span class="role-sw" id="role-sw">AI Researcher</span><span class="bar"></span>AI Engineer</p>
         <p class="lede reveal d1">I build trustworthy, human-centered AI systems that improve healthcare and access to information for underserved communities. My research lies at the intersection of <em>Human-AI Interaction (HAI), Responsible AI, Healthcare AI, and large language models</em>, with a focus on evaluating and deploying AI systems that are safe, equitable, and culturally grounded.</p>
-        <p class="reveal d2">I am a Full-Stack AI Engineer on <b><a href="https://www.awaazesehat.com/" target="_blank" rel="noopener">Awaaz-e-Sehat</a></b>, Pakistan's first voice-first LLM-powered maternal healthcare assistant, developed at the <b><a href="https://thenationalaihub.com/" target="_blank" rel="noopener">National AI Hub</a>, LUMS</b>, under the supervision of <b><a href="https://www.maryamustafa.com/" target="_blank" rel="noopener">Dr. Maryam Mustafa</a></b>. My current research focuses on auditing clinical large language models for fairness, safety, and linguistic disparities in Pakistani maternal healthcare.</p>
-        <p class="reveal d3">I have just completed an <b>M.S. in Artificial Intelligence</b> at <b>LUMS</b> and hold a <b>B.S. in Electrical Engineering</b> from <b>COMSATS University Islamabad</b>. I also founded <b>SYNQ</b>, an AI-native platform exploring the future of human connection through intelligent agents. I am currently applying to Ph.D. programs and welcome collaborations in Human-AI Interaction, Responsible AI, Healthcare AI, and AI for Social Good.</p>
+        <p class="reveal d2">I am a Full-Stack AI Engineer at <b><a href="https://www.awaazesehat.com/" target="_blank" rel="noopener">Awaaz-e-Sehat</a></b>, Pakistan's first voice-first LLM-powered maternal healthcare assistant, developed at the <b><a href="https://thenationalaihub.com/" target="_blank" rel="noopener">National AI Hub</a>, LUMS</b>, under the supervision of <b><a href="https://www.maryamustafa.com/" target="_blank" rel="noopener">Dr. Maryam Mustafa</a></b>. My current research focuses on auditing clinical large language models for fairness, safety, and linguistic disparities in Pakistani maternal healthcare.</p>
 
         <div class="links reveal d4">
           <a href="mailto:shawalkhan418@gmail.com" aria-label="Email" data-magnetic>
@@ -977,6 +998,10 @@
       <p class="sys-kicker">Production LLM System</p>
       <h3 class="sys-title">LLM Twin</h3>
       <p class="sys-summary">An end-to-end system that learns a person's writing voice and answers as they would — the production blueprint behind SYNQ. Tap a stage to trace how raw data becomes a living, self-improving twin.</p>
+      <a class="sys-cta" href="https://shawalkhan418--synq-campus-web.modal.run/" target="_blank" rel="noopener">
+        <span class="live" aria-hidden="true"></span>Launch live demo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+      </a>
 
       <div class="twin-rig" id="twin-rig">
         <div class="twin-rail" role="list">
@@ -1049,6 +1074,10 @@
       <h3 class="sys-title">SYNQ</h3>
       <p class="synq-tagline">Before people meet, their minds already have.</p>
       <p class="sys-prose">SYNQ is, at its core, a <b>generative-agent social simulation</b>. Each person trains a high-fidelity AI Clone — a grounded digital twin of themselves — and these autonomous LLM agents <em>live, remember, and interact</em> in a persistent synthetic society: they keep daily routines, hold conversations, negotiate values, and form relationships. A compatibility layer then reads the patterns that emerge to surface high-probability human connections — across friendship, mentorship, hiring, and co-founder discovery — before a single human word is exchanged.</p>
+      <a class="sys-cta" href="https://shawalkhan418--synq-campus-web.modal.run/" target="_blank" rel="noopener">
+        <span class="live" aria-hidden="true"></span>Enter the live world
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+      </a>
 
       <div class="synq-viz" id="synq-viz">
         <canvas class="agent-sim" id="agent-sim" aria-hidden="true"></canvas>
