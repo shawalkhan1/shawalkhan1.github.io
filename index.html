@@ -1011,8 +1011,8 @@
         <span class="edge-award-label"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3h12v6a6 6 0 0 1-12 0V3ZM6 5H3v3a4 4 0 0 0 4 4m11-7h3v3a4 4 0 0 1-4 4M12 15v6m-4 0h8"/></svg>Best Project Award</span>
       </div>
       <h3 class="sys-title" id="edge-title">Compressing <span class="edge-nowrap">LLaMA-2</span> for CPU inference</h3>
-      <p class="edge-credit">Shawal Latif &amp; Taimoor Karim <span>· Lowest perplexity and highest accuracy on the course leaderboard</span></p>
-      <p class="edge-lede">Our smallest configuration, Q2_K, used a <strong>2.10 GB</strong> model artifact, down from <strong>25.10 GB</strong>. The key engineering challenge was making non-uniformly pruned layers work in llama.cpp.</p>
+      <p class="edge-credit">Shawal Latif <span>· Lowest perplexity and highest accuracy on the course leaderboard</span></p>
+      <p class="edge-lede">My smallest configuration, Q2_K, used a <strong>2.10 GB</strong> model artifact, down from <strong>25.10 GB</strong>. The key engineering challenge was making non-uniformly pruned layers work in llama.cpp.</p>
 
       <section class="edge-architecture" aria-labelledby="edge-flow-title">
         <div class="edge-section-heading"><h4 id="edge-flow-title">From weights to a working runtime</h4><span class="edge-enhanced" hidden>Select a stage ↘</span></div>
@@ -1024,7 +1024,7 @@
           <li><button type="button" class="edge-stage is-active" data-stage="3" aria-pressed="true" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>04</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4M18 9h4m-4 6h4"/></svg></span><strong>Run</strong><span class="edge-stage-sub">Resolve runtime shapes</span></button></li>
         </ol>
         <div class="edge-stage-panel" id="edge-stage-panel" aria-live="polite" aria-atomic="true">
-          <div><p class="edge-panel-label" id="edge-stage-label">04 / Runtime integration</p><h5 id="edge-stage-title">Supporting layers with different shapes.</h5><p id="edge-stage-copy">We adapted llama.cpp to read per-layer dimensions from GGUF tensor shapes and pass them to the graph builder, supporting layers with different attention and feed-forward dimensions.</p></div>
+          <div><p class="edge-panel-label" id="edge-stage-label">04 / Runtime integration</p><h5 id="edge-stage-title">Supporting layers with different shapes.</h5><p id="edge-stage-copy">I adapted llama.cpp to read per-layer dimensions from GGUF tensor shapes and pass them to the graph builder, supporting layers with different attention and feed-forward dimensions.</p></div>
           <div class="edge-shape-flow" aria-label="Selected stage data flow"><span id="edge-shape-input">GGUF tensor shapes</span><span aria-hidden="true">↓</span><strong id="edge-shape-transform">Per-layer dimensions</strong><span aria-hidden="true">↓</span><span id="edge-shape-output">Graph construction</span></div>
         </div>
         <p class="edge-architecture-note">Pipeline overview from the project report. Built on LLM-Pruner, SmoothQuant, and llama.cpp.</p>
