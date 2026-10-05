@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Clinical fairness auditing of frontier LLMs | Shawal Latif
+  </title>
+  <meta content="Testing whether clinical language-model behavior changes across linguistic forms and intersectional user profiles." name="description"/>
+  <meta content="Shawal Latif" name="author"/>
+  <meta content="#8C1515" name="theme-color"/>
+  <link href="https://shawalkhan1.github.io/projects/clinical-fairness.html" rel="canonical"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Clinical fairness auditing of frontier LLMs | Shawal Latif" property="og:title"/>
+  <meta content="Testing whether clinical language-model behavior changes across linguistic forms and intersectional user profiles." property="og:description"/>
+  <meta content="https://shawalkhan1.github.io/projects/clinical-fairness.html" property="og:url"/>
+  <meta content="https://shawalkhan1.github.io/og-image.png" property="og:image"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+  <link href="../assets/css/base.css" rel="stylesheet"/>
+  <link href="../assets/css/edge-project.css" rel="stylesheet"/>
+  <link href="../assets/css/academic.css" rel="stylesheet"/>
+  <script defer="" src="../assets/js/academic.js">
+  </script>
+ </head>
+ <body data-page="case">
+  <a class="skip-link" href="#main">
+   Skip to content
+  </a>
+  <nav aria-label="Main navigation" id="nav">
+   <div class="nav-inner">
+    <span class="nav-name">
+     <a href="../index.html#about">
+      Shawal Latif
+     </a>
+    </span>
+    <div class="nav-links">
+     <a href="../index.html#work">
+      Work
+     </a>
+     <a href="../index.html#research">
+      Research
+     </a>
+     <a href="../index.html#publications">
+      Publications
+     </a>
+     <a href="../index.html#background">
+      Background
+     </a>
+     <a href="../index.html#personal">
+      Personal
+     </a>
+     <a href="../index.html#contact">
+      Contact
+     </a>
+    </div>
+    <details class="mobile-nav">
+     <summary>
+      Menu
+     </summary>
+     <div class="mobile-links">
+      <a href="../index.html#work">
+       Work
+      </a>
+      <a href="../index.html#research">
+       Research
+      </a>
+      <a href="../index.html#publications">
+       Publications
+      </a>
+      <a href="../index.html#background">
+       Background
+      </a>
+      <a href="../index.html#personal">
+       Personal
+      </a>
+      <a href="../index.html#contact">
+       Contact
+      </a>
+     </div>
+    </details>
+    <a class="nav-cv" href="../Shawal_Latif_CV.pdf">
+     CV →
+    </a>
+   </div>
+  </nav>
+  <main class="case-wrap" id="main" tabindex="-1">
+   <header class="case-header">
+    <a class="back-link" href="../index.html#work">
+     ← All research &amp; projects
+    </a>
+    <p class="eyebrow">
+     Responsible AI / Multilingual Evaluation
+    </p>
+    <h1>
+     Clinical fairness auditing of frontier LLMs
+    </h1>
+    <p class="case-lead">
+     Testing whether clinical language-model behavior changes across linguistic forms and intersectional user profiles.
+    </p>
+    <p class="case-meta">
+     Shawal Latif, M. Mustafa, et al. · Collaborative research
+    </p>
+    <p class="case-meta">
+     Manuscript in preparation and submission / target FAccT 2027
+    </p>
+   </header>
+   <nav aria-label="On this page" class="case-toc">
+    <a href="#problem">
+     Problem
+    </a>
+    <a href="#contribution">
+     My contribution
+    </a>
+    <a href="#approach">
+     Approach
+    </a>
+    <a href="#evidence">
+     Evidence
+    </a>
+    <a href="#limits">
+     Limitations
+    </a>
+    <a href="#questions">
+     Next questions
+    </a>
+   </nav>
+   <section class="case-section" id="problem">
+    <h2>
+     The problem
+    </h2>
+    <p>
+     A model can perform well on an aggregate evaluation while behaving differently for particular language varieties or demographic profiles. In healthcare, differences in care and triage decisions need specific investigation.
+    </p>
+   </section>
+   <section class="case-section" id="contribution">
+    <h2>
+     My contribution
+    </h2>
+    <p>
+     My work uses perturbation benchmarks across Roman Urdu, code-mixed language, and intersectional profiles. It introduces Reduced Care Rate, Reduced Care Error Rate, and Triage Threshold Shift to study clinical fairness.
+    </p>
+   </section>
+   <section class="case-section" id="approach">
+    <h2>
+     How it works
+    </h2>
+    <div class="method-explorer">
+     <div aria-label="Explore fairness-audit" class="method-tabs" hidden="" role="group">
+      <button aria-controls="fairness-audit-0" aria-pressed="true" type="button">
+       01 · Language
+      </button>
+      <button aria-controls="fairness-audit-1" aria-pressed="false" type="button">
+       02 · Profiles
+      </button>
+      <button aria-controls="fairness-audit-2" aria-pressed="false" type="button">
+       03 · Care
+      </button>
+      <button aria-controls="fairness-audit-3" aria-pressed="false" type="button">
+       04 · Triage
+      </button>
+     </div>
+     <div aria-label="Language" class="method-panel" id="fairness-audit-0" role="region">
+      <h3>
+       Examine linguistic disparities.
+      </h3>
+      <p>
+       Roman Urdu and code-mixed language are important parts of the evaluation. The audit asks how linguistic form relates to differences in model responses.
+      </p>
+     </div>
+     <div aria-label="Profiles" class="method-panel" id="fairness-audit-1" role="region">
+      <h3>
+       Examine intersectional behavior.
+      </h3>
+      <p>
+       The study includes intersectional user profiles to look for behavior that a single demographic comparison may miss.
+      </p>
+     </div>
+     <div aria-label="Care" class="method-panel" id="fairness-audit-2" role="region">
+      <h3>
+       Measure differences in care.
+      </h3>
+      <p>
+       Reduced Care Rate and Reduced Care Error Rate are proposed metrics in this work. Complete metric definitions and numerical findings belong in the manuscript.
+      </p>
+     </div>
+     <div aria-label="Triage" class="method-panel" id="fairness-audit-3" role="region">
+      <h3>
+       Examine decision thresholds.
+      </h3>
+      <p>
+       Triage Threshold Shift investigates variation in triage behavior. This is a research evaluation, not a clinical decision tool.
+      </p>
+     </div>
+     <p class="figure-note">
+      Audit-design overview. Full metric definitions and findings belong in the manuscript.
+     </p>
+    </div>
+   </section>
+   <section class="case-section" id="evidence">
+    <h2>
+     Evidence &amp; current status
+    </h2>
+    <p>
+     A manuscript describing the clinical fairness audit targets FAccT 2027. The available portfolio summary identifies the perturbation settings and proposed metrics, but does not publish the study results.
+    </p>
+   </section>
+   <section class="case-section" id="limits">
+    <h2>
+     Limitations
+    </h2>
+    <p>
+     The complete metric definitions, experimental protocol, and results are not included in this portfolio. A research audit also does not establish that a system is safe for clinical deployment.
+    </p>
+   </section>
+   <section class="case-section" id="questions">
+    <h2>
+     Next questions
+    </h2>
+    <p>
+     Does resource-efficient inference preserve equitable behavior across language varieties and user profiles? This is a direction for connecting responsible AI with edge deployment.
+    </p>
+   </section>
+   <div class="case-next">
+    <a href="../index.html#work">
+     ← Back to selected work
+    </a>
+    <a href="llm-twin.html">
+     <span>
+      Continue exploring
+     </span>
+     LLM Twin →
+    </a>
+   </div>
+  </main>
+  <footer>
+   Shawal Latif · Lahore, Pakistan
+   <br/>
+   <a href="mailto:shawalkhan418@gmail.com">
+    Email
+   </a>
+   ·
+   <a href="https://github.com/shawalkhan1">
+    GitHub
+   </a>
+   ·
+   <a href="../Shawal_Latif_CV.pdf">
+    Curriculum vitae
+   </a>
+  </footer>
+ </body>
+</html>

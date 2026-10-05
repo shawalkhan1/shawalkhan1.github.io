@@ -1,0 +1,6 @@
+configuration,wikitext2_perplexity,cpu_tokens_per_second,peak_memory_gb,artifact_size_gb
+Base FP16,7.18,36.8,14.99,25.10
+Pruned (30%),7.92,45.9,12.09,20.21
+GGUF Q8_0,8.31,24.5,6.00,5.61
+GGUF Q4_K_M,8.52,31.9,3.75,3.41
+GGUF Q2_K,10.38,39.4,2.43,2.10

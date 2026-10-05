@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Learning algorithms from first principles | Shawal Latif
+  </title>
+  <meta content="From-scratch implementations of neural networks, AlphaZero, and neuroevolution to understand how learning systems work internally." name="description"/>
+  <meta content="Shawal Latif" name="author"/>
+  <meta content="#8C1515" name="theme-color"/>
+  <link href="https://shawalkhan1.github.io/projects/ml-foundations.html" rel="canonical"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Learning algorithms from first principles | Shawal Latif" property="og:title"/>
+  <meta content="From-scratch implementations of neural networks, AlphaZero, and neuroevolution to understand how learning systems work internally." property="og:description"/>
+  <meta content="https://shawalkhan1.github.io/projects/ml-foundations.html" property="og:url"/>
+  <meta content="https://shawalkhan1.github.io/og-image.png" property="og:image"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+  <link href="../assets/css/base.css" rel="stylesheet"/>
+  <link href="../assets/css/edge-project.css" rel="stylesheet"/>
+  <link href="../assets/css/academic.css" rel="stylesheet"/>
+  <script defer="" src="../assets/js/academic.js">
+  </script>
+ </head>
+ <body data-page="case">
+  <a class="skip-link" href="#main">
+   Skip to content
+  </a>
+  <nav aria-label="Main navigation" id="nav">
+   <div class="nav-inner">
+    <span class="nav-name">
+     <a href="../index.html#about">
+      Shawal Latif
+     </a>
+    </span>
+    <div class="nav-links">
+     <a href="../index.html#work">
+      Work
+     </a>
+     <a href="../index.html#research">
+      Research
+     </a>
+     <a href="../index.html#publications">
+      Publications
+     </a>
+     <a href="../index.html#background">
+      Background
+     </a>
+     <a href="../index.html#personal">
+      Personal
+     </a>
+     <a href="../index.html#contact">
+      Contact
+     </a>
+    </div>
+    <details class="mobile-nav">
+     <summary>
+      Menu
+     </summary>
+     <div class="mobile-links">
+      <a href="../index.html#work">
+       Work
+      </a>
+      <a href="../index.html#research">
+       Research
+      </a>
+      <a href="../index.html#publications">
+       Publications
+      </a>
+      <a href="../index.html#background">
+       Background
+      </a>
+      <a href="../index.html#personal">
+       Personal
+      </a>
+      <a href="../index.html#contact">
+       Contact
+      </a>
+     </div>
+    </details>
+    <a class="nav-cv" href="../Shawal_Latif_CV.pdf">
+     CV →
+    </a>
+   </div>
+  </nav>
+  <main class="case-wrap" id="main" tabindex="-1">
+   <header class="case-header">
+    <a class="back-link" href="../index.html#work">
+     ← All research &amp; projects
+    </a>
+    <p class="eyebrow">
+     ML Foundations / Reinforcement Learning
+    </p>
+    <h1>
+     Learning algorithms from first principles
+    </h1>
+    <p class="case-lead">
+     From-scratch implementations of neural networks, AlphaZero, and neuroevolution to understand how learning systems work internally.
+    </p>
+    <p class="case-meta">
+     Shawal Latif · PyTorch and Java
+    </p>
+    <p class="case-meta">
+     Implementation projects
+    </p>
+   </header>
+   <nav aria-label="On this page" class="case-toc">
+    <a href="#problem">
+     Problem
+    </a>
+    <a href="#contribution">
+     My contribution
+    </a>
+    <a href="#approach">
+     Approach
+    </a>
+    <a href="#evidence">
+     Evidence
+    </a>
+    <a href="#limits">
+     Limitations
+    </a>
+    <a href="#questions">
+     Next questions
+    </a>
+   </nav>
+   <section class="case-section" id="problem">
+    <h2>
+     The problem
+    </h2>
+    <p>
+     Implementing the learning loop makes assumptions in an algorithm concrete: how gradients move through a network, how search informs a policy, and how evolution changes a model.
+    </p>
+   </section>
+   <section class="case-section" id="contribution">
+    <h2>
+     My contribution
+    </h2>
+    <p>
+     My implementations include AlphaZero for Connect 4, a neural network with backpropagation for MNIST, and NEAT for CartPole and Flappy Bird.
+    </p>
+   </section>
+   <section class="case-section" id="approach">
+    <h2>
+     How it works
+    </h2>
+    <div class="method-explorer">
+     <div aria-label="Explore learning-algorithms" class="method-tabs" hidden="" role="group">
+      <button aria-controls="learning-algorithms-0" aria-pressed="true" type="button">
+       01 · Backpropagation
+      </button>
+      <button aria-controls="learning-algorithms-1" aria-pressed="false" type="button">
+       02 · Search
+      </button>
+      <button aria-controls="learning-algorithms-2" aria-pressed="false" type="button">
+       03 · Evolution
+      </button>
+     </div>
+     <div aria-label="Backpropagation" class="method-panel" id="learning-algorithms-0" role="region">
+      <h3>
+       Implement the learning signal.
+      </h3>
+      <p>
+       A neural network with backpropagation was implemented from scratch and reached a reported 95% on MNIST. The current portfolio summary does not specify the split or complete evaluation settings.
+      </p>
+     </div>
+     <div aria-label="Search" class="method-panel" id="learning-algorithms-1" role="region">
+      <h3>
+       Connect policy learning to search.
+      </h3>
+      <p>
+       The AlphaZero implementation uses Connect 4 as its environment. The project explores reinforcement learning and search through implementation rather than relying only on a high-level library.
+      </p>
+     </div>
+     <div aria-label="Evolution" class="method-panel" id="learning-algorithms-2" role="region">
+      <h3>
+       Explore how structure can evolve.
+      </h3>
+      <p>
+       The NEAT implementations target CartPole and Flappy Bird, connecting neuroevolution to interactive environments.
+      </p>
+     </div>
+     <p class="figure-note">
+      Implementation overview. Algorithm descriptions are separate from measured benchmark claims.
+     </p>
+    </div>
+   </section>
+   <section class="case-section" id="evidence">
+    <h2>
+     Evidence &amp; current status
+    </h2>
+    <p>
+     The MNIST network has a reported 95% result in the original project summary. The AlphaZero and NEAT work is described by its implementation targets; no comparative benchmark is presented here.
+    </p>
+   </section>
+   <section class="case-section" id="limits">
+    <h2>
+     Limitations
+    </h2>
+    <p>
+     Evaluation settings and source links are needed before treating these summaries as reproducible benchmark results.
+    </p>
+   </section>
+   <section class="case-section" id="questions">
+    <h2>
+     Next questions
+    </h2>
+    <p>
+     What do these implementations reveal about computation, sample efficiency, and the tradeoff between general learning systems and task-specific design?
+    </p>
+   </section>
+   <div class="case-next">
+    <a href="../index.html#work">
+     ← Back to selected work
+    </a>
+    <a href="llm-compression.html">
+     <span>
+      Continue exploring
+     </span>
+     Compressing LLaMA-2 for CPU inference →
+    </a>
+   </div>
+  </main>
+  <footer>
+   Shawal Latif · Lahore, Pakistan
+   <br/>
+   <a href="mailto:shawalkhan418@gmail.com">
+    Email
+   </a>
+   ·
+   <a href="https://github.com/shawalkhan1">
+    GitHub
+   </a>
+   ·
+   <a href="../Shawal_Latif_CV.pdf">
+    Curriculum vitae
+   </a>
+  </footer>
+ </body>
+</html>
