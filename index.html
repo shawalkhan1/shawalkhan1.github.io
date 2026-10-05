@@ -39,7 +39,7 @@
     --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
     --sans:"Source Sans 3", system-ui, -apple-system, sans-serif;
     --mono:"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
-    --maxw:860px;
+    --page-gutter:clamp(20px,3vw,64px);
     --shadow:0 1px 2px rgba(28,20,16,.04), 0 10px 28px -18px rgba(28,20,16,.40);
     --shadow-lift:0 14px 40px -16px rgba(120,20,20,.30), 0 2px 6px -2px rgba(28,20,16,.10);
     --ease:cubic-bezier(.2,.7,.2,1);
@@ -93,7 +93,7 @@
   }
   nav.scrolled{box-shadow:0 6px 24px -16px rgba(28,20,16,.4);background:rgba(253,252,250,.86);}
   .nav-inner{
-    max-width:var(--maxw);margin:0 auto;padding:12px 28px;
+    width:100%;margin:0 auto;padding:12px var(--page-gutter);
     display:flex;align-items:baseline;gap:22px;flex-wrap:wrap;
   }
   .nav-name{font-weight:600;font-size:1.05rem;letter-spacing:.01em;margin-right:auto;}
@@ -114,7 +114,7 @@
   .nav-links a.active{color:var(--accent);}
   .nav-links a.active::after{transform:scaleX(1);}
 
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;}
+  .wrap{width:100%;margin:0 auto;padding:0 var(--page-gutter);position:relative;}
   section{scroll-margin-top:78px;}
 
   /* ---- reveal on scroll ---- */
@@ -721,7 +721,7 @@
   @keyframes askBlink{50%{opacity:0;}}
 
   footer{
-    max-width:var(--maxw);margin:30px auto 0;padding:34px 28px 56px;
+    margin:30px var(--page-gutter) 0;padding:28px 0 40px;
     border-top:1px solid var(--rule);
     font-family:var(--sans);font-size:.82rem;color:var(--faint);
   }
@@ -786,6 +786,7 @@
   @media (max-width:760px){#research .themes{grid-template-columns:minmax(0,1fr);}}
 </style>
 <link rel="stylesheet" href="assets/css/edge-project.css">
+<link rel="stylesheet" href="assets/css/layout.css">
 <script src="assets/js/edge-project.js" defer></script>
 <noscript><style>#research,#systems{opacity:1;transform:none;}</style></noscript>
 </head>
@@ -1397,7 +1398,7 @@
           io.unobserve(e.target);
         }
       });
-    }, {rootMargin:"0px 0px -8% 0px", threshold:0.12});
+    }, {rootMargin:"0px 0px -8% 0px", threshold:0});
     revealEls.forEach(function(el){ io.observe(el); });
     // animate the h2 underline when a block scrolls in
     var bio = new IntersectionObserver(function(entries){
@@ -1415,15 +1416,26 @@
     if(sec) sectionMap[id] = a;
   });
   if("IntersectionObserver" in window){
+    var visibleSections = {};
+    function updateActiveNav(){
+      // Paired sections can cross the reading line together. Honor the selected link.
+      var selected = window.location.hash.slice(1);
+      var activeId = visibleSections[selected] ? selected : Object.keys(sectionMap).find(function(id){ return visibleSections[id]; });
+      if(!activeId) return;
+      navLinks.forEach(function(a){
+        var active = a === sectionMap[activeId];
+        a.classList.toggle("active", active);
+        if(active) a.setAttribute("aria-current", "location");
+        else a.removeAttribute("aria-current");
+      });
+    }
     var spy = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
-        if(e.isIntersecting){
-          navLinks.forEach(function(a){ a.classList.remove("active"); });
-          var a = sectionMap[e.target.id];
-          if(a) a.classList.add("active");
-        }
+        visibleSections[e.target.id] = e.isIntersecting;
       });
+      updateActiveNav();
     }, {rootMargin:"-45% 0px -50% 0px"});
+    window.addEventListener("hashchange", updateActiveNav);
     Object.keys(sectionMap).forEach(function(id){ spy.observe(document.getElementById(id)); });
   }
 
