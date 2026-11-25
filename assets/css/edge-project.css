@@ -1,5 +1,5 @@
 /* LLM compression feature. All rules stay within this project. */
-.edge-project{scroll-margin-top:130px;padding:28px;margin:6px 0 28px;border:1px solid var(--rule-strong);border-radius:18px;background:var(--card);box-shadow:var(--shadow);}
+.edge-project{scroll-margin-top:1rem;padding:28px;margin:6px 0 28px;border:1px solid var(--rule-strong);border-radius:18px;background:var(--card);box-shadow:var(--shadow);}
 .edge-project [hidden]{display:none!important;}
 .edge-nowrap{white-space:nowrap;}
 .edge-heading{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;margin-bottom:14px;}
@@ -91,7 +91,6 @@
 .edge-links a:hover{text-decoration:none;background:var(--accent-dark);border-color:var(--accent-dark);color:#fff;}
 .edge-project :focus-visible{outline:2px solid var(--accent);outline-offset:4px;}
 .edge-architecture :focus-visible{outline-color:var(--accent);}
-@media (max-width:760px){.edge-project{scroll-margin-top:210px;}}
 @media (max-width:600px){
   .edge-project{padding:20px 16px;}
   .edge-project .sys-title{font-size:1.65rem;}

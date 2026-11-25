@@ -6,7 +6,7 @@
 <title>Shawal Latif</title>
 <meta name="description" content="Shawal Latif - AI Researcher and AI Engineer building human-centered, trustworthy, and resource-efficient AI systems for social impact.">
 <meta name="author" content="Shawal Latif">
-<meta name="theme-color" content="#8C1515">
+<meta name="theme-color" content="#333333">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://shawalkhan1.github.io/">
 <meta property="og:type" content="website">
@@ -22,1453 +22,605 @@
 <meta name="twitter:image" content="https://shawalkhan1.github.io/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#1a1a1a;
-    --soft:#444;
-    --faint:#777;
-    --rule:#e7e3dd;
-    --rule-strong:#cfc9c1;
-    --paper:#fdfcfa;
-    --card:#ffffff;
-    --accent:#8C1515;
-    --accent-dark:#6e1010;
-    --accent-soft:#b8324a;
-    --amber:#b07d28;
-    --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
-    --sans:"Source Sans 3", system-ui, -apple-system, sans-serif;
-    --mono:"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
-    --maxw:860px;
-    --shadow:0 1px 2px rgba(28,20,16,.04), 0 10px 28px -18px rgba(28,20,16,.40);
-    --shadow-lift:0 14px 40px -16px rgba(120,20,20,.30), 0 2px 6px -2px rgba(28,20,16,.10);
-    --ease:cubic-bezier(.2,.7,.2,1);
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    font-family:var(--serif);
-    color:var(--ink);
-    background:var(--paper);
-    line-height:1.65;
-    font-size:18px;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-    overflow-x:hidden;
-  }
-  a{color:var(--accent);text-decoration:none;}
-  a:hover{color:var(--accent-dark);text-decoration:underline;text-underline-offset:2px;}
-
-  /* fixed ambient gradient-mesh wash behind everything */
-  .mesh-wash{
-    position:fixed;inset:0;z-index:-2;pointer-events:none;
-    background:
-      radial-gradient(40% 38% at 14% 8%, rgba(140,21,21,.10), transparent 70%),
-      radial-gradient(36% 40% at 92% 4%, rgba(184,50,74,.09), transparent 72%),
-      radial-gradient(48% 46% at 80% 88%, rgba(176,125,40,.08), transparent 72%),
-      radial-gradient(42% 44% at 6% 92%, rgba(140,21,21,.07), transparent 72%);
-    animation:meshDrift 26s ease-in-out infinite alternate;
-  }
-  @keyframes meshDrift{
-    0%{transform:translate3d(0,0,0) scale(1);}
-    100%{transform:translate3d(0,-14px,0) scale(1.06);}
-  }
-
-  /* ---- scroll progress bar ---- */
-  .progress{
-    position:fixed;top:0;left:0;height:2.5px;width:0;z-index:60;
-    background:linear-gradient(90deg,var(--accent),var(--accent-soft),var(--amber));
-    box-shadow:0 0 10px rgba(140,21,21,.4);
-  }
-
-  /* ---- top nav ---- */
-  nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(253,252,250,.72);
-    backdrop-filter:saturate(160%) blur(14px);
-    -webkit-backdrop-filter:saturate(160%) blur(14px);
-    border-bottom:1px solid var(--rule);
-    transition:box-shadow .3s var(--ease), background .3s var(--ease);
-  }
-  nav.scrolled{box-shadow:0 6px 24px -16px rgba(28,20,16,.4);background:rgba(253,252,250,.86);}
-  .nav-inner{
-    max-width:var(--maxw);margin:0 auto;padding:12px 28px;
-    display:flex;align-items:baseline;gap:22px;flex-wrap:wrap;
-  }
-  .nav-name{font-weight:600;font-size:1.05rem;letter-spacing:.01em;margin-right:auto;}
-  .nav-name a{color:var(--ink);}
-  .nav-name a:hover{color:var(--accent);text-decoration:none;}
-  .nav-links{display:flex;gap:4px;flex-wrap:wrap;}
-  .nav-links a{
-    position:relative;font-family:var(--sans);font-size:.82rem;letter-spacing:.03em;
-    text-transform:uppercase;color:var(--soft);padding:4px 9px;border-radius:7px;
-    transition:color .2s var(--ease), background .2s var(--ease);
-  }
-  .nav-links a::after{
-    content:"";position:absolute;left:9px;right:9px;bottom:1px;height:1.5px;
-    background:var(--accent);transform:scaleX(0);transform-origin:left;
-    transition:transform .28s var(--ease);
-  }
-  .nav-links a:hover{color:var(--accent);text-decoration:none;background:rgba(140,21,21,.05);}
-  .nav-links a.active{color:var(--accent);}
-  .nav-links a.active::after{transform:scaleX(1);}
-
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;}
-  section{scroll-margin-top:78px;}
-
-  /* ---- reveal on scroll ---- */
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease), transform .7s var(--ease);will-change:opacity,transform;}
-  .reveal.in{opacity:1;transform:none;}
-  .reveal.d1{transition-delay:.07s;}
-  .reveal.d2{transition-delay:.14s;}
-  .reveal.d3{transition-delay:.21s;}
-  .reveal.d4{transition-delay:.28s;}
-
-  /* ---- HERO ---- */
-  .hero{position:relative;padding:60px 0 20px;}
-  .hero-canvas{position:absolute;inset:-20px 0 0;width:100%;height:calc(100% + 20px);z-index:0;pointer-events:none;opacity:.9;}
-
-  /* ---- academic cover banner ---- */
-  .cover{
-    position:relative;z-index:1;margin:0 0 4px;
-    border-radius:18px;overflow:hidden;
-    border:1px solid var(--rule);background:#463c34;
-    box-shadow:var(--shadow);
-  }
-  .cover img{
-    display:block;width:100%;height:320px;object-fit:cover;object-position:50% 50%;
-    filter:saturate(1.02) contrast(1.02);
-  }
-  .cover::after{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(180deg,rgba(20,14,10,.10) 0%,transparent 26%,transparent 58%,rgba(20,14,10,.46) 100%);
-  }
-  .cover-cap{
-    position:absolute;left:24px;right:24px;bottom:16px;z-index:2;margin:0;text-align:right;
-    font-family:var(--serif);font-style:italic;font-size:1.02rem;
-    color:rgba(255,255,255,.94);text-shadow:0 1px 14px rgba(0,0,0,.55);letter-spacing:.01em;
-  }
-  .cover-tag{
-    position:absolute;right:16px;top:14px;z-index:2;
-    font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
-    color:rgba(255,255,255,.9);background:rgba(20,14,10,.34);
-    border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:5px 12px;
-    backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
-  }
-
-  .intro{position:relative;z-index:2;display:flex;gap:40px;align-items:flex-start;}
-  .intro-photo{flex:none;width:180px;margin-top:18px;}
-
-  /* ---- clean round LinkedIn-style headshot ---- */
-  .headshot{
-    position:relative;width:180px;height:180px;border-radius:50%;overflow:hidden;
-    border:5px solid var(--paper);
-    box-shadow:0 0 0 1px var(--rule-strong),0 18px 40px -20px rgba(28,20,16,.55);
-  }
-  .headshot img{
-    display:block;width:100%;height:100%;object-fit:cover;object-position:50% 14%;
-  }
-  .intro-photo .loc{
-    font-family:var(--sans);font-size:.82rem;color:var(--faint);
-    text-align:center;margin-top:16px;line-height:1.4;
-    display:flex;align-items:center;justify-content:center;gap:6px;
-  }
-  .loc .dot{width:7px;height:7px;border-radius:50%;background:#2ea043;box-shadow:0 0 0 0 rgba(46,160,67,.5);animation:pulse 2.4s infinite;}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(46,160,67,.5);}70%{box-shadow:0 0 0 7px rgba(46,160,67,0);}100%{box-shadow:0 0 0 0 rgba(46,160,67,0);}}
-
-  .intro-body{min-width:0;}
-  .intro-body h1{
-    font-size:2.7rem;font-weight:700;letter-spacing:-.02em;
-    margin:0 0 6px;line-height:1.06;
-    background:linear-gradient(92deg,var(--ink) 30%, var(--accent) 90%);
-    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  }
-  .intro-tag{
-    font-family:var(--sans);font-size:.92rem;font-weight:600;color:var(--accent);
-    margin:0 0 18px;letter-spacing:.04em;text-transform:uppercase;
-    display:inline-flex;align-items:center;flex-wrap:wrap;gap:9px;
-  }
-  .intro-body p{margin:0 0 14px;color:var(--ink);}
-  .intro-body p.lede{font-size:1.04rem;}
-  .intro-body em{color:var(--accent-dark);font-style:italic;}
-
-  .links{
-    font-family:var(--sans);font-size:.9rem;
-    display:flex;flex-wrap:wrap;gap:10px 12px;margin-top:22px;
-  }
-  .links a{
-    display:inline-flex;align-items:center;gap:7px;color:var(--accent);
-    border:1px solid var(--rule-strong);border-radius:999px;padding:7px 15px;
-    background:rgba(255,255,255,.6);
-    transition:transform .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease), color .2s var(--ease);
-  }
-  .links a:hover{
-    text-decoration:none;color:#fff;background:var(--accent);border-color:var(--accent);
-    transform:translateY(-2px);box-shadow:var(--shadow-lift);
-  }
-  .links svg{width:15px;height:15px;flex:none;}
-
-  /* ---- stat band ---- */
-  .stats{
-    display:grid;grid-template-columns:repeat(5,1fr);gap:14px;
-    margin:38px 0 6px;
-  }
-  .stat{
-    text-align:center;padding:16px 8px;border-radius:14px;
-    background:var(--card);border:1px solid var(--rule);box-shadow:var(--shadow);
-    transition:transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
-  }
-  .stat:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:var(--accent-soft);}
-  .stat .num{
-    font-family:var(--sans);font-weight:700;font-size:1.7rem;letter-spacing:-.02em;
-    color:var(--accent);line-height:1;display:block;
-  }
-  .stat .lbl{font-family:var(--sans);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);margin-top:7px;display:block;line-height:1.3;}
-
-  /* ---- section headings ---- */
-  .block{padding:34px 0;}
-  .block h2{
-    position:relative;font-family:var(--sans);font-size:.82rem;font-weight:700;
-    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
-    margin:0 0 22px;padding-bottom:10px;
-    display:flex;align-items:center;gap:12px;
-  }
-  .block h2::before{
-    content:"";flex:none;width:22px;height:2px;border-radius:2px;
-    background:linear-gradient(90deg,var(--accent),var(--amber));
-  }
-  .block h2::after{
-    content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;
-    background:var(--rule-strong);
-  }
-  .block h2 .h2line{
-    position:absolute;left:0;bottom:0;height:1px;width:0;
-    background:linear-gradient(90deg,var(--accent),var(--amber),transparent);
-    transition:width .9s var(--ease);
-  }
-  .block.in h2 .h2line{width:64px;}
-
-  /* ---- research interests / theme cards ---- */
-  .research-p{margin:0 0 16px;color:var(--ink);}
-  .research-p em{color:var(--accent-dark);font-style:italic;}
-  .research-lead{margin:0 0 18px;color:var(--soft);font-size:.96rem;}
-  .themes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:6px 0 18px;}
-  .theme{
-    position:relative;overflow:hidden;
-    border:1px solid var(--rule);border-radius:16px;background:var(--card);
-    padding:20px 18px;box-shadow:var(--shadow);
-    transition:transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease);
-  }
-  .theme::before{
-    content:"";position:absolute;left:0;right:0;top:0;height:3px;
-    background:linear-gradient(90deg,var(--accent),var(--amber));
-    transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);
-  }
-  .theme:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift);border-color:var(--accent-soft);}
-  .theme:hover::before{transform:scaleX(1);}
-  .theme .ic{
-    width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;
-    background:linear-gradient(135deg,rgba(140,21,21,.10),rgba(176,125,40,.10));
-    color:var(--accent);margin-bottom:13px;
-  }
-  .theme .ic svg{width:20px;height:20px;}
-  .theme h3{font-family:var(--sans);font-weight:700;font-size:1rem;letter-spacing:-.01em;margin:0 0 7px;}
-  .theme p{margin:0;font-size:.92rem;color:var(--soft);line-height:1.55;}
-  .research-note{margin:18px 0 0;color:var(--soft);font-size:.96rem;}
-  .research-note b{color:var(--ink);font-weight:600;}
-
-  /* ---- news ---- */
-  .news{margin:0;}
-  .news-row{
-    display:flex;gap:18px;padding:11px 12px;border-radius:10px;
-    border-bottom:1px solid var(--rule);position:relative;
-    transition:background .22s var(--ease), transform .22s var(--ease);
-  }
-  .news-row::before{
-    content:"";position:absolute;left:0;top:10px;bottom:10px;width:2px;border-radius:2px;
-    background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform .25s var(--ease);
-  }
-  .news-row:hover{background:rgba(140,21,21,.035);transform:translateX(4px);}
-  .news-row:hover::before{transform:scaleY(1);}
-  .news-row:last-child{border-bottom:0;}
-  .news-date{
-    flex:none;width:112px;font-family:var(--mono);font-size:.76rem;
-    color:var(--faint);padding-top:.22em;letter-spacing:.01em;
-  }
-  .news-text{margin:0;color:var(--ink);}
-  .news-logo{
-    height:24px;width:auto;max-width:96px;object-fit:contain;
-    vertical-align:middle;margin:0 0 0 9px;
-    position:relative;top:-1px;filter:saturate(.94);
-    transition:transform .2s var(--ease), filter .2s var(--ease);
-  }
-  .news-logo:hover{transform:scale(1.06);filter:saturate(1.1);}
-
-  /* ---- publications ---- */
-  .pub{
-    display:flex;gap:20px;padding:18px 14px;border-radius:12px;
-    border-bottom:1px solid var(--rule);position:relative;
-    transition:background .22s var(--ease), box-shadow .22s var(--ease);
-  }
-  .pub:last-child{border-bottom:0;}
-  .pub:hover{background:var(--card);box-shadow:var(--shadow);}
-  .pub-venue{
-    flex:none;width:120px;font-family:var(--sans);font-size:.78rem;
-    font-weight:700;letter-spacing:.02em;color:var(--accent);padding-top:.2em;
-  }
-  .pub-badge{
-    display:inline-block;margin-top:6px;font-family:var(--mono);font-weight:400;
-    font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);
-    border:1px solid rgba(176,125,40,.4);border-radius:999px;padding:2px 8px;
-  }
-  .pub-main{min-width:0;}
-  .pub-title{font-weight:600;font-size:1.06rem;line-height:1.3;margin:0 0 4px;transition:color .2s var(--ease);}
-  .pub:hover .pub-title{color:var(--accent-dark);}
-  .pub-authors{font-size:.95rem;color:var(--soft);margin:0 0 6px;}
-  .pub-authors b{color:var(--ink);}
-  .pub-note{font-size:.92rem;color:var(--soft);margin:0;}
-
-  /* ---- entries (experience / education) ---- */
-  .entry{
-    padding:18px 16px;border-bottom:1px solid var(--rule);border-radius:12px;
-    transition:background .22s var(--ease), box-shadow .22s var(--ease);
-  }
-  .entry:last-child{border-bottom:0;}
-  .entry:hover{background:var(--card);box-shadow:var(--shadow);}
-  .entry-head{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap;}
-  .entry-role{font-weight:600;font-size:1.1rem;}
-  .entry-role .org{color:var(--accent-dark);}
-  .entry-when{font-family:var(--mono);font-size:.76rem;color:var(--faint);white-space:nowrap;}
-  .entry-meta{font-size:.95rem;color:var(--soft);font-style:italic;margin:2px 0 10px;}
-  .entry ul{list-style:none;margin:6px 0 0;padding:0;}
-  .entry ul li{position:relative;padding-left:20px;margin-bottom:7px;color:var(--soft);}
-  .entry ul li::before{content:"–";position:absolute;left:2px;color:var(--accent);}
-  .entry ul li b{color:var(--ink);font-weight:600;}
-
-  /* ---- affiliation logos ---- */
-  .entry-left{display:flex;align-items:center;gap:13px;min-width:0;}
-  .logos{display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px;margin:12px 0 4px;}
-  .logos .logo{display:flex;flex-direction:column;align-items:center;gap:5px;transition:transform .22s var(--ease);}
-  .logos .logo:hover{transform:translateY(-3px);}
-  .logos img{height:36px;width:auto;max-width:120px;object-fit:contain;display:block;filter:saturate(.9) grayscale(.15);transition:filter .25s var(--ease);}
-  .logos .logo:hover img{filter:saturate(1.05) grayscale(0);}
-  .logos .logo small{font-family:var(--sans);font-size:.66rem;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);}
-  .edu-logo{height:42px;width:auto;max-width:120px;object-fit:contain;flex:none;}
-
-  /* ---- teaching grid ---- */
-  .teach-lede{color:var(--soft);margin:0 0 18px;font-size:.98rem;}
-  .courses{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;list-style:none;margin:0;padding:0;}
-  .courses li{
-    padding:13px 15px;border:1px solid var(--rule);border-radius:13px;background:var(--card);
-    font-size:.98rem;box-shadow:var(--shadow);position:relative;overflow:hidden;
-    transition:transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
-  }
-  .courses li::after{
-    content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
-    background:linear-gradient(180deg,var(--accent),var(--amber));
-    transform:scaleY(0);transform-origin:top;transition:transform .3s var(--ease);
-  }
-  .courses li:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);border-color:var(--accent-soft);}
-  .courses li:hover::after{transform:scaleY(1);}
-  .courses li b{font-weight:600;}
-  .courses li span{display:block;font-family:var(--sans);font-size:.8rem;color:var(--faint);margin-top:4px;line-height:1.45;}
-
-  .edu-when{font-family:var(--mono);}
-
-  /* ---- honors cards ---- */
-  .honor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
-  .honor{
-    position:relative;overflow:hidden;
-    border:1px solid var(--rule);border-radius:16px;background:var(--card);
-    padding:18px 18px;box-shadow:var(--shadow);
-    transition:transform .26s var(--ease), box-shadow .26s var(--ease), border-color .26s var(--ease);
-  }
-  .honor:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:var(--accent-soft);}
-  .honor .ic{
-    width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;
-    background:linear-gradient(135deg,rgba(140,21,21,.10),rgba(176,125,40,.12));color:var(--accent);
-    margin-bottom:12px;
-  }
-  .honor .ic svg{width:21px;height:21px;}
-  .honor b{font-family:var(--sans);font-weight:700;font-size:.98rem;display:block;}
-  .honor span{display:block;font-size:.9rem;color:var(--soft);margin-top:4px;line-height:1.5;}
-
-  /* ---- projects ---- */
-  .proj-list{list-style:none;margin:0;padding:0;display:grid;gap:14px;}
-  .proj-list li{
-    padding:16px 18px;border:1px solid var(--rule);border-radius:14px;background:var(--card);
-    box-shadow:var(--shadow);position:relative;overflow:hidden;
-    transition:transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
-  }
-  .proj-list li::before{
-    content:"";position:absolute;left:0;right:0;top:0;height:3px;
-    background:linear-gradient(90deg,var(--accent),var(--amber));
-    transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);
-  }
-  .proj-list li:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:var(--accent-soft);}
-  .proj-list li:hover::before{transform:scaleX(1);}
-  .proj-list .pt{font-weight:600;}
-  .proj-list .ps{font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.02em;}
-  .proj-list .pd{color:var(--soft);font-size:.95rem;margin-top:3px;}
-
-  /* ---- skills ---- */
-  .skills-group{display:flex;gap:18px;padding:15px 12px;border-bottom:1px solid var(--rule);border-radius:10px;transition:background .2s var(--ease);}
-  .skills-group:hover{background:rgba(140,21,21,.025);}
-  .skills-group:last-child{border-bottom:0;}
-  .skills-cat{
-    flex:none;width:150px;font-family:var(--sans);font-size:.78rem;font-weight:700;
-    letter-spacing:.04em;text-transform:uppercase;color:var(--accent);padding-top:6px;
-  }
-  .skills-chips{display:flex;flex-wrap:wrap;gap:8px;min-width:0;}
-  .skills-chips span{
-    font-family:var(--mono);font-size:.74rem;letter-spacing:.01em;color:var(--soft);
-    border:1px solid var(--rule-strong);border-radius:8px;padding:5px 11px;white-space:nowrap;
-    background:var(--card);cursor:default;
-    transition:transform .18s var(--ease), color .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease), box-shadow .18s var(--ease);
-  }
-  .skills-chips span:hover{transform:translateY(-2px);color:#fff;background:var(--accent);border-color:var(--accent);box-shadow:var(--shadow-lift);}
-
-  /* ===== Systems section ===== */
-  .sys-feature{padding:26px 0 6px;border-bottom:1px solid var(--rule);}
-  .sys-feature:last-child{border-bottom:0;}
-  .sys-kicker{
-    font-family:var(--mono);font-size:.7rem;font-weight:500;
-    letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
-    margin:0 0 8px;display:inline-flex;align-items:center;gap:8px;
-  }
-  .sys-kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px rgba(140,21,21,.6);}
-  .sys-title{font-size:1.7rem;font-weight:700;letter-spacing:-.02em;margin:0 0 8px;line-height:1.12;}
-  .sys-summary{color:var(--soft);margin:0 0 20px;font-size:1.04rem;}
-  .sys-prose{color:var(--ink);margin:0 0 20px;}
-
-  /* live-demo call-to-action button */
-  .sys-cta{
-    display:inline-flex;align-items:center;gap:9px;margin:0 0 22px;position:relative;overflow:hidden;
-    font-family:var(--sans);font-size:.92rem;font-weight:600;
-    color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:9px 18px;
-    transition:transform .22s var(--ease), background .22s var(--ease), border-color .22s var(--ease), box-shadow .22s var(--ease);
-  }
-  .sys-cta:hover{
-    background:var(--accent-dark);border-color:var(--accent-dark);color:#fff;
-    text-decoration:none;transform:translateY(-2px);box-shadow:var(--shadow-lift);
-  }
-  .sys-cta .live{width:8px;height:8px;border-radius:50%;background:#2ea043;flex:none;
-    box-shadow:0 0 0 0 rgba(46,160,67,.6);animation:pulse 2.4s infinite;}
-  .sys-cta svg{width:16px;height:16px;flex:none;transition:transform .22s var(--ease);}
-  .sys-cta:hover svg{transform:translate(2px,-2px);}
-  .sys-cta::before{
-    content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;pointer-events:none;
-    background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);
-    transform:skewX(-18deg);transition:left .6s var(--ease);
-  }
-  .sys-cta:hover::before{left:170%;}
-
-  .sys-tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px;}
-  .sys-tags span{
-    font-family:var(--mono);font-size:.72rem;letter-spacing:.01em;color:var(--soft);
-    border:1px solid var(--rule-strong);border-radius:7px;padding:4px 10px;
-    white-space:nowrap;background:var(--card);
-    transition:transform .18s var(--ease), color .18s var(--ease), border-color .18s var(--ease);
-  }
-  .sys-tags span:hover{transform:translateY(-2px);color:var(--accent);border-color:var(--accent-soft);}
-
-  /* ===== LLM Twin animated pipeline ===== */
-  .twin-rig{
-    position:relative;margin:6px 0 22px;padding:26px 22px 18px;
-    border:1px solid var(--rule);border-radius:18px;
-    background:
-      radial-gradient(120% 100% at 50% 0%, rgba(140,21,21,.05), transparent 60%),
-      var(--card);
-    box-shadow:var(--shadow);overflow:hidden;
-  }
-  .twin-rig::after{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);
-    transform:translateX(-120%);
-  }
-  .twin-rig.shine::after{animation:twinShine 1.1s var(--ease);}
-  @keyframes twinShine{to{transform:translateX(120%);}}
-
-  .twin-rail{position:relative;display:flex;align-items:stretch;gap:0;}
-  .twin-stage{
-    flex:1 1 0;min-width:0;position:relative;z-index:2;
-    display:flex;flex-direction:column;align-items:center;gap:8px;
-    font-family:var(--sans);text-align:center;cursor:pointer;
-    background:transparent;border:0;padding:4px 6px;color:var(--soft);
-  }
-  .twin-dot{
-    position:relative;width:50px;height:50px;border-radius:14px;
-    display:flex;align-items:center;justify-content:center;
-    background:var(--paper);border:1.5px solid var(--rule-strong);
-    transition:border-color .25s var(--ease), background .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease);
-  }
-  .twin-dot svg{width:23px;height:23px;color:var(--faint);transition:color .25s var(--ease);}
-  .twin-num{position:absolute;top:-7px;right:-7px;font-family:var(--mono);font-size:.58rem;font-weight:500;
-    color:var(--accent);background:var(--paper);border:1px solid var(--rule-strong);border-radius:6px;padding:1px 4px;}
-  .twin-label{font-size:.82rem;font-weight:600;color:inherit;}
-  .twin-sub{font-family:var(--mono);font-size:.6rem;letter-spacing:.02em;color:var(--faint);text-transform:uppercase;}
-  .twin-stage:hover .twin-dot,
-  .twin-stage:focus-visible .twin-dot{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 24px -12px rgba(140,21,21,.5);}
-  .twin-stage:hover .twin-dot svg{color:var(--accent);}
-  .twin-stage:hover .twin-label{color:var(--ink);}
-  .twin-stage:focus-visible{outline:none;}
-  .twin-stage[aria-expanded="true"] .twin-dot{
-    border-color:var(--accent);background:linear-gradient(135deg,var(--accent),var(--accent-dark));
-    box-shadow:0 12px 26px -10px rgba(140,21,21,.6);
-  }
-  .twin-stage[aria-expanded="true"] .twin-dot svg{color:#fff;}
-  .twin-stage[aria-expanded="true"] .twin-label{color:var(--accent);}
-
-  /* connecting wire + traveling packet */
-  .twin-wire{
-    position:absolute;top:31px;left:11%;right:11%;height:2px;z-index:1;
-    background:repeating-linear-gradient(90deg,var(--rule-strong) 0 6px,transparent 6px 12px);
-  }
-  .twin-wire .packet{
-    position:absolute;top:50%;left:0;width:10px;height:10px;margin-top:-5px;border-radius:50%;
-    background:var(--accent);box-shadow:0 0 12px 3px rgba(140,21,21,.6);
-    animation:packetRun 5.5s linear infinite;
-  }
-  .twin-wire .packet.b{background:var(--amber);box-shadow:0 0 12px 3px rgba(176,125,40,.6);animation-delay:2.75s;}
-  @keyframes packetRun{0%{left:-1%;opacity:0;}6%{opacity:1;}94%{opacity:1;}100%{left:101%;opacity:0;}}
-
-  .twin-detail-wrap{
-    margin-top:14px;border-top:1px dashed var(--rule-strong);padding-top:14px;
-    min-height:0;
-  }
-  .twin-detail{
-    display:none;font-family:var(--serif);color:var(--soft);font-size:.98rem;
-    border-left:2px solid var(--accent);padding:2px 0 2px 16px;
-    animation:fadeUp .4s var(--ease);
-  }
-  .twin-detail.show{display:block;}
-  .twin-detail b{color:var(--ink);font-weight:600;}
-  .twin-hint{font-family:var(--mono);font-size:.7rem;color:var(--faint);text-align:center;letter-spacing:.02em;}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
-
-  /* ===== SYNQ generative-agent society simulation ===== */
-  .synq-tagline{font-style:italic;color:var(--accent-dark);font-size:1.12rem;margin:0 0 16px;}
-  .synq-viz{
-    position:relative;height:400px;margin:8px 0 14px;border:1px solid var(--rule);border-radius:18px;
-    background:linear-gradient(180deg,#fbf8f3,var(--card));
-    overflow:hidden;box-shadow:var(--shadow);cursor:crosshair;
-  }
-  .agent-sim{position:absolute;inset:0;width:100%;height:100%;display:block;}
-  .synq-legend{
-    position:absolute;left:15px;top:13px;z-index:3;display:flex;flex-wrap:wrap;gap:6px 15px;
-    font-family:var(--mono);font-size:.62rem;letter-spacing:.02em;color:var(--faint);
-  }
-  .synq-legend span{display:inline-flex;align-items:center;gap:6px;}
-  .synq-legend .lg{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none;}
-  .synq-legend .lg-you{background:var(--accent);}
-  .synq-legend .lg-a{background:var(--amber);}
-  .synq-legend .lg-link{width:15px;height:0;border-radius:0;border-top:1.5px dashed var(--accent-soft);}
-  .synq-caption{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:var(--mono);font-size:.66rem;color:#fff;mix-blend-mode:difference;z-index:3;padding:0 12px;opacity:.85;}
-  .sim-hud{
-    position:absolute;right:13px;top:11px;z-index:3;
-    font-family:var(--mono);font-size:.62rem;letter-spacing:.03em;color:var(--soft);
-    background:rgba(255,255,255,.72);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
-    border:1px solid var(--rule);border-radius:999px;padding:4px 11px;white-space:nowrap;
-  }
-  .sim-controls{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;}
-  .sim-btn{
-    font-family:var(--mono);font-size:.72rem;color:var(--soft);cursor:pointer;
-    background:var(--card);border:1px solid var(--rule-strong);border-radius:999px;
-    padding:6px 13px;display:inline-flex;align-items:center;gap:7px;
-    transition:transform .18s var(--ease),border-color .18s var(--ease),color .18s var(--ease),box-shadow .18s var(--ease),background .18s var(--ease);
-  }
-  .sim-btn .ic{font-size:.9rem;line-height:1;}
-  .sim-btn:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent);box-shadow:var(--shadow);}
-  .sim-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-  .sim-btn.on{background:var(--accent);border-color:var(--accent);color:#fff;}
-
-  .synq-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:6px 0 4px;}
-  .synq-step{
-    border:1px solid var(--rule);border-radius:15px;background:var(--card);padding:18px 16px;
-    box-shadow:var(--shadow);position:relative;overflow:hidden;
-    transition:transform .26s var(--ease), box-shadow .26s var(--ease), border-color .26s var(--ease);
-  }
-  .synq-step::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--amber));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);}
-  .synq-step:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift);border-color:var(--accent-soft);}
-  .synq-step:hover::before{transform:scaleX(1);}
-  .synq-step-label{
-    font-family:var(--mono);font-size:.66rem;font-weight:500;letter-spacing:.06em;
-    text-transform:uppercase;color:var(--accent);margin:0 0 8px;
-  }
-  .synq-step-head{font-family:var(--sans);font-size:1.05rem;font-weight:700;margin:0 0 6px;letter-spacing:-.01em;}
-  .synq-step-text{color:var(--soft);font-size:.92rem;margin:0;line-height:1.55;}
-  .synq-ethics-label{
-    font-family:var(--mono);font-size:.66rem;font-weight:500;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--faint);margin:24px 0 10px;
-  }
-
-  /* ===== Mathematics & Physics / Astrophysics ===== */
-  .phys-lead{color:var(--ink);margin:0 0 14px;}
-  .phys-lead em{color:var(--accent-dark);font-style:italic;}
-  .phys-sub{color:var(--soft);font-size:.96rem;margin:0 0 22px;}
-
-  /* chalkboard feature */
-  .board-feature{
-    display:grid;grid-template-columns:1.15fr 1fr;gap:0;align-items:stretch;
-    border:1px solid var(--rule);border-radius:18px;overflow:hidden;background:var(--card);
-    box-shadow:var(--shadow);margin:0 0 22px;
-    transition:transform .26s var(--ease), box-shadow .26s var(--ease), border-color .26s var(--ease);
-  }
-  .board-feature:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:var(--accent-soft);}
-  .board-feature .board-img{position:relative;min-height:260px;background:#1c1c1c;overflow:hidden;}
-  .board-feature .board-img img{
-    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 52%;
-    filter:saturate(1.02) contrast(1.04);
-  }
-  .board-body{padding:24px 24px;display:flex;flex-direction:column;justify-content:center;}
-  .board-kicker{
-    font-family:var(--mono);font-size:.66rem;font-weight:500;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--accent);margin:0 0 8px;display:inline-flex;align-items:center;gap:8px;
-  }
-  .board-kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);}
-  .board-body h3{font-family:var(--sans);font-weight:700;font-size:1.18rem;letter-spacing:-.01em;margin:0 0 8px;}
-  .board-body p{margin:0 0 12px;color:var(--soft);font-size:.95rem;line-height:1.6;}
-  .board-body p:last-child{margin-bottom:0;}
-  .board-body b{color:var(--ink);font-weight:600;}
-
-  /* astrophotography gallery */
-  .astro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-  .astro-card{
-    position:relative;overflow:hidden;border:1px solid var(--rule);border-radius:16px;background:#0b0b0f;
-    box-shadow:var(--shadow);
-    transition:transform .26s var(--ease), box-shadow .26s var(--ease), border-color .26s var(--ease);
-  }
-  .astro-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift);border-color:var(--accent-soft);}
-  .astro-card img{
-    display:block;width:100%;height:230px;object-fit:cover;
-    transition:transform .5s var(--ease);
-  }
-  .astro-card:hover img{transform:scale(1.05);}
-  .astro-cap{
-    position:absolute;left:0;right:0;bottom:0;padding:24px 14px 12px;z-index:2;
-    background:linear-gradient(180deg,transparent,rgba(6,6,10,.78) 62%,rgba(6,6,10,.92));
-  }
-  .astro-cap .obj{
-    display:block;font-family:var(--sans);font-weight:700;font-size:.92rem;color:#fff;letter-spacing:-.01em;
-  }
-  .astro-cap .meta{
-    display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;
-    color:rgba(255,255,255,.78);margin-top:3px;
-  }
-  .phys-note{margin:20px 0 0;color:var(--soft);font-size:.92rem;}
-  .phys-note b{color:var(--ink);font-weight:600;}
-
-  /* ===== Ask Me Anything ===== */
-  .ask-intro{color:var(--soft);margin:0 0 20px;font-size:1.02rem;}
-  .ask-form{display:flex;gap:10px;margin:0 0 14px;}
-  .ask-input{
-    flex:1 1 auto;min-width:0;font-family:var(--serif);font-size:1rem;color:var(--ink);
-    background:var(--card);border:1px solid var(--rule-strong);border-radius:11px;padding:12px 16px;
-    transition:border-color .2s var(--ease), box-shadow .2s var(--ease);
-  }
-  .ask-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(140,21,21,.10);}
-  .ask-input::placeholder{color:var(--faint);font-style:italic;}
-  .ask-btn{
-    flex:none;font-family:var(--sans);font-size:.82rem;font-weight:700;
-    letter-spacing:.06em;text-transform:uppercase;cursor:pointer;
-    color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-dark));border:1px solid var(--accent);
-    border-radius:11px;padding:0 24px;transition:transform .18s var(--ease), box-shadow .18s var(--ease), filter .18s var(--ease);
-  }
-  .ask-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift);filter:brightness(1.05);}
-  .ask-btn:focus-visible{outline:2px solid var(--accent-dark);outline-offset:2px;}
-
-  .ask-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;}
-  .ask-chip{
-    font-family:var(--sans);font-size:.8rem;color:var(--soft);cursor:pointer;
-    background:var(--card);border:1px solid var(--rule-strong);border-radius:999px;
-    padding:6px 14px;transition:transform .18s var(--ease), border-color .18s var(--ease), color .18s var(--ease), box-shadow .18s var(--ease);
-  }
-  .ask-chip:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent);box-shadow:var(--shadow);}
-  .ask-chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-
-  .ask-steps{
-    display:flex;flex-wrap:wrap;gap:10px 22px;list-style:none;margin:0 0 20px;padding:0;
-    font-family:var(--sans);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;
-    color:var(--faint);
-  }
-  .ask-steps li{display:flex;align-items:center;gap:8px;transition:color .2s ease;}
-  .ask-step-num{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:22px;height:22px;border-radius:50%;border:1px solid var(--rule-strong);
-    font-size:.72rem;color:var(--faint);transition:all .2s ease;
-  }
-  .ask-steps li.active{color:var(--accent);}
-  .ask-steps li.active .ask-step-num{border-color:var(--accent);background:var(--accent);color:#fff;transform:scale(1.08);}
-
-  .ask-results{margin-top:4px;}
-  .ask-doc{border-left:2px solid var(--accent);padding:2px 0 2px 16px;margin:0 0 12px;animation:fadeUp .4s var(--ease);}
-  .ask-doc-score{
-    font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;text-transform:uppercase;
-    color:var(--faint);display:block;margin-bottom:2px;
-  }
-  .ask-doc-text{color:var(--soft);font-size:.96rem;margin:0;}
-  .ask-answer-label{
-    font-family:var(--mono);font-size:.68rem;font-weight:500;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--accent);margin:20px 0 8px;
-  }
-  .ask-answer{color:var(--ink);font-size:1.05rem;line-height:1.6;margin:0;}
-  .ask-caret{
-    display:inline-block;width:2px;height:1.05em;background:var(--accent);
-    vertical-align:-2px;margin-left:1px;animation:askBlink 1s step-end infinite;
-  }
-  .ask-empty{color:var(--faint);font-style:italic;}
-  @keyframes askBlink{50%{opacity:0;}}
-
-  footer{
-    max-width:var(--maxw);margin:30px auto 0;padding:34px 28px 56px;
-    border-top:1px solid var(--rule);
-    font-family:var(--sans);font-size:.82rem;color:var(--faint);
-  }
-  footer a{color:var(--accent);}
-
-  /* ---- back to top ---- */
-  .totop{
-    position:fixed;right:22px;bottom:22px;z-index:40;
-    width:44px;height:44px;border-radius:50%;border:1px solid var(--rule-strong);
-    background:rgba(255,255,255,.85);backdrop-filter:blur(8px);color:var(--accent);
-    display:flex;align-items:center;justify-content:center;cursor:pointer;
-    opacity:0;transform:translateY(12px) scale(.9);pointer-events:none;
-    box-shadow:var(--shadow);transition:opacity .3s var(--ease), transform .3s var(--ease), background .2s var(--ease);
-  }
-  .totop.show{opacity:1;transform:none;pointer-events:auto;}
-  .totop:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
-  .totop svg{width:20px;height:20px;}
-
-  @media (max-width:760px){
-    .stats{grid-template-columns:repeat(2,1fr);}
-    .themes,.synq-steps{grid-template-columns:1fr;}
-    .honor-grid{grid-template-columns:1fr;}
-    .astro-grid{grid-template-columns:1fr 1fr;}
-    .board-feature{grid-template-columns:1fr;}
-    .board-feature .board-img{min-height:230px;}
-  }
-  @media (max-width:680px){
-    body{font-size:17px;}
-    .nav-links{gap:2px;}
-    .intro{flex-direction:column;gap:24px;}
-    .hero{padding:36px 0 8px;}
-    .intro-photo{width:130px;align-self:flex-start;margin-top:14px;}
-    .headshot{width:130px;height:130px;}
-    .cover img{height:215px;object-position:50% 53%;}
-    .cover-cap{display:none;}
-    .cover-tag{font-size:.56rem;right:auto;left:12px;top:12px;padding:4px 9px;}
-    .intro-photo .loc{justify-content:flex-start;}
-    .intro-body h1{font-size:2.15rem;}
-    .courses{grid-template-columns:1fr;}
-    .news-date,.pub-venue{width:92px;}
-    .skills-group{flex-direction:column;gap:8px;}
-    .skills-cat{width:auto;padding-top:0;}
-    .sys-title{font-size:1.4rem;}
-    .ask-form{flex-direction:column;}
-    .ask-btn{padding:12px 0;}
-    .synq-viz{height:320px;}
-    .twin-label{font-size:.74rem;}
-    .twin-sub{display:none;}
-    .twin-dot{width:42px;height:42px;}
-    .astro-grid{grid-template-columns:1fr;}
-    .astro-card img{height:240px;}
-  }
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto;}
-    *,*::before,*::after{animation:none!important;transition:none!important;}
-    .reveal{opacity:1!important;transform:none!important;}
-    .hero-canvas{display:none;}
-    .mesh-wash{animation:none;}
-  }
-  /* Research layout retained alongside the edge AI feature. */
-  #research .themes{grid-template-columns:repeat(2,minmax(0,1fr));}
-  @media (max-width:760px){#research .themes{grid-template-columns:minmax(0,1fr);}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/portfolio.css">
+<link rel="stylesheet" href="assets/css/portfolio-components.css">
 <link rel="stylesheet" href="assets/css/edge-project.css">
 <script src="assets/js/edge-project.js" defer></script>
-<noscript><style>#research,#systems{opacity:1;transform:none;}</style></noscript>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<div class="mesh-wash" aria-hidden="true"></div>
-<div class="progress" id="progress" aria-hidden="true"></div>
-
-<nav id="nav">
-  <div class="nav-inner">
-    <span class="nav-name"><a href="#about">Shawal Latif</a></span>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#news">News</a>
-      <a href="#publications">Publications</a>
-      <a href="#experience">Experience</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#systems">Systems</a>
-      <a href="#physics">Physics</a>
-      <a href="#ask">Ask Me</a>
-    </div>
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a class="site-name" href="#about">Shawal Latif</a>
+    <button class="nav-toggle" type="button" aria-controls="site-links" aria-expanded="false" aria-label="Open navigation" hidden>
+      <span aria-hidden="true"></span>
+    </button>
+    <ul class="nav-links" id="site-links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#publications">Papers</a></li>
+      <li><a href="#systems">Systems</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+    </ul>
   </div>
 </nav>
 
-<main class="wrap">
-
-  <header class="hero" id="about">
-    <canvas class="hero-canvas" id="mesh" aria-hidden="true"></canvas>
-    <div class="cover reveal">
-      <img src="cover.jpg" alt="Shawal Latif at the blackboard deriving relativistic tensor transformations" loading="eager">
-      <span class="cover-tag">LUMS · Pakistan</span>
+<main id="main-content" tabindex="-1">
+  <header class="container profile" id="about">
+    <div class="profile-photo">
+      <img src="shawal.jpg" alt="Shawal Latif" width="749" height="1331" fetchpriority="high">
+      <p>
+        <a href="mailto:shawalkhan418@gmail.com">shawalkhan418@gmail.com</a><br>
+        Lahore, Pakistan<br>
+        <a href="Shawal_Latif_CV.pdf">[CV]</a>
+        <a href="https://github.com/shawalkhan1" target="_blank" rel="noopener">[GitHub]</a>
+      </p>
     </div>
-    <div class="intro">
-      <div class="intro-photo reveal">
-        <div class="headshot"><img src="shawal.jpg" alt="Shawal Latif" loading="eager"></div>
-        <div class="loc"><span class="dot"></span>Lahore, Pakistan</div>
-      </div>
-      <div class="intro-body">
-        <h1 class="reveal">Shawal Latif</h1>
-        <p class="intro-tag reveal d1"><span>AI Researcher</span><span aria-hidden="true">&middot;</span><span>AI Engineer</span></p>
-        <p class="lede reveal d1">I build <strong>human-centered, trustworthy, and resource-efficient AI systems for social impact</strong>, particularly for communities with limited access to computation, connectivity, healthcare, and information.</p>
-        <p class="reveal d2">My research lies at the intersection of <strong>Human-AI Interaction, Efficient &amp; Edge AI, Responsible AI, and AI for Social Impact</strong>. I am particularly interested in making advanced AI accessible in resource-constrained settings while ensuring that efficiency does not compromise safety, fairness, cultural relevance, or usability.</p>
-        <p class="reveal d3">I am a Full-Stack AI Engineer at <strong><a href="https://www.awaazesehat.com/" target="_blank" rel="noopener">Awaaz-e-Sehat</a></strong>, Pakistan's voice-first LLM-powered maternal healthcare assistant, developed at the <strong><a href="https://thenationalaihub.com/" target="_blank" rel="noopener">National AI Hub</a>, LUMS</strong>. My current work focuses on evaluating and developing multilingual AI systems for maternal healthcare, including fairness, safety, linguistic disparities, and efficient deployment in low-connectivity environments.</p>
-
-        <div class="links reveal d4">
-          <a href="mailto:shawalkhan418@gmail.com" aria-label="Email" data-magnetic>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
-          <a href="Shawal_Latif_CV.pdf" download="Shawal_Latif_CV.pdf" aria-label="Curriculum Vitae" data-magnetic>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>CV</a>
-          <a href="https://github.com/shawalkhan1" target="_blank" rel="noopener" aria-label="GitHub" data-magnetic>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.3-1.1.6-1.4-2.2-.3-4.6-1.2-4.6-5.1 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9 9 0 0 1 4.9 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.8-4.6 5.1.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2Z"/></svg>GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="stats reveal d2" id="stats">
-      <div class="stat"><span class="num" data-count="30" data-suffix="+">0</span><span class="lbl">LLMs benchmarked</span></div>
-      <div class="stat"><span class="num" data-count="3">0</span><span class="lbl">Papers in submission</span></div>
-      <div class="stat"><span class="num" data-count="6">0</span><span class="lbl">Courses TA'd</span></div>
-      <div class="stat"><span class="num" data-count="200" data-suffix="+">0</span><span class="lbl">Students mentored</span></div>
-      <div class="stat"><span class="num" data-count="1" data-suffix="M">0</span><span class="lbl">PKR raised (charity)</span></div>
+    <div class="profile-bio">
+      <h1>Shawal Latif</h1>
+      <p>I am currently an AI Engineer at <a href="https://www.awaazesehat.com/" target="_blank" rel="noopener">Awaaz-e-Sehat</a>, a voice-first maternal healthcare assistant developed at the <a href="https://thenationalaihub.com/" target="_blank" rel="noopener">National AI Hub</a> at LUMS. I develop and evaluate multilingual AI systems for maternal healthcare in Pakistan, focusing on safety, fairness across languages, and deployment in low-connectivity settings.</p>
+      <p>My research lies at the intersection of <strong>Artificial Intelligence, Human-Computer Interaction, and Computational Social Science</strong>. I am interested in how humans interact with increasingly capable AI systems, how AI can understand and model the diversity of human behavior, and how these advances can support more informed and equitable decision-making.</p>
+      <p>My research draws on my experience developing and evaluating AI systems in real-world settings, particularly through my work on maternal healthcare in Pakistan. This has motivated my interest in incorporating human behavior, values, cultural context, and individual needs into AI development and evaluation. I am also exploring how generative AI and autonomous agents can model individual and collective human behavior through realistic and empirically grounded simulations.</p>
+      <p>Ultimately, I aim to develop AI systems that better understand, interact with, and support humans, while ensuring that advances in AI remain safe, accessible, and beneficial across diverse populations.</p>
     </div>
   </header>
 
-  <section class="block reveal" id="research">
-    <h2>Research Interests<span class="h2line"></span></h2>
-    <p class="research-p">My research asks a central question: <strong>How can we design AI systems that remain capable, trustworthy, and useful when computation, connectivity, data, and expert access are limited?</strong></p>
-    <div class="themes">
-      <div class="theme reveal">
-        <div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="12" height="20" rx="2"/><path d="M7 18h4M7 6h4M7 9h3"/><circle cx="18" cy="10" r="2"/><path d="M15 17v-1a3 3 0 0 1 6 0v1"/></svg></div>
-        <h3>Human-Centered &amp; Efficient AI</h3>
-        <p>I study <strong>small language models, model compression, quantization, efficient multimodal inference, and on-device AI</strong>, while examining how these constraints affect safety, linguistic fidelity, cultural understanding, trust, and usability.</p>
-      </div>
-      <div class="theme reveal d1">
-        <div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3>Trustworthy, Responsible &amp; Agentic AI</h3>
-        <p>I study the <strong>safety, accountability, and human consequences of increasingly autonomous AI systems</strong>, including LLM agents that reason, use tools, interact with other agents, and act on users' behalf. I am interested in fairness, robustness, sycophancy, human oversight, multi-agent behavior, and how agentic systems redistribute <strong>agency, responsibility, and power</strong> between users, developers, institutions, and AI.</p>
-      </div>
-      <div class="theme reveal d2">
-        <div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A4.5 4.5 0 0 0 12 5.5 4.5 4.5 0 0 0 2 8.5C2 11 4 13 6 14l6 6 7-6Z"/></svg></div>
-        <h3>AI for Healthcare &amp; Social Impact</h3>
-        <p>I develop <strong>multilingual, voice-first, culturally grounded AI systems for low-resource settings</strong>, with a focus on maternal healthcare and broader applications in healthcare, education, accessibility, and public services.</p>
-      </div>
-      <div class="theme reveal d3">
-        <div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 7l3 3m7-3-3 3m-4 4-3 3m10-3-3-3"/></svg></div>
-        <h3>Human-Centered AI &amp; Social Simulation</h3>
-        <p>I study <strong>LLM-based agents and computational social simulations</strong> that model individual and collective behavior, with interests in behavioral fidelity, bias, diversity, and applications to public health, policy, and societal decision-making.</p>
-      </div>
-    </div>
-    <p class="research-note">Overall, my goal is to develop <strong>AI that is not only powerful, but accessible, accountable, culturally grounded, and designed to enhance rather than diminish human agency.</strong></p>
+  <section class="container summary-section" id="news" aria-labelledby="news-title">
+    <h2 id="news-title">Recent News</h2>
+    <ul>
+      <li><em>Jun 2026</em> · Three <a href="#publications">manuscripts</a> in preparation and submission, targeting <strong>ACL, CHI, and FAccT 2027</strong>.</li>
+      <li><em>Jan 2025</em> · Joined <a href="https://www.awaazesehat.com/" target="_blank" rel="noopener">Awaaz-e-Sehat</a> as a Full-Stack AI Engineer at the Gates Foundation–funded National AI Hub at LUMS.</li>
+      <li><em>Aug 2024</em> · Began the M.S. in Artificial Intelligence at LUMS.</li>
+      <li><em>2024–present</em> · Served as a graduate teaching assistant for six courses and received the <strong>Best TA Award</strong> for Mathematics for AI.</li>
+    </ul>
   </section>
 
-  <section class="block reveal" id="news">
-    <h2>News<span class="h2line"></span></h2>
-    <div class="news">
-      <div class="news-row reveal">
-        <div class="news-date">Jun 2026</div>
-        <p class="news-text">Three manuscripts are in preparation and submission, targeting <b>ACL</b>, <b>CHI</b>, and <b>FAccT 2027</b>.</p>
-      </div>
-      <div class="news-row reveal">
-        <div class="news-date">2024 – present</div>
-        <p class="news-text">Served as a Graduate Teaching Assistant for six courses, and was awarded the <b>Best TA Award</b> for the Mathematics for AI course.<img class="news-logo" src="logos/lums.png" alt="LUMS" onerror="this.style.display='none'"></p>
-      </div>
-      <div class="news-row reveal">
-        <div class="news-date">Jan 2025</div>
-        <p class="news-text">Joined <b><a href="https://www.awaazesehat.com/" target="_blank" rel="noopener">Awaaz-e-Sehat</a></b> as Full-Stack AI Engineer — the Gates Foundation–funded National AI Hub for Maternal, Newborn &amp; Child Health at LUMS.<a href="https://www.awaazesehat.com/" target="_blank" rel="noopener"><img class="news-logo" src="logos/aihublogo.png" alt="Awaaz-e-Sehat · National AI Hub" onerror="this.style.display='none'"></a></p>
-      </div>
-      <div class="news-row reveal">
-        <div class="news-date">Aug 2024</div>
-        <p class="news-text">Began the M.S. in Artificial Intelligence at LUMS.<img class="news-logo" src="logos/lums.png" alt="LUMS" onerror="this.style.display='none'"></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="block reveal" id="publications">
-    <h2>Publications &amp; Manuscripts<span class="h2line"></span></h2>
-    <div class="pub reveal">
-      <div class="pub-venue">ACL 2027<span class="pub-badge">In submission</span></div>
-      <div class="pub-main">
-        <p class="pub-title">BenchMaterna: A Clinician-Validated Benchmark for Evaluating LLMs on Maternal Healthcare in the Global South</p>
-        <p class="pub-authors"><b>Shawal Latif</b>, M. Mustafa, <i>et al.</i></p>
-        <p class="pub-note">The first large-scale, clinician-validated benchmark evaluating 30+ LLMs on maternal healthcare for Global South women — co-built with 30 clinical experts across regional languages and scored on six dimensions.</p>
-      </div>
-    </div>
-    <div class="pub reveal">
-      <div class="pub-venue">CHI 2027<span class="pub-badge">In submission</span></div>
-      <div class="pub-main">
-        <p class="pub-title">Awaaz-e-Sehat: A Voice-First LLM Assistant for Maternal Health among Low-Literacy Women</p>
-        <p class="pub-authors"><b>Shawal Latif</b>, M. Mustafa, <i>et al.</i></p>
-        <p class="pub-note">System architecture, clinicians-in-the-loop design, and longitudinal deployment with rural women — examining trust calibration and over-reliance among first-time AI users making high-stakes clinical decisions.</p>
-      </div>
-    </div>
-    <div class="pub reveal">
-      <div class="pub-venue">FAccT 2027<span class="pub-badge">In submission</span></div>
-      <div class="pub-main">
-        <p class="pub-title">Clinical Fairness Auditing of Frontier LLMs</p>
-        <p class="pub-authors"><b>Shawal Latif</b>, M. Mustafa, <i>et al.</i></p>
-        <p class="pub-note">Perturbation benchmarks across Roman Urdu, code-mixed language, and intersectional profiles, with new fairness metrics — Reduced Care Rate, Reduced Care Error Rate, and Triage Threshold Shift.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="block reveal" id="experience">
-    <h2>Experience<span class="h2line"></span></h2>
-    <div class="entry reveal">
-      <div class="entry-head">
-        <span class="entry-role">Full-Stack AI Engineer, <a class="org" href="https://www.awaazesehat.com/" target="_blank" rel="noopener">Awaaz-e-Sehat</a> · <a href="https://thenationalaihub.com/" target="_blank" rel="noopener">National AI Hub</a></span>
-        <span class="entry-when">Jan 2025 – Present</span>
-      </div>
-      <p class="entry-meta">Advised by <a href="https://www.maryamustafa.com/" target="_blank" rel="noopener">Dr. Maryam Mustafa</a> · Bill &amp; Melinda Gates Foundation collaboration, LUMS</p>
-      <div class="logos">
-        <span class="logo"><img src="logos/aihublogo.png" alt="National AI Hub"><small>National AI Hub</small></span>
-        <span class="logo"><img src="logos/gates.png" alt="Bill &amp; Melinda Gates Foundation"><small>Gates Foundation</small></span>
-        <span class="logo"><img src="logos/lums.png" alt="LUMS"><small>LUMS</small></span>
-        <span class="logo"><img src="logos/aku.png" alt="Aga Khan University"><small>Aga Khan University</small></span>
-      </div>
-      <ul>
-        <li>Leading the <b>end-to-end system architecture</b> — speech, LLM, and RAG pipelines through backend services — for Pakistan's first voice-first LLM maternal-healthcare assistant for low-literacy women.</li>
-        <li>Part of the Gates Foundation–funded National AI Hub at LUMS, Pakistan's first AI platform for Maternal, Newborn &amp; Child Health (MNCH), with Aga Khan University as clinical partner.</li>
-        <li>Driving iterative field testing and LLM evaluation with rural users, translating literacy, device-sharing, and cultural findings directly into model and system design.</li>
-        <li>Mentoring junior engineers and students on LLM evaluation, system design, and responsible AI.</li>
-      </ul>
-    </div>
-    <div class="entry reveal">
-      <div class="entry-head">
-        <span class="entry-role">Founder, <span class="org">SYNQ</span></span>
-        <span class="entry-when">2026 – Present</span>
-      </div>
-      <p class="entry-meta">LUMS Centre for Entrepreneurship · idea-stage</p>
-      <ul>
-        <li>Building an early-stage <b>AI compatibility platform</b> in which users train a personal AI agent whose interactions surface high-probability human connections — exploring multi-agent LLM systems, personality modeling, and consent-first design.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="block reveal" id="teaching">
-    <h2>Teaching<span class="h2line"></span></h2>
-    <p class="teach-lede">Graduate Teaching Assistant, Department of Computer Science, Syed Babar Ali School of Science &amp; Engineering, LUMS (2024 – present). Selected to TA six graduate-level (5000) courses across the modern AI stack; led recitations, designed and graded assignments and exams, held weekly office hours, and mentored 200+ students. Awarded the <b>Best TA Award</b> for Mathematics for AI.</p>
+  <section class="container summary-section" id="teaching" aria-labelledby="teaching-title">
+    <h2 id="teaching-title">Teaching</h2>
+    <p>Graduate Teaching Assistant, Department of Computer Science, LUMS (2024–present). I led recitations, designed and graded assignments and exams, held office hours, and mentored more than 200 students.</p>
     <ul class="courses">
-      <li class="reveal"><b>Topics in Large Language Models</b><span>graduate (5000) research course · scaling laws, pretraining objectives, mixture-of-experts, long-context &amp; efficient attention, RLHF/DPO alignment, parameter-efficient fine-tuning, retrieval-augmentation, agents &amp; tool use, mechanistic interpretability</span></li>
-      <li class="reveal d1"><b>Vision-Language Models</b><span>graduate (5000) · vision transformers, CLIP &amp; multimodal alignment, cross-modal fusion, LLaVA/Flamingo/BLIP architectures, diffusion &amp; text-to-image generation, visual grounding, multimodal RAG and reasoning</span></li>
-      <li class="reveal"><b>Human-Centered AI</b><span>graduate (5000) · HCI, trust calibration &amp; over-reliance, explainability, value-sensitive design, human-AI teaming, mixed-methods user research</span></li>
-      <li class="reveal d1"><b>AI for Social Impact</b><span>graduate (5000) · algorithmic fairness, causal inference, ML for development, deployment in low-resource settings, public-good ML</span></li>
-      <li class="reveal"><b>Mathematics for AI</b><span>graduate (5000) · linear algebra, matrix calculus, multivariate calculus, convex optimization, numerical methods</span></li>
-      <li class="reveal d1"><b>Probability &amp; Statistics</b><span>graduate (5000) · probability theory, statistical inference, Bayesian reasoning, hypothesis testing, evaluation</span></li>
+      <li><b>Topics in Large Language Models</b><span>graduate (5000) research course · scaling laws, pretraining objectives, mixture-of-experts, long-context &amp; efficient attention, RLHF/DPO alignment, parameter-efficient fine-tuning, retrieval-augmentation, agents &amp; tool use, mechanistic interpretability</span></li>
+      <li><b>Vision-Language Models</b><span>graduate (5000) · vision transformers, CLIP &amp; multimodal alignment, cross-modal fusion, LLaVA/Flamingo/BLIP architectures, diffusion &amp; text-to-image generation, visual grounding, multimodal RAG and reasoning</span></li>
+      <li><b>Human-Centered AI</b><span>graduate (5000) · HCI, trust calibration &amp; over-reliance, explainability, value-sensitive design, human-AI teaming, mixed-methods user research</span></li>
+      <li><b>AI for Social Impact</b><span>graduate (5000) · algorithmic fairness, causal inference, ML for development, deployment in low-resource settings, public-good ML</span></li>
+      <li><b>Mathematics for AI</b><span>graduate (5000) · linear algebra, matrix calculus, multivariate calculus, convex optimization, numerical methods</span></li>
+      <li><b>Probability &amp; Statistics</b><span>graduate (5000) · probability theory, statistical inference, Bayesian reasoning, hypothesis testing, evaluation</span></li>
     </ul>
   </section>
 
-  <section class="block reveal" id="education">
-    <h2>Education<span class="h2line"></span></h2>
-    <div class="entry reveal">
-      <div class="entry-head">
-        <span class="entry-left"><img class="edu-logo" src="logos/lums.png" alt="LUMS"><span class="entry-role">M.S. in Artificial Intelligence</span></span>
-        <span class="entry-when edu-when">2024 – 2026</span>
+  <section id="research" aria-labelledby="research-title">
+    <div class="section-band">
+      <h2 class="container" id="research-title">Research</h2>
+    </div>
+    <div class="container section-body">
+      <p>My research asks how we can design AI systems that remain capable, trustworthy, and useful when computation, connectivity, data, and expert access are limited.</p>
+      <p><strong>Human-Centered &amp; Efficient AI.</strong> I study small language models, model compression, quantization, efficient multimodal inference, and on-device AI, while examining how these constraints affect safety, linguistic fidelity, cultural understanding, trust, and usability.<br>
+        <em>Related work:</em> <a href="#llm-compression">LLaMA-2 compression for CPU inference</a>.</p>
+      <p><strong>Trustworthy, Responsible &amp; Agentic AI.</strong> I study the safety, accountability, and human consequences of increasingly autonomous AI systems, including LLM agents that reason, use tools, interact with other agents, and act on users' behalf. I am interested in fairness, robustness, sycophancy, human oversight, multi-agent behavior, and how agentic systems redistribute agency, responsibility, and power between users, developers, institutions, and AI.<br>
+        <em>Related work:</em> <a href="#fairness-audit">Clinical Fairness Auditing of Frontier LLMs</a>.</p>
+      <p><strong>AI for Healthcare &amp; Social Impact.</strong> I develop multilingual, voice-first, culturally grounded AI systems for low-resource settings, with a focus on maternal healthcare and broader applications in healthcare, education, accessibility, and public services.<br>
+        <em>Related work:</em> <a href="#benchmaterna">BenchMaterna</a> and <a href="#awaaz-paper">Awaaz-e-Sehat</a>.</p>
+      <p><strong>Human-Centered AI &amp; Social Simulation.</strong> I study LLM-based agents and computational social simulations that model individual and collective behavior, with interests in behavioral fidelity, bias, diversity, and applications to public health, policy, and societal decision-making.<br>
+        <em>Related work:</em> <a href="#synq">SYNQ</a>.</p>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="section-band">
+      <h2 class="container" id="contact-title">Contact</h2>
+    </div>
+    <div class="container section-body">
+      <p>For research collaboration or questions about efficient AI, human–AI interaction, or AI for healthcare, email me at <a href="mailto:shawalkhan418@gmail.com">shawalkhan418@gmail.com</a>. You can also find my work on <a href="https://github.com/shawalkhan1" target="_blank" rel="noopener">GitHub</a>.</p>
+    </div>
+  </section>
+
+  <section id="publications" aria-labelledby="publications-title">
+    <div class="section-band">
+      <h2 class="container" id="publications-title">Selected Papers</h2>
+    </div>
+    <div class="container section-body papers">
+      <p>For more about my research and experience, see my <a href="Shawal_Latif_CV.pdf">CV</a>.</p>
+      <div class="paper-list">
+        <article class="paper" id="benchmaterna">
+          <h3>BenchMaterna: A Clinician-Validated Benchmark for Evaluating LLMs on Maternal Healthcare in the Global South</h3>
+          <p><b>Shawal Latif</b>, M. Mustafa, <i>et al.</i><br>In submission · Target venue: ACL 2027</p>
+          <p>The first large-scale, clinician-validated benchmark evaluating 30+ LLMs on maternal healthcare for Global South women — co-built with 30 clinical experts across regional languages and scored on six dimensions.</p>
+        </article>
+        <article class="paper" id="awaaz-paper">
+          <h3>Awaaz-e-Sehat: A Voice-First LLM Assistant for Maternal Health among Low-Literacy Women</h3>
+          <p><b>Shawal Latif</b>, M. Mustafa, <i>et al.</i><br>In submission · Target venue: CHI 2027</p>
+          <p>System architecture, clinicians-in-the-loop design, and longitudinal deployment with rural women — examining trust calibration and over-reliance among first-time AI users making high-stakes clinical decisions.</p>
+        </article>
+        <article class="paper" id="fairness-audit">
+          <h3>Clinical Fairness Auditing of Frontier LLMs</h3>
+          <p><b>Shawal Latif</b>, M. Mustafa, <i>et al.</i><br>In submission · Target venue: FAccT 2027</p>
+          <p>Perturbation benchmarks across Roman Urdu, code-mixed language, and intersectional profiles, with new fairness metrics — Reduced Care Rate, Reduced Care Error Rate, and Triage Threshold Shift.</p>
+        </article>
       </div>
-      <p class="entry-meta">Lahore University of Management Sciences (LUMS)</p>
-      <ul>
-        <li>Coursework in large language models, human-centered AI, AI for social impact, deep learning, and machine learning.</li>
+    </div>
+  </section>
+
+  <section id="systems" aria-labelledby="systems-title">
+    <div class="section-band">
+      <h2 class="container" id="systems-title">Systems</h2>
+    </div>
+    <div class="container section-body">
+
+      <!-- ===== System-aware compression: human-centered edge AI ===== -->
+      <article class="sys-feature edge-project" id="llm-compression" aria-labelledby="edge-title">
+        <div class="edge-heading">
+          <p class="sys-kicker">AI on Edge Devices · LLaMA-2-7B</p>
+          <span class="edge-award-label"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3h12v6a6 6 0 0 1-12 0V3ZM6 5H3v3a4 4 0 0 0 4 4m11-7h3v3a4 4 0 0 1-4 4M12 15v6m-4 0h8"/></svg>Best Project Award</span>
+        </div>
+        <h3 class="sys-title" id="edge-title">Compressing <span class="edge-nowrap">LLaMA-2</span> for CPU inference</h3>
+        <p class="edge-credit">Shawal Latif <span>· Lowest perplexity and highest accuracy on the course leaderboard</span></p>
+        <p class="edge-lede">My smallest configuration, Q2_K, used a <strong>2.10 GB</strong> model artifact, down from <strong>25.10 GB</strong>. The key engineering challenge was making non-uniformly pruned layers work in llama.cpp.</p>
+
+        <section class="edge-architecture" aria-labelledby="edge-flow-title">
+          <div class="edge-section-heading"><h4 id="edge-flow-title">From weights to a working runtime</h4><span class="edge-enhanced" hidden>Select a stage</span></div>
+          <div class="edge-flow-zones" aria-hidden="true"><span>Model preparation</span><span>CPU inference</span></div>
+          <ol class="edge-flow" aria-label="Compression architecture">
+            <li><button type="button" class="edge-stage" data-stage="0" aria-pressed="false" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>01</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="5"/><rect x="11" y="3" width="5" height="5"/><rect x="3" y="11" width="5" height="5"/><path d="m12 12 8 8m0-8-8 8M20 3v5M3 20h5"/></svg></span><strong>Prune</strong><span class="edge-stage-sub">Reduce the model</span></button></li>
+            <li><button type="button" class="edge-stage" data-stage="1" aria-pressed="false" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>02</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h6v14H3zM15 8h6v8h-6zM10 12h4M12 10v4"/></svg></span><strong>Recover</strong><span class="edge-stage-sub">LoRA fine-tuning</span></button></li>
+            <li><button type="button" class="edge-stage" data-stage="2" aria-pressed="false" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>03</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 16V9m5 7V4m5 12V7m5 9v-4M3 16h18"/></svg></span><strong>Quantize</strong><span class="edge-stage-sub">Lower the precision</span></button></li>
+            <li><button type="button" class="edge-stage is-active" data-stage="3" aria-pressed="true" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>04</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4M18 9h4m-4 6h4"/></svg></span><strong>Run</strong><span class="edge-stage-sub">Resolve runtime shapes</span></button></li>
+          </ol>
+          <div class="edge-stage-panel" id="edge-stage-panel" aria-live="polite" aria-atomic="true">
+            <div><p class="edge-panel-label" id="edge-stage-label">04 / Runtime integration</p><h5 id="edge-stage-title">Supporting layers with different shapes.</h5><p id="edge-stage-copy">I adapted llama.cpp to read per-layer dimensions from GGUF tensor shapes and pass them to the graph builder, supporting layers with different attention and feed-forward dimensions.</p></div>
+            <div class="edge-shape-flow" aria-label="Selected stage data flow"><span id="edge-shape-input">GGUF tensor shapes</span><span aria-hidden="true">↓</span><strong id="edge-shape-transform">Per-layer dimensions</strong><span aria-hidden="true">↓</span><span id="edge-shape-output">Graph construction</span></div>
+          </div>
+          <p class="edge-architecture-note">Pipeline overview from the project report. Built on LLM-Pruner, SmoothQuant, and llama.cpp.</p>
+        </section>
+
+        <section class="edge-explorer" aria-labelledby="edge-results-title">
+          <div class="edge-section-heading"><div><p class="edge-eyebrow">The tradeoffs</p><h4 id="edge-results-title">Smaller models, different costs.</h4></div><span class="edge-data-tag">Reported measurements</span></div>
+          <p class="edge-explorer-intro">Compare each configuration with the FP16 baseline. Memory savings, speed, and language-model quality do not move together.</p>
+          <div class="edge-configs edge-enhanced" role="group" aria-label="Choose a measured model configuration" hidden>
+            <button type="button" data-config="0" aria-pressed="false">FP16 <span>baseline</span></button>
+            <button type="button" data-config="1" aria-pressed="false">Pruned <span>30% target</span></button>
+            <button type="button" data-config="2" aria-pressed="false">Q8_0</button>
+            <button type="button" data-config="3" aria-pressed="true" class="is-active">Q4_K_M</button>
+            <button type="button" data-config="4" aria-pressed="false">Q2_K</button>
+          </div>
+          <div class="edge-verdict" aria-live="polite" aria-atomic="true"><strong id="edge-config-title">Q4_K_M</strong><p id="edge-config-note">A smaller footprint, with a speed tradeoff: 86.4% less storage and 75.0% less peak memory, but 13.3% lower throughput than FP16. Perplexity rises from 7.18 to 8.52.</p></div>
+          <div class="edge-measures">
+            <div class="edge-measure" data-metric="size">
+              <div class="edge-measure-heading"><h5>Artifact size</h5><span>Lower is better</span></div>
+              <p class="edge-reading"><strong data-value>3.41</strong> <span>GB</span></p>
+              <p class="edge-delta" data-delta>86.4% smaller</p>
+              <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:100%"></i></span><span>25.10 GB</span></div>
+              <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:13.59%"></i></span><span data-bar-value>3.41 GB</span></div>
+            </div>
+            <div class="edge-measure" data-metric="memory">
+              <div class="edge-measure-heading"><h5>Peak memory</h5><span>Lower is better</span></div>
+              <p class="edge-reading"><strong data-value>3.75</strong> <span>GB</span></p>
+              <p class="edge-delta" data-delta>75.0% less memory</p>
+              <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:100%"></i></span><span>14.99 GB</span></div>
+              <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:25.02%"></i></span><span data-bar-value>3.75 GB</span></div>
+            </div>
+            <div class="edge-measure" data-metric="speed">
+              <div class="edge-measure-heading"><h5>CPU throughput</h5><span>Higher is better</span></div>
+              <p class="edge-reading"><strong data-value>31.9</strong> <span>tok/s</span></p>
+              <p class="edge-delta" data-delta>13.3% slower</p>
+              <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:80.17%"></i></span><span>36.8 tok/s</span></div>
+              <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:69.50%"></i></span><span data-bar-value>31.9 tok/s</span></div>
+            </div>
+            <div class="edge-measure" data-metric="ppl">
+              <div class="edge-measure-heading"><h5>WikiText-2 perplexity</h5><span>Lower is better</span></div>
+              <p class="edge-reading"><strong data-value>8.52</strong> <span></span></p>
+              <p class="edge-delta" data-delta>+1.34 perplexity</p>
+              <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:69.17%"></i></span><span>7.18</span></div>
+              <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:82.08%"></i></span><span data-bar-value>8.52</span></div>
+            </div>
+          </div>
+          <p class="edge-chart-note"><span class="edge-legend-base" aria-hidden="true"></span>FP16 baseline <span class="edge-legend-selected" aria-hidden="true"></span>Selected configuration <span>· Each metric uses its own scale.</span></p>
+        </section>
+
+        <details class="edge-benchmarks">
+          <summary>Full results &amp; measurement notes</summary>
+          <div class="edge-table-wrap" role="region" aria-label="Compression benchmark table, horizontally scrollable on small screens" tabindex="0">
+            <table class="edge-table">
+              <caption>LLaMA-2-7B · Project report, Table 1. Lower perplexity, memory, and size are better; higher throughput is better.</caption>
+              <thead><tr><th scope="col">Configuration</th><th scope="col">Perplexity<span>WikiText-2 ↓</span></th><th scope="col">Throughput<span>tok/s ↑</span></th><th scope="col">Peak memory<span>GB ↓</span></th><th scope="col">Artifact size<span>GB ↓</span></th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Base FP16</th><td>7.18</td><td>36.8</td><td>14.99</td><td>25.10</td></tr>
+                <tr><th scope="row">Pruned (30%)</th><td>7.92</td><td>45.9</td><td>12.09</td><td>20.21</td></tr>
+                <tr><th scope="row">GGUF Q8_0</th><td>8.31</td><td>24.5</td><td>6.00</td><td>5.61</td></tr>
+                <tr><th scope="row">GGUF Q4_K_M</th><td>8.52</td><td>31.9</td><td>3.75</td><td>3.41</td></tr>
+                <tr><th scope="row">GGUF Q2_K</th><td>10.38</td><td>39.4</td><td>2.43</td><td>2.10</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="edge-note">Results are reproduced from the <a href="assets/reports/llm-compression-report.pdf#page=5">project report, Table 1</a>. The report describes CPU inference but does not specify the CPU model or full benchmark settings; these figures should not be read as Raspberry Pi-specific measurements. Q4_K_M trades lower throughput than the baseline for memory and storage savings.</p>
+          <p class="edge-note">Built on LLM-Pruner, SmoothQuant, and llama.cpp. The course award is separate from these reported configurations.</p>
+        </details>
+
+
+        <p class="edge-motivation"><strong>Why this matters to me.</strong> I want to pair efficient local inference with HCI research: useful AI on devices people can access, even when a reliable internet connection is out of reach.</p>
+        <div class="edge-links">
+          <a href="https://github.com/shawalkhan1/AI-624-LLM-Compression-Project" target="_blank" rel="noopener">Explore the code <span aria-hidden="true">↗</span></a>
+          <a href="assets/reports/llm-compression-report.pdf">Read the report <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <!-- ===== LLM Twin featured project ===== -->
+      <article class="sys-feature twin">
+        <p class="sys-kicker">Production LLM System</p>
+        <h3 class="sys-title">LLM Twin</h3>
+        <p class="sys-summary">An end-to-end system that learns a person's writing voice and answers as they would — the production blueprint behind SYNQ. Tap a stage to trace how raw data becomes a living, self-improving twin.</p>
+        <a class="sys-cta" href="https://shawalkhan418--synq-campus-web.modal.run/" target="_blank" rel="noopener">
+          <span class="live" aria-hidden="true"></span>Launch live demo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+
+        <div class="twin-rig" id="twin-rig">
+          <div class="twin-rail" role="list">
+            <div class="twin-wire" aria-hidden="true"><span class="packet"></span><span class="packet b"></span></div>
+
+            <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-0" aria-controls="twin-panel-0">
+              <span class="twin-dot"><span class="twin-num">01</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+              </span>
+              <span class="twin-label">Data</span><span class="twin-sub">ETL · CDC</span>
+            </button>
+
+            <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-1" aria-controls="twin-panel-1">
+              <span class="twin-dot"><span class="twin-num">02</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+              </span>
+              <span class="twin-label">Feature</span><span class="twin-sub">RAG · Qdrant</span>
+            </button>
+
+            <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-2" aria-controls="twin-panel-2">
+              <span class="twin-dot"><span class="twin-num">03</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2"/></svg>
+              </span>
+              <span class="twin-label">Training</span><span class="twin-sub">QLoRA · DPO</span>
+            </button>
+
+            <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-3" aria-controls="twin-panel-3">
+              <span class="twin-dot"><span class="twin-num">04</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m13 2-9 12h7l-2 8 9-12h-7l2-8Z"/></svg>
+              </span>
+              <span class="twin-label">Inference</span><span class="twin-sub">vLLM · SageMaker</span>
+            </button>
+
+            <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-4" aria-controls="twin-panel-4">
+              <span class="twin-dot"><span class="twin-num">05</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v4h-4"/></svg>
+              </span>
+              <span class="twin-label">MLOps</span><span class="twin-sub">ZenML · CI/CD</span>
+            </button>
+          </div>
+
+          <div class="twin-detail-wrap">
+            <p class="twin-hint" id="twin-hint">Select a pipeline stage to expand</p>
+            <div class="twin-detail" id="twin-panel-0" role="region" aria-labelledby="twin-btn-0">
+              <b>Data.</b> A multi-source ETL crawler pulls every digital trace (GitHub, Medium, personal sites) into a MongoDB warehouse. A Change-Data-Capture layer and a Bytewax streaming pipeline keep the twin's memory continuously fresh.
+            </div>
+            <div class="twin-detail" id="twin-panel-1" role="region" aria-labelledby="twin-btn-1">
+              <b>Feature.</b> Text is cleaned, chunked, and embedded into a Qdrant vector database. The RAG layer uses query expansion, self-querying metadata filters, hybrid search, and a cross-encoder reranker.
+            </div>
+            <div class="twin-detail" id="twin-panel-2" role="region" aria-labelledby="twin-btn-2">
+              <b>Training.</b> Llama 3.1 8B fine-tuned with QLoRA/LoRA (TRL + Unsloth) on an instruction dataset, then aligned with DPO/RLHF. Runs are tracked and evaluated with LLM-as-a-judge and RAGAS in Comet ML.
+            </div>
+            <div class="twin-detail" id="twin-panel-3" role="region" aria-labelledby="twin-btn-3">
+              <b>Inference.</b> Served as a real-time AWS SageMaker endpoint behind a FastAPI microservice with a LangGraph agentic-RAG brain. Optimized with quantization (GPTQ/AWQ/GGUF), speculative decoding, Flash Attention, KV-cache, and continuous batching; benchmarked across vLLM, TGI, and TensorRT-LLM.
+            </div>
+            <div class="twin-detail" id="twin-panel-4" role="region" aria-labelledby="twin-btn-4">
+              <b>MLOps.</b> Built on the Feature/Training/Inference (FTI) pattern, orchestrated by ZenML into deployable microservices, with CI/CD/CT via GitHub Actions, Opik observability, and drift detection that triggers automatic retraining.
+            </div>
+          </div>
+        </div>
+
+        <div class="sys-tags">
+          <span>FTI Pipeline</span><span>ZenML</span><span>RAG</span><span>Qdrant</span><span>Llama 3.1 8B</span><span>QLoRA/LoRA</span><span>DPO/RLHF</span><span>vLLM</span><span>TGI</span><span>TensorRT-LLM</span><span>AWS SageMaker</span><span>FastAPI</span><span>LangGraph</span><span>Docker</span><span>CI/CD/CT</span>
+        </div>
+      </article>
+
+      <!-- ===== SYNQ featured project ===== -->
+      <article class="sys-feature synq" id="synq">
+        <p class="sys-kicker">Generative-Agent Social Simulation · Founder, LUMS Centre for Entrepreneurship</p>
+        <h3 class="sys-title">SYNQ</h3>
+        <p class="synq-tagline">Before people meet, their minds already have.</p>
+        <p class="sys-prose">SYNQ is, at its core, a <b>generative-agent social simulation</b>. Each person trains a high-fidelity AI Clone — a grounded digital twin of themselves — and these autonomous LLM agents <em>live, remember, and interact</em> in a persistent synthetic society: they keep daily routines, hold conversations, negotiate values, and form relationships. A compatibility layer then reads the patterns that emerge to surface high-probability human connections — across friendship, mentorship, hiring, and co-founder discovery — before a single human word is exchanged.</p>
+        <a class="sys-cta" href="https://shawalkhan418--synq-campus-web.modal.run/" target="_blank" rel="noopener">
+          <span class="live" aria-hidden="true"></span>Enter the live world
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+
+        <div class="synq-viz" id="synq-viz">
+          <canvas class="agent-sim" id="agent-sim" aria-hidden="true"></canvas>
+          <div class="synq-legend" aria-hidden="true">
+            <span><i class="lg lg-you"></i>your clone</span>
+            <span><i class="lg lg-a"></i>agents</span>
+            <span><i class="lg lg-link"></i>emergent connection</span>
+          </div>
+          <div class="sim-hud" id="sim-hud" aria-hidden="true">06:00 · Summer</div>
+          <div class="synq-caption" aria-hidden="true">a generative-agent campus — daily routines, conversations, seasons &amp; events</div>
+        </div>
+        <div class="sim-controls" role="group" aria-label="Simulation controls">
+          <button type="button" class="sim-btn" id="sim-time"><span class="ic">☾</span> Night</button>
+          <button type="button" class="sim-btn" id="sim-season"><span class="ic">❄</span> Winter</button>
+          <button type="button" class="sim-btn" id="sim-event"><span class="ic">⚡</span> Trigger event</button>
+          <button type="button" class="sim-btn" id="sim-pause"><span class="ic">⏸</span> Pause</button>
+        </div>
+
+        <div class="synq-steps">
+          <div class="synq-step">
+            <p class="synq-step-label">01 · Identity</p>
+            <h4 class="synq-step-head">The Clone</h4>
+            <p class="synq-step-text">A behavioral model fusing a structured interview, psychometrics, and opt-in signals into a five-layer personality embedding: communication style, ethics, emotional intelligence, cognition, and social energy.</p>
+          </div>
+          <div class="synq-step">
+            <p class="synq-step-label">02 · Simulation</p>
+            <h4 class="synq-step-head">Autonomous Agents</h4>
+            <p class="synq-step-text">Live LLM agents meet asynchronously through curiosity probes, value-negotiation dialogues, and conflict simulations — a persistent synthetic-social environment that surfaces authentic resonance.</p>
+          </div>
+          <div class="synq-step">
+            <p class="synq-step-label">03 · Intelligence</p>
+            <h4 class="synq-step-head">The Orchestrator</h4>
+            <p class="synq-step-text">A meta-level engine that scores flow symmetry, sentiment trajectory, healthy debate, and vulnerability signals, then delivers a Compatibility Report only on bilateral consent.</p>
+          </div>
+        </div>
+
+        <p class="synq-ethics-label">Ethics by design</p>
+        <div class="sys-tags synq-ethics">
+          <span>Bilateral consent</span><span>You own your Clone</span><span>Emotional-safety layer</span><span>Differential privacy (AES-256, GDPR/PDPB)</span><span>AI-to-AI only, no impersonation</span>
+        </div>
+
+        <div class="sys-tags">
+          <span>LangGraph</span><span>CrewAI</span><span>Multi-Agent Systems</span><span>Personality Embeddings</span><span>Affective Computing</span><span>Pinecone</span><span>FastAPI</span><span>Next.js</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience" aria-labelledby="experience-title">
+    <div class="section-band">
+      <h2 class="container" id="experience-title">Experience</h2>
+    </div>
+    <div class="container section-body">
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-role">Full-Stack AI Engineer, <a class="org" href="https://www.awaazesehat.com/" target="_blank" rel="noopener">Awaaz-e-Sehat</a> · <a href="https://thenationalaihub.com/" target="_blank" rel="noopener">National AI Hub</a></span>
+          <span class="entry-when">Jan 2025 – Present</span>
+        </div>
+        <p class="entry-meta">Advised by <a href="https://www.maryamustafa.com/" target="_blank" rel="noopener">Dr. Maryam Mustafa</a> · Bill &amp; Melinda Gates Foundation collaboration, LUMS</p>
+        <div class="logos">
+          <span class="logo"><img src="logos/aihublogo.png" alt="National AI Hub"><small>National AI Hub</small></span>
+          <span class="logo"><img src="logos/gates.png" alt="Bill &amp; Melinda Gates Foundation"><small>Gates Foundation</small></span>
+          <span class="logo"><img src="logos/lums.png" alt="LUMS"><small>LUMS</small></span>
+          <span class="logo"><img src="logos/aku.png" alt="Aga Khan University"><small>Aga Khan University</small></span>
+        </div>
+        <ul>
+          <li>Leading the <b>end-to-end system architecture</b> — speech, LLM, and RAG pipelines through backend services — for Pakistan's first voice-first LLM maternal-healthcare assistant for low-literacy women.</li>
+          <li>Part of the Gates Foundation–funded National AI Hub at LUMS, Pakistan's first AI platform for Maternal, Newborn &amp; Child Health (MNCH), with Aga Khan University as clinical partner.</li>
+          <li>Driving iterative field testing and LLM evaluation with rural users, translating literacy, device-sharing, and cultural findings directly into model and system design.</li>
+          <li>Mentoring junior engineers and students on LLM evaluation, system design, and responsible AI.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-role">Founder, <span class="org">SYNQ</span></span>
+          <span class="entry-when">2026 – Present</span>
+        </div>
+        <p class="entry-meta">LUMS Centre for Entrepreneurship · idea-stage</p>
+        <ul>
+          <li>Building an early-stage <b>AI compatibility platform</b> in which users train a personal AI agent whose interactions surface high-probability human connections — exploring multi-agent LLM systems, personality modeling, and consent-first design.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" aria-labelledby="education-title">
+    <div class="section-band">
+      <h2 class="container" id="education-title">Education</h2>
+    </div>
+    <div class="container section-body">
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-left"><img class="edu-logo" src="logos/lums.png" alt="LUMS"><span class="entry-role">M.S. in Artificial Intelligence</span></span>
+          <span class="entry-when edu-when">2024 – 2026</span>
+        </div>
+        <p class="entry-meta">Lahore University of Management Sciences (LUMS)</p>
+        <ul>
+          <li>Coursework in large language models, human-centered AI, AI for social impact, deep learning, and machine learning.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-left"><img class="edu-logo" src="logos/comsats.png" alt="COMSATS University Islamabad"><span class="entry-role">B.S. in Electrical Engineering</span></span>
+          <span class="entry-when edu-when">2017 – 2021</span>
+        </div>
+        <p class="entry-meta">COMSATS University Islamabad (CUI)</p>
+        <ul>
+          <li>Foundation in signals, systems, and mathematics; ranked top 5% of the department in the first year. Undergraduate TA for Object-Oriented Programming, Linear Algebra, and Power Electronics.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-title">
+    <div class="section-band">
+      <h2 class="container" id="projects-title">Selected Projects</h2>
+    </div>
+    <div class="container section-body">
+      <ul class="proj-list">
+        <li><span class="pt">NBA-3D &amp; Basketball-RL</span> — <span class="ps">PyTorch</span><div class="pd">3D reconstruction of NBA players from multi-view video via a differentiable renderer; a differentiable 2D basketball RL environment, behavior-cloned from real NBA data then reward-fine-tuned.</div></li>
+        <li><span class="pt">Audio Source Separation</span> — <span class="ps">PyTorch · GAN</span><div class="pd">A U-Net CNN–GAN separating noisy and clean spectrograms, using the GAN as a segmentation loss.</div></li>
+        <li><span class="pt">From-Scratch Reimplementations</span> — <span class="ps">PyTorch · Java</span><div class="pd">AlphaZero (Connect 4), a neural net with backprop reaching 95% on MNIST, and NEAT solving CartPole and Flappy Bird.</div></li>
       </ul>
     </div>
-    <div class="entry reveal">
-      <div class="entry-head">
-        <span class="entry-left"><img class="edu-logo" src="logos/comsats.png" alt="COMSATS University Islamabad"><span class="entry-role">B.S. in Electrical Engineering</span></span>
-        <span class="entry-when edu-when">2017 – 2021</span>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-title">
+    <div class="section-band">
+      <h2 class="container" id="skills-title">Skills</h2>
+    </div>
+    <div class="container section-body">
+      <div class="skills-group">
+        <div class="skills-cat">Languages</div>
+        <div class="skills-chips"><span>Python</span><span>SQL</span><span>C</span><span>JavaScript</span><span>MATLAB</span></div>
       </div>
-      <p class="entry-meta">COMSATS University Islamabad (CUI)</p>
-      <ul>
-        <li>Foundation in signals, systems, and mathematics; ranked top 5% of the department in the first year. Undergraduate TA for Object-Oriented Programming, Linear Algebra, and Power Electronics.</li>
-      </ul>
+      <div class="skills-group">
+        <div class="skills-cat">ML &amp; LLM</div>
+        <div class="skills-chips"><span>PyTorch</span><span>TensorFlow</span><span>Hugging Face</span><span>scikit-learn</span><span>TRL</span><span>Unsloth</span><span>LangChain</span><span>LangGraph</span></div>
+      </div>
+      <div class="skills-group">
+        <div class="skills-cat">LLM Techniques</div>
+        <div class="skills-chips"><span>RAG</span><span>Fine-tuning (QLoRA/LoRA)</span><span>DPO/RLHF</span><span>Quantization</span><span>Prompt Engineering</span><span>LLM Evaluation</span></div>
+      </div>
+      <div class="skills-group">
+        <div class="skills-cat">Serving &amp; MLOps</div>
+        <div class="skills-chips"><span>vLLM</span><span>TGI</span><span>TensorRT-LLM</span><span>FastAPI</span><span>ZenML</span><span>Docker</span><span>GitHub Actions</span><span>Comet ML</span></div>
+      </div>
+      <div class="skills-group">
+        <div class="skills-cat">Cloud &amp; Data</div>
+        <div class="skills-chips"><span>AWS SageMaker</span><span>Qdrant</span><span>MongoDB</span><span>Bytewax</span><span>ETL / CDC</span></div>
+      </div>
+      <div class="skills-group">
+        <div class="skills-cat">Analytics</div>
+        <div class="skills-chips"><span>Power BI</span><span>Tableau</span><span>Pandas</span><span>NumPy</span></div>
+      </div>
     </div>
   </section>
 
-  <section class="block reveal" id="systems">
-    <h2>Systems<span class="h2line"></span></h2>
-
-    <!-- ===== System-aware compression: human-centered edge AI ===== -->
-    <article class="sys-feature edge-project" id="llm-compression" aria-labelledby="edge-title">
-      <div class="edge-heading">
-        <p class="sys-kicker">AI on Edge Devices · LLaMA-2-7B</p>
-        <span class="edge-award-label"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3h12v6a6 6 0 0 1-12 0V3ZM6 5H3v3a4 4 0 0 0 4 4m11-7h3v3a4 4 0 0 1-4 4M12 15v6m-4 0h8"/></svg>Best Project Award</span>
-      </div>
-      <h3 class="sys-title" id="edge-title">Compressing <span class="edge-nowrap">LLaMA-2</span> for CPU inference</h3>
-      <p class="edge-credit">Shawal Latif <span>· Lowest perplexity and highest accuracy on the course leaderboard</span></p>
-      <p class="edge-lede">My smallest configuration, Q2_K, used a <strong>2.10 GB</strong> model artifact, down from <strong>25.10 GB</strong>. The key engineering challenge was making non-uniformly pruned layers work in llama.cpp.</p>
-
-      <section class="edge-architecture" aria-labelledby="edge-flow-title">
-        <div class="edge-section-heading"><h4 id="edge-flow-title">From weights to a working runtime</h4><span class="edge-enhanced" hidden>Select a stage ↘</span></div>
-        <div class="edge-flow-zones" aria-hidden="true"><span>Model preparation</span><span>CPU inference</span></div>
-        <ol class="edge-flow" aria-label="Compression architecture">
-          <li><button type="button" class="edge-stage" data-stage="0" aria-pressed="false" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>01</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="5"/><rect x="11" y="3" width="5" height="5"/><rect x="3" y="11" width="5" height="5"/><path d="m12 12 8 8m0-8-8 8M20 3v5M3 20h5"/></svg></span><strong>Prune</strong><span class="edge-stage-sub">Reduce the model</span></button></li>
-          <li><button type="button" class="edge-stage" data-stage="1" aria-pressed="false" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>02</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h6v14H3zM15 8h6v8h-6zM10 12h4M12 10v4"/></svg></span><strong>Recover</strong><span class="edge-stage-sub">LoRA fine-tuning</span></button></li>
-          <li><button type="button" class="edge-stage" data-stage="2" aria-pressed="false" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>03</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 16V9m5 7V4m5 12V7m5 9v-4M3 16h18"/></svg></span><strong>Quantize</strong><span class="edge-stage-sub">Lower the precision</span></button></li>
-          <li><button type="button" class="edge-stage is-active" data-stage="3" aria-pressed="true" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>04</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4M18 9h4m-4 6h4"/></svg></span><strong>Run</strong><span class="edge-stage-sub">Resolve runtime shapes</span></button></li>
-        </ol>
-        <div class="edge-stage-panel" id="edge-stage-panel" aria-live="polite" aria-atomic="true">
-          <div><p class="edge-panel-label" id="edge-stage-label">04 / Runtime integration</p><h5 id="edge-stage-title">Supporting layers with different shapes.</h5><p id="edge-stage-copy">I adapted llama.cpp to read per-layer dimensions from GGUF tensor shapes and pass them to the graph builder, supporting layers with different attention and feed-forward dimensions.</p></div>
-          <div class="edge-shape-flow" aria-label="Selected stage data flow"><span id="edge-shape-input">GGUF tensor shapes</span><span aria-hidden="true">↓</span><strong id="edge-shape-transform">Per-layer dimensions</strong><span aria-hidden="true">↓</span><span id="edge-shape-output">Graph construction</span></div>
-        </div>
-        <p class="edge-architecture-note">Pipeline overview from the project report. Built on LLM-Pruner, SmoothQuant, and llama.cpp.</p>
-      </section>
-
-      <section class="edge-explorer" aria-labelledby="edge-results-title">
-        <div class="edge-section-heading"><div><p class="edge-eyebrow">The tradeoffs</p><h4 id="edge-results-title">Smaller models, different costs.</h4></div><span class="edge-data-tag">Reported measurements</span></div>
-        <p class="edge-explorer-intro">Compare each configuration with the FP16 baseline. Memory savings, speed, and language-model quality do not move together.</p>
-        <div class="edge-configs edge-enhanced" role="group" aria-label="Choose a measured model configuration" hidden>
-          <button type="button" data-config="0" aria-pressed="false">FP16 <span>baseline</span></button>
-          <button type="button" data-config="1" aria-pressed="false">Pruned <span>30% target</span></button>
-          <button type="button" data-config="2" aria-pressed="false">Q8_0</button>
-          <button type="button" data-config="3" aria-pressed="true" class="is-active">Q4_K_M</button>
-          <button type="button" data-config="4" aria-pressed="false">Q2_K</button>
-        </div>
-        <div class="edge-verdict" aria-live="polite" aria-atomic="true"><strong id="edge-config-title">Q4_K_M</strong><p id="edge-config-note">A smaller footprint, with a speed tradeoff: 86.4% less storage and 75.0% less peak memory, but 13.3% lower throughput than FP16. Perplexity rises from 7.18 to 8.52.</p></div>
-        <div class="edge-measures">
-          <div class="edge-measure" data-metric="size">
-            <div class="edge-measure-heading"><h5>Artifact size</h5><span>Lower is better</span></div>
-            <p class="edge-reading"><strong data-value>3.41</strong> <span>GB</span></p>
-            <p class="edge-delta" data-delta>86.4% smaller</p>
-            <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:100%"></i></span><span>25.10 GB</span></div>
-            <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:13.59%"></i></span><span data-bar-value>3.41 GB</span></div>
-          </div>
-          <div class="edge-measure" data-metric="memory">
-            <div class="edge-measure-heading"><h5>Peak memory</h5><span>Lower is better</span></div>
-            <p class="edge-reading"><strong data-value>3.75</strong> <span>GB</span></p>
-            <p class="edge-delta" data-delta>75.0% less memory</p>
-            <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:100%"></i></span><span>14.99 GB</span></div>
-            <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:25.02%"></i></span><span data-bar-value>3.75 GB</span></div>
-          </div>
-          <div class="edge-measure" data-metric="speed">
-            <div class="edge-measure-heading"><h5>CPU throughput</h5><span>Higher is better</span></div>
-            <p class="edge-reading"><strong data-value>31.9</strong> <span>tok/s</span></p>
-            <p class="edge-delta" data-delta>13.3% slower</p>
-            <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:80.17%"></i></span><span>36.8 tok/s</span></div>
-            <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:69.50%"></i></span><span data-bar-value>31.9 tok/s</span></div>
-          </div>
-          <div class="edge-measure" data-metric="ppl">
-            <div class="edge-measure-heading"><h5>WikiText-2 perplexity</h5><span>Lower is better</span></div>
-            <p class="edge-reading"><strong data-value>8.52</strong> <span></span></p>
-            <p class="edge-delta" data-delta>+1.34 perplexity</p>
-            <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:69.17%"></i></span><span>7.18</span></div>
-            <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:82.08%"></i></span><span data-bar-value>8.52</span></div>
-          </div>
-        </div>
-        <p class="edge-chart-note"><span class="edge-legend-base" aria-hidden="true"></span>FP16 baseline <span class="edge-legend-selected" aria-hidden="true"></span>Selected configuration <span>· Each metric uses its own scale.</span></p>
-      </section>
-
-      <details class="edge-benchmarks">
-        <summary>Full results &amp; measurement notes</summary>
-        <div class="edge-table-wrap" role="region" aria-label="Compression benchmark table, horizontally scrollable on small screens" tabindex="0">
-          <table class="edge-table">
-            <caption>LLaMA-2-7B · Project report, Table 1. Lower perplexity, memory, and size are better; higher throughput is better.</caption>
-            <thead><tr><th scope="col">Configuration</th><th scope="col">Perplexity<span>WikiText-2 ↓</span></th><th scope="col">Throughput<span>tok/s ↑</span></th><th scope="col">Peak memory<span>GB ↓</span></th><th scope="col">Artifact size<span>GB ↓</span></th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Base FP16</th><td>7.18</td><td>36.8</td><td>14.99</td><td>25.10</td></tr>
-              <tr><th scope="row">Pruned (30%)</th><td>7.92</td><td>45.9</td><td>12.09</td><td>20.21</td></tr>
-              <tr><th scope="row">GGUF Q8_0</th><td>8.31</td><td>24.5</td><td>6.00</td><td>5.61</td></tr>
-              <tr><th scope="row">GGUF Q4_K_M</th><td>8.52</td><td>31.9</td><td>3.75</td><td>3.41</td></tr>
-              <tr><th scope="row">GGUF Q2_K</th><td>10.38</td><td>39.4</td><td>2.43</td><td>2.10</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="edge-note">Results are reproduced from the <a href="assets/reports/llm-compression-report.pdf#page=5">project report, Table 1</a>. The report describes CPU inference but does not specify the CPU model or full benchmark settings; these figures should not be read as Raspberry Pi-specific measurements. Q4_K_M trades lower throughput than the baseline for memory and storage savings.</p>
-        <p class="edge-note">Built on LLM-Pruner, SmoothQuant, and llama.cpp. The course award is separate from these reported configurations.</p>
-      </details>
-
-
-      <p class="edge-motivation"><strong>Why this matters to me.</strong> I want to pair efficient local inference with HCI research: useful AI on devices people can access, even when a reliable internet connection is out of reach.</p>
-      <div class="edge-links">
-        <a href="https://github.com/shawalkhan1/AI-624-LLM-Compression-Project" target="_blank" rel="noopener">Explore the code <span aria-hidden="true">↗</span></a>
-        <a href="assets/reports/llm-compression-report.pdf">Read the report <span aria-hidden="true">↗</span></a>
-      </div>
-    </article>
-
-    <!-- ===== LLM Twin featured project ===== -->
-    <article class="sys-feature twin reveal">
-      <p class="sys-kicker">Production LLM System</p>
-      <h3 class="sys-title">LLM Twin</h3>
-      <p class="sys-summary">An end-to-end system that learns a person's writing voice and answers as they would — the production blueprint behind SYNQ. Tap a stage to trace how raw data becomes a living, self-improving twin.</p>
-      <a class="sys-cta" href="https://shawalkhan418--synq-campus-web.modal.run/" target="_blank" rel="noopener">
-        <span class="live" aria-hidden="true"></span>Launch live demo
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
-      </a>
-
-      <div class="twin-rig" id="twin-rig">
-        <div class="twin-rail" role="list">
-          <div class="twin-wire" aria-hidden="true"><span class="packet"></span><span class="packet b"></span></div>
-
-          <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-0" aria-controls="twin-panel-0">
-            <span class="twin-dot"><span class="twin-num">01</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
-            </span>
-            <span class="twin-label">Data</span><span class="twin-sub">ETL · CDC</span>
-          </button>
-
-          <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-1" aria-controls="twin-panel-1">
-            <span class="twin-dot"><span class="twin-num">02</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
-            </span>
-            <span class="twin-label">Feature</span><span class="twin-sub">RAG · Qdrant</span>
-          </button>
-
-          <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-2" aria-controls="twin-panel-2">
-            <span class="twin-dot"><span class="twin-num">03</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2"/></svg>
-            </span>
-            <span class="twin-label">Training</span><span class="twin-sub">QLoRA · DPO</span>
-          </button>
-
-          <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-3" aria-controls="twin-panel-3">
-            <span class="twin-dot"><span class="twin-num">04</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m13 2-9 12h7l-2 8 9-12h-7l2-8Z"/></svg>
-            </span>
-            <span class="twin-label">Inference</span><span class="twin-sub">vLLM · SageMaker</span>
-          </button>
-
-          <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-4" aria-controls="twin-panel-4">
-            <span class="twin-dot"><span class="twin-num">05</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v4h-4"/></svg>
-            </span>
-            <span class="twin-label">MLOps</span><span class="twin-sub">ZenML · CI/CD</span>
-          </button>
-        </div>
-
-        <div class="twin-detail-wrap">
-          <p class="twin-hint" id="twin-hint">↑ Select a pipeline stage to expand</p>
-          <div class="twin-detail" id="twin-panel-0" role="region" aria-labelledby="twin-btn-0">
-            <b>Data.</b> A multi-source ETL crawler pulls every digital trace (GitHub, Medium, personal sites) into a MongoDB warehouse. A Change-Data-Capture layer and a Bytewax streaming pipeline keep the twin's memory continuously fresh.
-          </div>
-          <div class="twin-detail" id="twin-panel-1" role="region" aria-labelledby="twin-btn-1">
-            <b>Feature.</b> Text is cleaned, chunked, and embedded into a Qdrant vector database. The RAG layer uses query expansion, self-querying metadata filters, hybrid search, and a cross-encoder reranker.
-          </div>
-          <div class="twin-detail" id="twin-panel-2" role="region" aria-labelledby="twin-btn-2">
-            <b>Training.</b> Llama 3.1 8B fine-tuned with QLoRA/LoRA (TRL + Unsloth) on an instruction dataset, then aligned with DPO/RLHF. Runs are tracked and evaluated with LLM-as-a-judge and RAGAS in Comet ML.
-          </div>
-          <div class="twin-detail" id="twin-panel-3" role="region" aria-labelledby="twin-btn-3">
-            <b>Inference.</b> Served as a real-time AWS SageMaker endpoint behind a FastAPI microservice with a LangGraph agentic-RAG brain. Optimized with quantization (GPTQ/AWQ/GGUF), speculative decoding, Flash Attention, KV-cache, and continuous batching; benchmarked across vLLM, TGI, and TensorRT-LLM.
-          </div>
-          <div class="twin-detail" id="twin-panel-4" role="region" aria-labelledby="twin-btn-4">
-            <b>MLOps.</b> Built on the Feature/Training/Inference (FTI) pattern, orchestrated by ZenML into deployable microservices, with CI/CD/CT via GitHub Actions, Opik observability, and drift detection that triggers automatic retraining.
-          </div>
-        </div>
-      </div>
-
-      <div class="sys-tags">
-        <span>FTI Pipeline</span><span>ZenML</span><span>RAG</span><span>Qdrant</span><span>Llama 3.1 8B</span><span>QLoRA/LoRA</span><span>DPO/RLHF</span><span>vLLM</span><span>TGI</span><span>TensorRT-LLM</span><span>AWS SageMaker</span><span>FastAPI</span><span>LangGraph</span><span>Docker</span><span>CI/CD/CT</span>
-      </div>
-    </article>
-
-    <!-- ===== SYNQ featured project ===== -->
-    <article class="sys-feature synq reveal">
-      <p class="sys-kicker">Generative-Agent Social Simulation · Founder, LUMS Centre for Entrepreneurship</p>
-      <h3 class="sys-title">SYNQ</h3>
-      <p class="synq-tagline">Before people meet, their minds already have.</p>
-      <p class="sys-prose">SYNQ is, at its core, a <b>generative-agent social simulation</b>. Each person trains a high-fidelity AI Clone — a grounded digital twin of themselves — and these autonomous LLM agents <em>live, remember, and interact</em> in a persistent synthetic society: they keep daily routines, hold conversations, negotiate values, and form relationships. A compatibility layer then reads the patterns that emerge to surface high-probability human connections — across friendship, mentorship, hiring, and co-founder discovery — before a single human word is exchanged.</p>
-      <a class="sys-cta" href="https://shawalkhan418--synq-campus-web.modal.run/" target="_blank" rel="noopener">
-        <span class="live" aria-hidden="true"></span>Enter the live world
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
-      </a>
-
-      <div class="synq-viz" id="synq-viz">
-        <canvas class="agent-sim" id="agent-sim" aria-hidden="true"></canvas>
-        <div class="synq-legend" aria-hidden="true">
-          <span><i class="lg lg-you"></i>your clone</span>
-          <span><i class="lg lg-a"></i>agents</span>
-          <span><i class="lg lg-link"></i>emergent connection</span>
-        </div>
-        <div class="sim-hud" id="sim-hud" aria-hidden="true">06:00 · Summer</div>
-        <div class="synq-caption" aria-hidden="true">a generative-agent campus — daily routines, conversations, seasons &amp; events</div>
-      </div>
-      <div class="sim-controls" role="group" aria-label="Simulation controls">
-        <button type="button" class="sim-btn" id="sim-time"><span class="ic">☾</span> Night</button>
-        <button type="button" class="sim-btn" id="sim-season"><span class="ic">❄</span> Winter</button>
-        <button type="button" class="sim-btn" id="sim-event"><span class="ic">⚡</span> Trigger event</button>
-        <button type="button" class="sim-btn" id="sim-pause"><span class="ic">⏸</span> Pause</button>
-      </div>
-
-      <div class="synq-steps">
-        <div class="synq-step reveal">
-          <p class="synq-step-label">01 · Identity</p>
-          <h4 class="synq-step-head">The Clone</h4>
-          <p class="synq-step-text">A behavioral model fusing a structured interview, psychometrics, and opt-in signals into a five-layer personality embedding: communication style, ethics, emotional intelligence, cognition, and social energy.</p>
-        </div>
-        <div class="synq-step reveal d1">
-          <p class="synq-step-label">02 · Simulation</p>
-          <h4 class="synq-step-head">Autonomous Agents</h4>
-          <p class="synq-step-text">Live LLM agents meet asynchronously through curiosity probes, value-negotiation dialogues, and conflict simulations — a persistent synthetic-social environment that surfaces authentic resonance.</p>
-        </div>
-        <div class="synq-step reveal d2">
-          <p class="synq-step-label">03 · Intelligence</p>
-          <h4 class="synq-step-head">The Orchestrator</h4>
-          <p class="synq-step-text">A meta-level engine that scores flow symmetry, sentiment trajectory, healthy debate, and vulnerability signals, then delivers a Compatibility Report only on bilateral consent.</p>
-        </div>
-      </div>
-
-      <p class="synq-ethics-label">Ethics by design</p>
-      <div class="sys-tags synq-ethics">
-        <span>Bilateral consent</span><span>You own your Clone</span><span>Emotional-safety layer</span><span>Differential privacy (AES-256, GDPR/PDPB)</span><span>AI-to-AI only, no impersonation</span>
-      </div>
-
-      <div class="sys-tags">
-        <span>LangGraph</span><span>CrewAI</span><span>Multi-Agent Systems</span><span>Personality Embeddings</span><span>Affective Computing</span><span>Pinecone</span><span>FastAPI</span><span>Next.js</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span>
-      </div>
-    </article>
-  </section>
-
-  <section class="block reveal" id="projects">
-    <h2>Selected Projects<span class="h2line"></span></h2>
-    <ul class="proj-list">
-      <li class="reveal"><span class="pt">NBA-3D &amp; Basketball-RL</span> — <span class="ps">PyTorch</span><div class="pd">3D reconstruction of NBA players from multi-view video via a differentiable renderer; a differentiable 2D basketball RL environment, behavior-cloned from real NBA data then reward-fine-tuned.</div></li>
-      <li class="reveal d1"><span class="pt">Audio Source Separation</span> — <span class="ps">PyTorch · GAN</span><div class="pd">A U-Net CNN–GAN separating noisy and clean spectrograms, using the GAN as a segmentation loss.</div></li>
-      <li class="reveal d2"><span class="pt">From-Scratch Reimplementations</span> — <span class="ps">PyTorch · Java</span><div class="pd">AlphaZero (Connect 4), a neural net with backprop reaching 95% on MNIST, and NEAT solving CartPole and Flappy Bird.</div></li>
-    </ul>
-  </section>
-
-  <section class="block reveal" id="skills">
-    <h2>Skills<span class="h2line"></span></h2>
-    <div class="skills-group reveal">
-      <div class="skills-cat">Languages</div>
-      <div class="skills-chips"><span>Python</span><span>SQL</span><span>C</span><span>JavaScript</span><span>MATLAB</span></div>
+  <section id="physics" aria-labelledby="physics-title">
+    <div class="section-band">
+      <h2 class="container" id="physics-title">Mathematics &amp; Physics</h2>
     </div>
-    <div class="skills-group reveal">
-      <div class="skills-cat">ML &amp; LLM</div>
-      <div class="skills-chips"><span>PyTorch</span><span>TensorFlow</span><span>Hugging Face</span><span>scikit-learn</span><span>TRL</span><span>Unsloth</span><span>LangChain</span><span>LangGraph</span></div>
-    </div>
-    <div class="skills-group reveal">
-      <div class="skills-cat">LLM Techniques</div>
-      <div class="skills-chips"><span>RAG</span><span>Fine-tuning (QLoRA/LoRA)</span><span>DPO/RLHF</span><span>Quantization</span><span>Prompt Engineering</span><span>LLM Evaluation</span></div>
-    </div>
-    <div class="skills-group reveal">
-      <div class="skills-cat">Serving &amp; MLOps</div>
-      <div class="skills-chips"><span>vLLM</span><span>TGI</span><span>TensorRT-LLM</span><span>FastAPI</span><span>ZenML</span><span>Docker</span><span>GitHub Actions</span><span>Comet ML</span></div>
-    </div>
-    <div class="skills-group reveal">
-      <div class="skills-cat">Cloud &amp; Data</div>
-      <div class="skills-chips"><span>AWS SageMaker</span><span>Qdrant</span><span>MongoDB</span><span>Bytewax</span><span>ETL / CDC</span></div>
-    </div>
-    <div class="skills-group reveal">
-      <div class="skills-cat">Analytics</div>
-      <div class="skills-chips"><span>Power BI</span><span>Tableau</span><span>Pandas</span><span>NumPy</span></div>
+    <div class="container section-body">
+      <p class="phys-lead">Long before AI, it was <em>mathematics and physics</em> that drew me in — and they still anchor how I think. I have a deep knack for both: from the symmetry of Maxwell's equations rewritten across integral, vector, covariant, and differential-form formulations, to the tensor calculus of general relativity and the curvature of spacetime. The same instinct — to find structure, symmetry, and beauty inside complex systems — is what later pulled me toward AI.</p>
+      <p class="phys-sub">Astrophysics is my enduring love. On clear nights I do astrophotography — chasing galaxies tens of millions of light-years away through a telescope and stacking the light by hand. Some of that work, alongside fellow night-sky enthusiasts, is below.</p>
+
+      <div class="board-feature">
+        <div class="board-img"><img src="maxwell-boards.jpg" alt="Blackboard showing Maxwell's equations in integral, differential, covariant tensor, and differential-form notations" loading="lazy"></div>
+        <div class="board-body">
+          <span class="board-kicker">Classical Electromagnetism</span>
+          <h3>One law, four languages</h3>
+          <p>Maxwell's equations written four ways on a single board — <b>integral</b> form, <b>differential</b> (∇·, ∇×) form, the manifestly covariant <b>tensor</b> form ∂<sub>α</sub>F<sup>αβ</sup> = μ₀J<sup>β</sup>, and the compact <b>differential-forms</b> statement dF = 0, d⋆F = μ₀J.</p>
+          <p>Seeing the same physics survive every change of notation is, to me, the whole point of theoretical physics — and exactly the kind of structural thinking I bring to AI.</p>
+        </div>
+      </div>
+
+      <div class="astro-grid">
+        <figure class="astro-card" style="margin:0;">
+          <img src="astro-m51.jpg" alt="Whirlpool Galaxy M51" loading="lazy">
+          <figcaption class="astro-cap"><span class="obj">Whirlpool Galaxy · M51</span><span class="meta">Grand-design spiral · ~31 Mly</span></figcaption>
+        </figure>
+        <figure class="astro-card" style="margin:0;">
+          <img src="astro-sombrero.jpg" alt="Sombrero Galaxy M104" loading="lazy">
+          <figcaption class="astro-cap"><span class="obj">Sombrero Galaxy · M104</span><span class="meta">Edge-on spiral · ~29.3 Mly</span></figcaption>
+        </figure>
+        <figure class="astro-card" style="margin:0;">
+          <img src="astro-moon.jpg" alt="The waxing Moon along the terminator" loading="lazy" style="object-position:50% 35%;">
+          <figcaption class="astro-cap"><span class="obj">The Moon · Terminator</span><span class="meta">Craters &amp; maria in relief · ~1.3 ls</span></figcaption>
+        </figure>
+      </div>
+      <p class="phys-note"><b>Gear &amp; method:</b> long-exposure deep-sky imaging through a tracked telescope, with frame stacking and post-processing to draw faint structure out of the noise — the observational counterpart to the theory above.</p>
     </div>
   </section>
 
-  <section class="block reveal" id="physics">
-    <h2>Mathematics &amp; Physics<span class="h2line"></span></h2>
-    <p class="phys-lead">Long before AI, it was <em>mathematics and physics</em> that drew me in — and they still anchor how I think. I have a deep knack for both: from the symmetry of Maxwell's equations rewritten across integral, vector, covariant, and differential-form formulations, to the tensor calculus of general relativity and the curvature of spacetime. The same instinct — to find structure, symmetry, and beauty inside complex systems — is what later pulled me toward AI.</p>
-    <p class="phys-sub">Astrophysics is my enduring love. On clear nights I do astrophotography — chasing galaxies tens of millions of light-years away through a telescope and stacking the light by hand. Some of that work, alongside fellow night-sky enthusiasts, is below.</p>
-
-    <div class="board-feature reveal">
-      <div class="board-img"><img src="maxwell-boards.jpg" alt="Blackboard showing Maxwell's equations in integral, differential, covariant tensor, and differential-form notations" loading="lazy"></div>
-      <div class="board-body">
-        <span class="board-kicker">Classical Electromagnetism</span>
-        <h3>One law, four languages</h3>
-        <p>Maxwell's equations written four ways on a single board — <b>integral</b> form, <b>differential</b> (∇·, ∇×) form, the manifestly covariant <b>tensor</b> form ∂<sub>α</sub>F<sup>αβ</sup> = μ₀J<sup>β</sup>, and the compact <b>differential-forms</b> statement dF = 0, d⋆F = μ₀J.</p>
-        <p>Seeing the same physics survive every change of notation is, to me, the whole point of theoretical physics — and exactly the kind of structural thinking I bring to AI.</p>
+  <section id="honors" aria-labelledby="honors-title">
+    <div class="section-band">
+      <h2 class="container" id="honors-title">Honors &amp; Service</h2>
+    </div>
+    <div class="container section-body">
+      <div class="honor-grid">
+        <div class="honor">
+          <b>Top 5% of Batch</b><span>ECE Department, COMSATS — first year.</span>
+        </div>
+        <div class="honor">
+          <b>Battle of Thetas — Winner</b><span>First place, PION '18 national engineering competition.</span>
+        </div>
+        <div class="honor">
+          <b>1,000,000 PKR raised for charity</b><span>Led campaigns for the Abda Foundation.</span>
+        </div>
+        <div class="honor">
+          <b>Featured on National Television</b><span>Recognized for community and social-impact work.</span>
+        </div>
       </div>
     </div>
-
-    <div class="astro-grid">
-      <figure class="astro-card reveal" style="margin:0;">
-        <img src="astro-m51.jpg" alt="Whirlpool Galaxy M51" loading="lazy">
-        <figcaption class="astro-cap"><span class="obj">Whirlpool Galaxy · M51</span><span class="meta">Grand-design spiral · ~31 Mly</span></figcaption>
-      </figure>
-      <figure class="astro-card reveal d1" style="margin:0;">
-        <img src="astro-sombrero.jpg" alt="Sombrero Galaxy M104" loading="lazy">
-        <figcaption class="astro-cap"><span class="obj">Sombrero Galaxy · M104</span><span class="meta">Edge-on spiral · ~29.3 Mly</span></figcaption>
-      </figure>
-      <figure class="astro-card reveal d2" style="margin:0;">
-        <img src="astro-moon.jpg" alt="The waxing Moon along the terminator" loading="lazy" style="object-position:50% 35%;">
-        <figcaption class="astro-cap"><span class="obj">The Moon · Terminator</span><span class="meta">Craters &amp; maria in relief · ~1.3 ls</span></figcaption>
-      </figure>
-    </div>
-    <p class="phys-note"><b>Gear &amp; method:</b> long-exposure deep-sky imaging through a tracked telescope, with frame stacking and post-processing to draw faint structure out of the noise — the observational counterpart to the theory above.</p>
   </section>
 
-  <section class="block reveal" id="ask">
-    <h2>Ask Me Anything<span class="h2line"></span></h2>
-    <p class="ask-intro">A small retrieval engine that runs entirely in your browser — nothing you type ever leaves this page. Ask about my research, systems work, or teaching, and it retrieves the relevant facts and answers in my voice.</p>
-
-    <form class="ask-form" id="ask-form" autocomplete="off">
-      <input type="text" id="ask-input" class="ask-input" aria-label="Ask a question" placeholder="Ask a question…">
-      <button type="submit" class="ask-btn" id="ask-btn" data-magnetic>Ask</button>
-    </form>
-
-    <div class="ask-chips" id="ask-chips">
-      <button type="button" class="ask-chip">How do you take an LLM to production?</button>
-      <button type="button" class="ask-chip">What do you teach at LUMS?</button>
-      <button type="button" class="ask-chip">Tell me about your RAG work</button>
-      <button type="button" class="ask-chip">What are you researching?</button>
-      <button type="button" class="ask-chip">What is SYNQ?</button>
+  <section id="ask" aria-labelledby="ask-title">
+    <div class="section-band">
+      <h2 class="container" id="ask-title">Ask Me Anything</h2>
     </div>
+    <div class="container section-body">
+      <p class="ask-intro">A small retrieval engine that runs entirely in your browser — nothing you type ever leaves this page. Ask about my research, systems work, or teaching, and it retrieves the relevant facts and answers in my voice.</p>
 
-    <ol class="ask-steps" id="ask-steps" aria-hidden="true">
-      <li data-step="0"><span class="ask-step-num">1</span>Understand</li>
-      <li data-step="1"><span class="ask-step-num">2</span>Search</li>
-      <li data-step="2"><span class="ask-step-num">3</span>Rank</li>
-      <li data-step="3"><span class="ask-step-num">4</span>Answer</li>
-    </ol>
+      <form class="ask-form" id="ask-form" autocomplete="off">
+        <input type="text" id="ask-input" class="ask-input" aria-label="Ask a question" placeholder="Ask a question…">
+        <button type="submit" class="ask-btn" id="ask-btn">Ask</button>
+      </form>
 
-    <div class="ask-results" id="ask-results" aria-live="polite"></div>
-  </section>
+      <div class="ask-chips" id="ask-chips">
+        <button type="button" class="ask-chip">How do you take an LLM to production?</button>
+        <button type="button" class="ask-chip">What do you teach at LUMS?</button>
+        <button type="button" class="ask-chip">Tell me about your RAG work</button>
+        <button type="button" class="ask-chip">What are you researching?</button>
+        <button type="button" class="ask-chip">What is SYNQ?</button>
+      </div>
 
-  <section class="block reveal" id="honors">
-    <h2>Honors &amp; Service<span class="h2line"></span></h2>
-    <div class="honor-grid">
-      <div class="honor reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg></div>
-        <b>Top 5% of Batch</b><span>ECE Department, COMSATS — first year.</span>
-      </div>
-      <div class="honor reveal d1">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6m12 5h1.5a2.5 2.5 0 0 0 0-5H18M6 4v6a6 6 0 0 0 12 0V4M8 22h8m-4-4v4"/></svg></div>
-        <b>Battle of Thetas — Winner</b><span>First place, PION '18 national engineering competition.</span>
-      </div>
-      <div class="honor reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A4.5 4.5 0 0 0 12 5.5 4.5 4.5 0 0 0 2 8.5C2 11 4 13 6 14l6 6 7-6Z"/></svg></div>
-        <b>1,000,000 PKR raised for charity</b><span>Led campaigns for the Abda Foundation.</span>
-      </div>
-      <div class="honor reveal d1">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="m17 2-5 5-5-5"/></svg></div>
-        <b>Featured on National Television</b><span>Recognized for community and social-impact work.</span>
-      </div>
+      <ol class="ask-steps" id="ask-steps" aria-hidden="true">
+        <li data-step="0"><span class="ask-step-num">1</span>Understand</li>
+        <li data-step="1"><span class="ask-step-num">2</span>Search</li>
+        <li data-step="2"><span class="ask-step-num">3</span>Rank</li>
+        <li data-step="3"><span class="ask-step-num">4</span>Answer</li>
+      </ol>
+
+      <div class="ask-results" id="ask-results" aria-live="polite"></div>
     </div>
   </section>
 
 </main>
 
-<footer>
-  Shawal Latif · <a href="mailto:shawalkhan418@gmail.com">shawalkhan418@gmail.com</a> · <a href="https://github.com/shawalkhan1" target="_blank" rel="noopener">github.com/shawalkhan1</a>
+<footer class="site-footer">
+  <div class="container">
+    Shawal Latif · <a href="mailto:shawalkhan418@gmail.com">shawalkhan418@gmail.com</a> · <a href="https://github.com/shawalkhan1" target="_blank" rel="noopener">GitHub</a>
+  </div>
 </footer>
-
-<button class="totop" id="totop" aria-label="Back to top">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
-</button>
 
 <script>
 (function(){
   "use strict";
-  var reduceMotion = window.matchMedia &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- scroll progress + nav shadow + back-to-top ---------- */
-  var progress = document.getElementById("progress");
-  var nav = document.getElementById("nav");
-  var totop = document.getElementById("totop");
-  function onScroll(){
-    var st = window.pageYOffset || document.documentElement.scrollTop;
-    var h = document.documentElement.scrollHeight - window.innerHeight;
-    if(progress) progress.style.width = (h > 0 ? (st / h) * 100 : 0) + "%";
-    if(nav) nav.classList.toggle("scrolled", st > 8);
-    if(totop) totop.classList.toggle("show", st > 600);
-  }
-  window.addEventListener("scroll", onScroll, {passive:true});
-  onScroll();
-  if(totop){
-    totop.addEventListener("click", function(){
-      window.scrollTo({top:0, behavior: reduceMotion ? "auto" : "smooth"});
-    });
+  var navToggle = document.querySelector(".nav-toggle");
+  var navLinks = document.getElementById("site-links");
+  var mobileNav = window.matchMedia("(max-width: 767px)");
+
+  function setMenu(open){
+    navToggle.setAttribute("aria-expanded", String(open));
+    navToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+    navLinks.hidden = mobileNav.matches && !open;
   }
 
-  /* ---------- reveal on scroll ---------- */
-  var revealEls = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
-  if(reduceMotion || !("IntersectionObserver" in window)){
-    revealEls.forEach(function(el){ el.classList.add("in"); });
-    Array.prototype.slice.call(document.querySelectorAll(".block")).forEach(function(b){ b.classList.add("in"); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          e.target.classList.add("in");
-          io.unobserve(e.target);
-        }
-      });
-    }, {rootMargin:"0px 0px -8% 0px", threshold:0.12});
-    revealEls.forEach(function(el){ io.observe(el); });
-    // animate the h2 underline when a block scrolls in
-    var bio = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); } });
-    }, {threshold:0.18});
-    Array.prototype.slice.call(document.querySelectorAll(".block")).forEach(function(b){ bio.observe(b); });
-  }
-
-  /* ---------- scrollspy: active nav link ---------- */
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-links a"));
-  var sectionMap = {};
-  navLinks.forEach(function(a){
-    var id = a.getAttribute("href").slice(1);
-    var sec = document.getElementById(id);
-    if(sec) sectionMap[id] = a;
+  navToggle.hidden = false;
+  setMenu(false);
+  mobileNav.addEventListener("change", function(){ setMenu(false); });
+  navToggle.addEventListener("click", function(){
+    setMenu(navToggle.getAttribute("aria-expanded") === "false");
   });
-  if("IntersectionObserver" in window){
-    var spy = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          navLinks.forEach(function(a){ a.classList.remove("active"); });
-          var a = sectionMap[e.target.id];
-          if(a) a.classList.add("active");
-        }
-      });
-    }, {rootMargin:"-45% 0px -50% 0px"});
-    Object.keys(sectionMap).forEach(function(id){ spy.observe(document.getElementById(id)); });
-  }
+  navLinks.addEventListener("click", function(event){
+    var link = event.target.closest("a");
+    if(!link || !mobileNav.matches) return;
 
-  /* ---------- count-up stats ---------- */
-  var stats = document.getElementById("stats");
-  if(stats){
-    var ran = false;
-    function runCounts(){
-      if(ran) return; ran = true;
-      Array.prototype.slice.call(stats.querySelectorAll(".num")).forEach(function(el){
-        var target = parseInt(el.getAttribute("data-count"), 10) || 0;
-        var suffix = el.getAttribute("data-suffix") || "";
-        if(reduceMotion){ el.textContent = target + suffix; return; }
-        var start = null, dur = 1200;
-        function tick(ts){
-          if(start === null) start = ts;
-          var p = Math.min((ts - start) / dur, 1);
-          var eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = Math.round(eased * target) + suffix;
-          if(p < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-      });
+    var target = document.getElementById(link.hash.slice(1));
+    setMenu(false);
+    target.tabIndex = -1;
+    target.focus({preventScroll:true});
+  });
+  navToggle.closest("nav").addEventListener("keydown", function(event){
+    if(event.key === "Escape" && navToggle.getAttribute("aria-expanded") === "true"){
+      setMenu(false);
+      navToggle.focus();
     }
-    if("IntersectionObserver" in window){
-      var sio = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){ if(e.isIntersecting){ runCounts(); sio.disconnect(); } });
-      }, {threshold:0.4});
-      sio.observe(stats);
-    } else { runCounts(); }
-  }
-
-  /* ---------- magnetic buttons / links ---------- */
-  if(!reduceMotion && window.matchMedia("(pointer:fine)").matches){
-    Array.prototype.slice.call(document.querySelectorAll("[data-magnetic]")).forEach(function(el){
-      el.style.transition = el.style.transition || "transform .2s cubic-bezier(.2,.7,.2,1)";
-      el.addEventListener("mousemove", function(ev){
-        var r = el.getBoundingClientRect();
-        var mx = ev.clientX - (r.left + r.width / 2);
-        var my = ev.clientY - (r.top + r.height / 2);
-        el.style.transform = "translate(" + (mx * 0.25) + "px," + (my * 0.35) + "px)";
-      });
-      el.addEventListener("mouseleave", function(){ el.style.transform = ""; });
-    });
-  }
+  });
 
   /* ---------- SYNQ: living generative-agent campus world ---------- */
   (function(){
@@ -2803,100 +1955,6 @@
         if(!paused && !raf) raf=requestAnimationFrame(frame);
       });
     }
-  })();
-
-  /* ---------- hero neural mesh ---------- */
-  (function(){
-    var canvas = document.getElementById("mesh");
-    if(!canvas || reduceMotion) return;
-    var ctx = canvas.getContext("2d");
-    var w = 0, h = 0, dpr = 1, pts = [], raf = null;
-    var mouse = {x:-9999, y:-9999};
-    var LINK = 128;
-
-    function size(){
-      var r = canvas.getBoundingClientRect();
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = r.width; h = r.height;
-      canvas.width = Math.max(1, w * dpr);
-      canvas.height = Math.max(1, h * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      makePts();
-    }
-    function makePts(){
-      var n = Math.round(Math.min(64, Math.max(22, (w * h) / 16000)));
-      pts = [];
-      for(var i = 0; i < n; i++){
-        pts.push({
-          x: Math.random() * w, y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.22,
-          vy: (Math.random() - 0.5) * 0.22
-        });
-      }
-    }
-    function frame(){
-      ctx.clearRect(0, 0, w, h);
-      for(var i = 0; i < pts.length; i++){
-        var p = pts[i];
-        // gentle cursor pull
-        var dxm = mouse.x - p.x, dym = mouse.y - p.y;
-        var dm = Math.sqrt(dxm * dxm + dym * dym);
-        if(dm < 150 && dm > 0.1){
-          p.vx += (dxm / dm) * 0.012;
-          p.vy += (dym / dm) * 0.012;
-        }
-        p.vx *= 0.985; p.vy *= 0.985;
-        p.x += p.vx; p.y += p.vy;
-        if(p.x < 0 || p.x > w) p.vx *= -1;
-        if(p.y < 0 || p.y > h) p.vy *= -1;
-        p.x = Math.max(0, Math.min(w, p.x));
-        p.y = Math.max(0, Math.min(h, p.y));
-      }
-      for(var a = 0; a < pts.length; a++){
-        for(var b = a + 1; b < pts.length; b++){
-          var dx = pts[a].x - pts[b].x, dy = pts[a].y - pts[b].y;
-          var d = Math.sqrt(dx * dx + dy * dy);
-          if(d < LINK){
-            var al = (1 - d / LINK) * 0.16;
-            ctx.strokeStyle = "rgba(140,21,21," + al.toFixed(3) + ")";
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(pts[a].x, pts[a].y);
-            ctx.lineTo(pts[b].x, pts[b].y);
-            ctx.stroke();
-          }
-        }
-      }
-      for(var k = 0; k < pts.length; k++){
-        ctx.beginPath();
-        ctx.arc(pts[k].x, pts[k].y, 1.6, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(140,21,21,0.34)";
-        ctx.fill();
-      }
-      raf = requestAnimationFrame(frame);
-    }
-    var hero = document.getElementById("about");
-    if(hero){
-      hero.addEventListener("mousemove", function(ev){
-        var r = canvas.getBoundingClientRect();
-        mouse.x = ev.clientX - r.left;
-        mouse.y = ev.clientY - r.top;
-      });
-      hero.addEventListener("mouseleave", function(){ mouse.x = -9999; mouse.y = -9999; });
-    }
-    var rsz; window.addEventListener("resize", function(){ clearTimeout(rsz); rsz = setTimeout(size, 200); });
-    // pause when off-screen
-    if("IntersectionObserver" in window){
-      var vio = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if(e.isIntersecting){ if(!raf){ raf = requestAnimationFrame(frame); } }
-          else { if(raf){ cancelAnimationFrame(raf); raf = null; } }
-        });
-      }, {threshold:0});
-      vio.observe(canvas);
-    }
-    size();
-    raf = requestAnimationFrame(frame);
   })();
 
   /* ---------- LLM Twin pipeline accordion (one open at a time) ---------- */
