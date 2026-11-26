@@ -41,7 +41,7 @@
       <li><a href="#research">Research</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#publications">Papers</a></li>
-      <li><a href="#systems">Systems</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#teaching">Teaching</a></li>
     </ul>
   </div>
@@ -103,274 +103,31 @@
     </div>
   </section>
 
-  <section id="contact" aria-labelledby="contact-title">
+  <section id="education" aria-labelledby="education-title">
     <div class="section-band">
-      <h2 class="container" id="contact-title">Contact</h2>
+      <h2 class="container" id="education-title">Education</h2>
     </div>
     <div class="container section-body">
-      <p>For research collaboration or questions about efficient AI, human–AI interaction, or AI for healthcare, email me at <a href="mailto:24280068@lums.edu.pk">24280068@lums.edu.pk</a>. You can also find my work on <a href="https://github.com/shawalkhan1" target="_blank" rel="noopener">GitHub</a>.</p>
-    </div>
-  </section>
-
-  <section id="publications" aria-labelledby="publications-title">
-    <div class="section-band">
-      <h2 class="container" id="publications-title">Selected Papers</h2>
-    </div>
-    <div class="container section-body papers">
-      <p>For more about my research and experience, see my <a href="Shawal_Latif_CV.pdf">CV</a>.</p>
-      <div class="paper-list">
-        <article class="paper" id="benchmaterna">
-          <h3>BenchMaterna: A Clinician-Validated Benchmark for Evaluating LLMs on Maternal Healthcare in the Global South</h3>
-          <p><b>Shawal Latif</b>, M. Mustafa, <i>et al.</i><br>In submission · Target venue: ACL 2027</p>
-          <p>The first large-scale, clinician-validated benchmark evaluating 30+ LLMs on maternal healthcare for Global South women — co-built with 30 clinical experts across regional languages and scored on six dimensions.</p>
-        </article>
-        <article class="paper" id="awaaz-paper">
-          <h3>Awaaz-e-Sehat: A Voice-First LLM Assistant for Maternal Health among Low-Literacy Women</h3>
-          <p><b>Shawal Latif</b>, M. Mustafa, <i>et al.</i><br>In submission · Target venue: CHI 2027</p>
-          <p>System architecture, clinicians-in-the-loop design, and longitudinal deployment with rural women — examining trust calibration and over-reliance among first-time AI users making high-stakes clinical decisions.</p>
-        </article>
-        <article class="paper" id="fairness-audit">
-          <h3>Clinical Fairness Auditing of Frontier LLMs</h3>
-          <p><b>Shawal Latif</b>, M. Mustafa, <i>et al.</i><br>In submission · Target venue: FAccT 2027</p>
-          <p>Perturbation benchmarks across Roman Urdu, code-mixed language, and intersectional profiles, with new fairness metrics — Reduced Care Rate, Reduced Care Error Rate, and Triage Threshold Shift.</p>
-        </article>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-left"><img class="edu-logo" src="logos/lums.png" alt="LUMS"><span class="entry-role">M.S. in Artificial Intelligence</span></span>
+          <span class="entry-when edu-when">2024 – 2026</span>
+        </div>
+        <p class="entry-meta">Lahore University of Management Sciences (LUMS)</p>
+        <ul>
+          <li>Coursework in large language models, human-centered AI, AI for social impact, deep learning, and machine learning.</li>
+        </ul>
       </div>
-    </div>
-  </section>
-
-  <section id="systems" aria-labelledby="systems-title">
-    <div class="section-band">
-      <h2 class="container" id="systems-title">Systems</h2>
-    </div>
-    <div class="container section-body">
-
-      <!-- ===== System-aware compression: human-centered edge AI ===== -->
-      <article class="sys-feature edge-project" id="llm-compression" aria-labelledby="edge-title">
-        <div class="edge-heading">
-          <p class="sys-kicker">AI on Edge Devices · LLaMA-2-7B</p>
-          <span class="edge-award-label"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3h12v6a6 6 0 0 1-12 0V3ZM6 5H3v3a4 4 0 0 0 4 4m11-7h3v3a4 4 0 0 1-4 4M12 15v6m-4 0h8"/></svg>Best Project Award</span>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-left"><img class="edu-logo" src="logos/comsats.png" alt="COMSATS University Islamabad"><span class="entry-role">B.S. in Electrical Engineering</span></span>
+          <span class="entry-when edu-when">2017 – 2021</span>
         </div>
-        <h3 class="sys-title" id="edge-title">Compressing <span class="edge-nowrap">LLaMA-2</span> for CPU inference</h3>
-        <p class="edge-credit">Shawal Latif <span>· Lowest perplexity and highest accuracy on the course leaderboard</span></p>
-        <p class="edge-lede">My smallest configuration, Q2_K, used a <strong>2.10 GB</strong> model artifact, down from <strong>25.10 GB</strong>. The key engineering challenge was making non-uniformly pruned layers work in llama.cpp.</p>
-
-        <section class="edge-architecture" aria-labelledby="edge-flow-title">
-          <div class="edge-section-heading"><h4 id="edge-flow-title">From weights to a working runtime</h4><span class="edge-enhanced" hidden>Select a stage</span></div>
-          <div class="edge-flow-zones" aria-hidden="true"><span>Model preparation</span><span>CPU inference</span></div>
-          <ol class="edge-flow" aria-label="Compression architecture">
-            <li><button type="button" class="edge-stage" data-stage="0" aria-pressed="false" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>01</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="5"/><rect x="11" y="3" width="5" height="5"/><rect x="3" y="11" width="5" height="5"/><path d="m12 12 8 8m0-8-8 8M20 3v5M3 20h5"/></svg></span><strong>Prune</strong><span class="edge-stage-sub">Reduce the model</span></button></li>
-            <li><button type="button" class="edge-stage" data-stage="1" aria-pressed="false" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>02</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h6v14H3zM15 8h6v8h-6zM10 12h4M12 10v4"/></svg></span><strong>Recover</strong><span class="edge-stage-sub">LoRA fine-tuning</span></button></li>
-            <li><button type="button" class="edge-stage" data-stage="2" aria-pressed="false" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>03</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 16V9m5 7V4m5 12V7m5 9v-4M3 16h18"/></svg></span><strong>Quantize</strong><span class="edge-stage-sub">Lower the precision</span></button></li>
-            <li><button type="button" class="edge-stage is-active" data-stage="3" aria-pressed="true" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>04</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4M18 9h4m-4 6h4"/></svg></span><strong>Run</strong><span class="edge-stage-sub">Resolve runtime shapes</span></button></li>
-          </ol>
-          <div class="edge-stage-panel" id="edge-stage-panel" aria-live="polite" aria-atomic="true">
-            <div><p class="edge-panel-label" id="edge-stage-label">04 / Runtime integration</p><h5 id="edge-stage-title">Supporting layers with different shapes.</h5><p id="edge-stage-copy">I adapted llama.cpp to read per-layer dimensions from GGUF tensor shapes and pass them to the graph builder, supporting layers with different attention and feed-forward dimensions.</p></div>
-            <div class="edge-shape-flow" aria-label="Selected stage data flow"><span id="edge-shape-input">GGUF tensor shapes</span><span aria-hidden="true">↓</span><strong id="edge-shape-transform">Per-layer dimensions</strong><span aria-hidden="true">↓</span><span id="edge-shape-output">Graph construction</span></div>
-          </div>
-          <p class="edge-architecture-note">Pipeline overview from the project report. Built on LLM-Pruner, SmoothQuant, and llama.cpp.</p>
-        </section>
-
-        <section class="edge-explorer" aria-labelledby="edge-results-title">
-          <div class="edge-section-heading"><div><p class="edge-eyebrow">The tradeoffs</p><h4 id="edge-results-title">Smaller models, different costs.</h4></div><span class="edge-data-tag">Reported measurements</span></div>
-          <p class="edge-explorer-intro">Compare each configuration with the FP16 baseline. Memory savings, speed, and language-model quality do not move together.</p>
-          <div class="edge-configs edge-enhanced" role="group" aria-label="Choose a measured model configuration" hidden>
-            <button type="button" data-config="0" aria-pressed="false">FP16 <span>baseline</span></button>
-            <button type="button" data-config="1" aria-pressed="false">Pruned <span>30% target</span></button>
-            <button type="button" data-config="2" aria-pressed="false">Q8_0</button>
-            <button type="button" data-config="3" aria-pressed="true" class="is-active">Q4_K_M</button>
-            <button type="button" data-config="4" aria-pressed="false">Q2_K</button>
-          </div>
-          <div class="edge-verdict" aria-live="polite" aria-atomic="true"><strong id="edge-config-title">Q4_K_M</strong><p id="edge-config-note">A smaller footprint, with a speed tradeoff: 86.4% less storage and 75.0% less peak memory, but 13.3% lower throughput than FP16. Perplexity rises from 7.18 to 8.52.</p></div>
-          <div class="edge-measures">
-            <div class="edge-measure" data-metric="size">
-              <div class="edge-measure-heading"><h5>Artifact size</h5><span>Lower is better</span></div>
-              <p class="edge-reading"><strong data-value>3.41</strong> <span>GB</span></p>
-              <p class="edge-delta" data-delta>86.4% smaller</p>
-              <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:100%"></i></span><span>25.10 GB</span></div>
-              <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:13.59%"></i></span><span data-bar-value>3.41 GB</span></div>
-            </div>
-            <div class="edge-measure" data-metric="memory">
-              <div class="edge-measure-heading"><h5>Peak memory</h5><span>Lower is better</span></div>
-              <p class="edge-reading"><strong data-value>3.75</strong> <span>GB</span></p>
-              <p class="edge-delta" data-delta>75.0% less memory</p>
-              <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:100%"></i></span><span>14.99 GB</span></div>
-              <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:25.02%"></i></span><span data-bar-value>3.75 GB</span></div>
-            </div>
-            <div class="edge-measure" data-metric="speed">
-              <div class="edge-measure-heading"><h5>CPU throughput</h5><span>Higher is better</span></div>
-              <p class="edge-reading"><strong data-value>31.9</strong> <span>tok/s</span></p>
-              <p class="edge-delta" data-delta>13.3% slower</p>
-              <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:80.17%"></i></span><span>36.8 tok/s</span></div>
-              <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:69.50%"></i></span><span data-bar-value>31.9 tok/s</span></div>
-            </div>
-            <div class="edge-measure" data-metric="ppl">
-              <div class="edge-measure-heading"><h5>WikiText-2 perplexity</h5><span>Lower is better</span></div>
-              <p class="edge-reading"><strong data-value>8.52</strong> <span></span></p>
-              <p class="edge-delta" data-delta>+1.34 perplexity</p>
-              <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:69.17%"></i></span><span>7.18</span></div>
-              <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:82.08%"></i></span><span data-bar-value>8.52</span></div>
-            </div>
-          </div>
-          <p class="edge-chart-note"><span class="edge-legend-base" aria-hidden="true"></span>FP16 baseline <span class="edge-legend-selected" aria-hidden="true"></span>Selected configuration <span>· Each metric uses its own scale.</span></p>
-        </section>
-
-        <details class="edge-benchmarks">
-          <summary>Full results &amp; measurement notes</summary>
-          <div class="edge-table-wrap" role="region" aria-label="Compression benchmark table, horizontally scrollable on small screens" tabindex="0">
-            <table class="edge-table">
-              <caption>LLaMA-2-7B · Project report, Table 1. Lower perplexity, memory, and size are better; higher throughput is better.</caption>
-              <thead><tr><th scope="col">Configuration</th><th scope="col">Perplexity<span>WikiText-2 ↓</span></th><th scope="col">Throughput<span>tok/s ↑</span></th><th scope="col">Peak memory<span>GB ↓</span></th><th scope="col">Artifact size<span>GB ↓</span></th></tr></thead>
-              <tbody>
-                <tr><th scope="row">Base FP16</th><td>7.18</td><td>36.8</td><td>14.99</td><td>25.10</td></tr>
-                <tr><th scope="row">Pruned (30%)</th><td>7.92</td><td>45.9</td><td>12.09</td><td>20.21</td></tr>
-                <tr><th scope="row">GGUF Q8_0</th><td>8.31</td><td>24.5</td><td>6.00</td><td>5.61</td></tr>
-                <tr><th scope="row">GGUF Q4_K_M</th><td>8.52</td><td>31.9</td><td>3.75</td><td>3.41</td></tr>
-                <tr><th scope="row">GGUF Q2_K</th><td>10.38</td><td>39.4</td><td>2.43</td><td>2.10</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="edge-note">Results are reproduced from the <a href="assets/reports/llm-compression-report.pdf#page=5">project report, Table 1</a>. The report describes CPU inference but does not specify the CPU model or full benchmark settings; these figures should not be read as Raspberry Pi-specific measurements. Q4_K_M trades lower throughput than the baseline for memory and storage savings.</p>
-          <p class="edge-note">Built on LLM-Pruner, SmoothQuant, and llama.cpp. The course award is separate from these reported configurations.</p>
-        </details>
-
-
-        <p class="edge-motivation"><strong>Why this matters to me.</strong> I want to pair efficient local inference with HCI research: useful AI on devices people can access, even when a reliable internet connection is out of reach.</p>
-        <div class="edge-links">
-          <a href="https://github.com/shawalkhan1/AI-624-LLM-Compression-Project" target="_blank" rel="noopener">Explore the code <span aria-hidden="true">↗</span></a>
-          <a href="assets/reports/llm-compression-report.pdf">Read the report <span aria-hidden="true">↗</span></a>
-        </div>
-      </article>
-
-      <!-- ===== LLM Twin featured project ===== -->
-      <article class="sys-feature twin">
-        <p class="sys-kicker">Production LLM System</p>
-        <h3 class="sys-title">LLM Twin</h3>
-        <p class="sys-summary">An end-to-end system that learns a person's writing voice and answers as they would — the production blueprint behind SYNQ. Tap a stage to trace how raw data becomes a living, self-improving twin.</p>
-        <a class="sys-cta" href="https://shawalkhan418--synq-campus-web.modal.run/" target="_blank" rel="noopener">
-          <span class="live" aria-hidden="true"></span>Launch live demo
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
-        </a>
-
-        <div class="twin-rig" id="twin-rig">
-          <div class="twin-rail" role="list">
-            <div class="twin-wire" aria-hidden="true"><span class="packet"></span><span class="packet b"></span></div>
-
-            <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-0" aria-controls="twin-panel-0">
-              <span class="twin-dot"><span class="twin-num">01</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
-              </span>
-              <span class="twin-label">Data</span><span class="twin-sub">ETL · CDC</span>
-            </button>
-
-            <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-1" aria-controls="twin-panel-1">
-              <span class="twin-dot"><span class="twin-num">02</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
-              </span>
-              <span class="twin-label">Feature</span><span class="twin-sub">RAG · Qdrant</span>
-            </button>
-
-            <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-2" aria-controls="twin-panel-2">
-              <span class="twin-dot"><span class="twin-num">03</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2"/></svg>
-              </span>
-              <span class="twin-label">Training</span><span class="twin-sub">QLoRA · DPO</span>
-            </button>
-
-            <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-3" aria-controls="twin-panel-3">
-              <span class="twin-dot"><span class="twin-num">04</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m13 2-9 12h7l-2 8 9-12h-7l2-8Z"/></svg>
-              </span>
-              <span class="twin-label">Inference</span><span class="twin-sub">vLLM · SageMaker</span>
-            </button>
-
-            <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-4" aria-controls="twin-panel-4">
-              <span class="twin-dot"><span class="twin-num">05</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v4h-4"/></svg>
-              </span>
-              <span class="twin-label">MLOps</span><span class="twin-sub">ZenML · CI/CD</span>
-            </button>
-          </div>
-
-          <div class="twin-detail-wrap">
-            <p class="twin-hint" id="twin-hint">Select a pipeline stage to expand</p>
-            <div class="twin-detail" id="twin-panel-0" role="region" aria-labelledby="twin-btn-0">
-              <b>Data.</b> A multi-source ETL crawler pulls every digital trace (GitHub, Medium, personal sites) into a MongoDB warehouse. A Change-Data-Capture layer and a Bytewax streaming pipeline keep the twin's memory continuously fresh.
-            </div>
-            <div class="twin-detail" id="twin-panel-1" role="region" aria-labelledby="twin-btn-1">
-              <b>Feature.</b> Text is cleaned, chunked, and embedded into a Qdrant vector database. The RAG layer uses query expansion, self-querying metadata filters, hybrid search, and a cross-encoder reranker.
-            </div>
-            <div class="twin-detail" id="twin-panel-2" role="region" aria-labelledby="twin-btn-2">
-              <b>Training.</b> Llama 3.1 8B fine-tuned with QLoRA/LoRA (TRL + Unsloth) on an instruction dataset, then aligned with DPO/RLHF. Runs are tracked and evaluated with LLM-as-a-judge and RAGAS in Comet ML.
-            </div>
-            <div class="twin-detail" id="twin-panel-3" role="region" aria-labelledby="twin-btn-3">
-              <b>Inference.</b> Served as a real-time AWS SageMaker endpoint behind a FastAPI microservice with a LangGraph agentic-RAG brain. Optimized with quantization (GPTQ/AWQ/GGUF), speculative decoding, Flash Attention, KV-cache, and continuous batching; benchmarked across vLLM, TGI, and TensorRT-LLM.
-            </div>
-            <div class="twin-detail" id="twin-panel-4" role="region" aria-labelledby="twin-btn-4">
-              <b>MLOps.</b> Built on the Feature/Training/Inference (FTI) pattern, orchestrated by ZenML into deployable microservices, with CI/CD/CT via GitHub Actions, Opik observability, and drift detection that triggers automatic retraining.
-            </div>
-          </div>
-        </div>
-
-        <div class="sys-tags">
-          <span>FTI Pipeline</span><span>ZenML</span><span>RAG</span><span>Qdrant</span><span>Llama 3.1 8B</span><span>QLoRA/LoRA</span><span>DPO/RLHF</span><span>vLLM</span><span>TGI</span><span>TensorRT-LLM</span><span>AWS SageMaker</span><span>FastAPI</span><span>LangGraph</span><span>Docker</span><span>CI/CD/CT</span>
-        </div>
-      </article>
-
-      <!-- ===== SYNQ featured project ===== -->
-      <article class="sys-feature synq" id="synq">
-        <p class="sys-kicker">Generative-Agent Social Simulation · Founder, LUMS Centre for Entrepreneurship</p>
-        <h3 class="sys-title">SYNQ</h3>
-        <p class="synq-tagline">Before people meet, their minds already have.</p>
-        <p class="sys-prose">SYNQ is, at its core, a <b>generative-agent social simulation</b>. Each person trains a high-fidelity AI Clone — a grounded digital twin of themselves — and these autonomous LLM agents <em>live, remember, and interact</em> in a persistent synthetic society: they keep daily routines, hold conversations, negotiate values, and form relationships. A compatibility layer then reads the patterns that emerge to surface high-probability human connections — across friendship, mentorship, hiring, and co-founder discovery — before a single human word is exchanged.</p>
-        <a class="sys-cta" href="https://shawalkhan418--synq-campus-web.modal.run/" target="_blank" rel="noopener">
-          <span class="live" aria-hidden="true"></span>Enter the live world
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
-        </a>
-
-        <div class="synq-viz" id="synq-viz">
-          <canvas class="agent-sim" id="agent-sim" aria-hidden="true"></canvas>
-          <div class="synq-legend" aria-hidden="true">
-            <span><i class="lg lg-you"></i>your clone</span>
-            <span><i class="lg lg-a"></i>agents</span>
-            <span><i class="lg lg-link"></i>emergent connection</span>
-          </div>
-          <div class="sim-hud" id="sim-hud" aria-hidden="true">06:00 · Summer</div>
-          <div class="synq-caption" aria-hidden="true">a generative-agent campus — daily routines, conversations, seasons &amp; events</div>
-        </div>
-        <div class="sim-controls" role="group" aria-label="Simulation controls">
-          <button type="button" class="sim-btn" id="sim-time"><span class="ic">☾</span> Night</button>
-          <button type="button" class="sim-btn" id="sim-season"><span class="ic">❄</span> Winter</button>
-          <button type="button" class="sim-btn" id="sim-event"><span class="ic">⚡</span> Trigger event</button>
-          <button type="button" class="sim-btn" id="sim-pause"><span class="ic">⏸</span> Pause</button>
-        </div>
-
-        <div class="synq-steps">
-          <div class="synq-step">
-            <p class="synq-step-label">01 · Identity</p>
-            <h4 class="synq-step-head">The Clone</h4>
-            <p class="synq-step-text">A behavioral model fusing a structured interview, psychometrics, and opt-in signals into a five-layer personality embedding: communication style, ethics, emotional intelligence, cognition, and social energy.</p>
-          </div>
-          <div class="synq-step">
-            <p class="synq-step-label">02 · Simulation</p>
-            <h4 class="synq-step-head">Autonomous Agents</h4>
-            <p class="synq-step-text">Live LLM agents meet asynchronously through curiosity probes, value-negotiation dialogues, and conflict simulations — a persistent synthetic-social environment that surfaces authentic resonance.</p>
-          </div>
-          <div class="synq-step">
-            <p class="synq-step-label">03 · Intelligence</p>
-            <h4 class="synq-step-head">The Orchestrator</h4>
-            <p class="synq-step-text">A meta-level engine that scores flow symmetry, sentiment trajectory, healthy debate, and vulnerability signals, then delivers a Compatibility Report only on bilateral consent.</p>
-          </div>
-        </div>
-
-        <p class="synq-ethics-label">Ethics by design</p>
-        <div class="sys-tags synq-ethics">
-          <span>Bilateral consent</span><span>You own your Clone</span><span>Emotional-safety layer</span><span>Differential privacy (AES-256, GDPR/PDPB)</span><span>AI-to-AI only, no impersonation</span>
-        </div>
-
-        <div class="sys-tags">
-          <span>LangGraph</span><span>CrewAI</span><span>Multi-Agent Systems</span><span>Personality Embeddings</span><span>Affective Computing</span><span>Pinecone</span><span>FastAPI</span><span>Next.js</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span>
-        </div>
-      </article>
+        <p class="entry-meta">COMSATS University Islamabad (CUI)</p>
+        <ul>
+          <li>Foundation in signals, systems, and mathematics; ranked top 5% of the department in the first year. Undergraduate TA for Object-Oriented Programming, Linear Algebra, and Power Electronics.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -411,47 +168,6 @@
     </div>
   </section>
 
-  <section id="education" aria-labelledby="education-title">
-    <div class="section-band">
-      <h2 class="container" id="education-title">Education</h2>
-    </div>
-    <div class="container section-body">
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-left"><img class="edu-logo" src="logos/lums.png" alt="LUMS"><span class="entry-role">M.S. in Artificial Intelligence</span></span>
-          <span class="entry-when edu-when">2024 – 2026</span>
-        </div>
-        <p class="entry-meta">Lahore University of Management Sciences (LUMS)</p>
-        <ul>
-          <li>Coursework in large language models, human-centered AI, AI for social impact, deep learning, and machine learning.</li>
-        </ul>
-      </div>
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-left"><img class="edu-logo" src="logos/comsats.png" alt="COMSATS University Islamabad"><span class="entry-role">B.S. in Electrical Engineering</span></span>
-          <span class="entry-when edu-when">2017 – 2021</span>
-        </div>
-        <p class="entry-meta">COMSATS University Islamabad (CUI)</p>
-        <ul>
-          <li>Foundation in signals, systems, and mathematics; ranked top 5% of the department in the first year. Undergraduate TA for Object-Oriented Programming, Linear Algebra, and Power Electronics.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" aria-labelledby="projects-title">
-    <div class="section-band">
-      <h2 class="container" id="projects-title">Selected Projects</h2>
-    </div>
-    <div class="container section-body">
-      <ul class="proj-list">
-        <li><span class="pt">NBA-3D &amp; Basketball-RL</span> — <span class="ps">PyTorch</span><div class="pd">3D reconstruction of NBA players from multi-view video via a differentiable renderer; a differentiable 2D basketball RL environment, behavior-cloned from real NBA data then reward-fine-tuned.</div></li>
-        <li><span class="pt">Audio Source Separation</span> — <span class="ps">PyTorch · GAN</span><div class="pd">A U-Net CNN–GAN separating noisy and clean spectrograms, using the GAN as a segmentation loss.</div></li>
-        <li><span class="pt">From-Scratch Reimplementations</span> — <span class="ps">PyTorch · Java</span><div class="pd">AlphaZero (Connect 4), a neural net with backprop reaching 95% on MNIST, and NEAT solving CartPole and Flappy Bird.</div></li>
-      </ul>
-    </div>
-  </section>
-
   <section id="skills" aria-labelledby="skills-title">
     <div class="section-band">
       <h2 class="container" id="skills-title">Skills</h2>
@@ -484,9 +200,244 @@
     </div>
   </section>
 
+  <section id="projects" aria-labelledby="projects-title">
+    <div class="section-band">
+      <h2 class="container" id="projects-title">Projects</h2>
+    </div>
+    <div class="container section-body">
+      <article class="project-entry" id="llm-compression" aria-labelledby="edge-title">
+        <h3 id="edge-title">Compressing LLaMA-2 for CPU inference</h3>
+        <p>Large model files and high memory requirements constrain local inference. I combined pruning, LoRA fine-tuning, and quantization, then extended llama.cpp to run models with unevenly pruned layers.</p>
+        <p><strong>Why it matters</strong> The Q2_K model file shrank from 25.10 GB to 2.10 GB, while WikiText-2 perplexity rose from 7.18 to 10.38. Measuring that trade-off helps assess which models could be useful on lower-cost hardware or where internet access is unreliable.</p>
+        <p class="project-links"><a href="assets/reports/llm-compression-report.pdf">Technical report</a> <a href="https://github.com/shawalkhan1/AI-624-LLM-Compression-Project" target="_blank" rel="noopener">Source code</a> <span>Best Project Award</span></p>
+        <details class="project-details">
+          <summary>Compression pipeline and CPU benchmarks</summary>
+          <div class="project-detail-body">
+            <section class="edge-architecture" aria-labelledby="edge-flow-title">
+              <div class="edge-section-heading"><h4 id="edge-flow-title">From weights to a working runtime</h4><span class="edge-enhanced" hidden>Select a stage</span></div>
+              <div class="edge-flow-zones" aria-hidden="true"><span>Model preparation</span><span>CPU inference</span></div>
+              <ol class="edge-flow" aria-label="Compression architecture">
+                <li><button type="button" class="edge-stage" data-stage="0" aria-pressed="false" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>01</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="5"/><rect x="11" y="3" width="5" height="5"/><rect x="3" y="11" width="5" height="5"/><path d="m12 12 8 8m0-8-8 8M20 3v5M3 20h5"/></svg></span><strong>Prune</strong><span class="edge-stage-sub">Reduce the model</span></button></li>
+                <li><button type="button" class="edge-stage" data-stage="1" aria-pressed="false" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>02</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h6v14H3zM15 8h6v8h-6zM10 12h4M12 10v4"/></svg></span><strong>Recover</strong><span class="edge-stage-sub">LoRA fine-tuning</span></button></li>
+                <li><button type="button" class="edge-stage" data-stage="2" aria-pressed="false" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>03</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 16V9m5 7V4m5 12V7m5 9v-4M3 16h18"/></svg></span><strong>Quantize</strong><span class="edge-stage-sub">Lower the precision</span></button></li>
+                <li><button type="button" class="edge-stage is-active" data-stage="3" aria-pressed="true" aria-controls="edge-stage-panel" disabled><span class="edge-stage-top"><span>04</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4M18 9h4m-4 6h4"/></svg></span><strong>Run</strong><span class="edge-stage-sub">Resolve runtime shapes</span></button></li>
+              </ol>
+              <div class="edge-stage-panel" id="edge-stage-panel" aria-live="polite" aria-atomic="true">
+                <div><p class="edge-panel-label" id="edge-stage-label">04 / Runtime integration</p><h5 id="edge-stage-title">Supporting layers with different shapes.</h5><p id="edge-stage-copy">I adapted llama.cpp to read per-layer dimensions from GGUF tensor shapes and pass them to the graph builder, supporting layers with different attention and feed-forward dimensions.</p></div>
+                <div class="edge-shape-flow" aria-label="Selected stage data flow"><span id="edge-shape-input">GGUF tensor shapes</span><span aria-hidden="true">↓</span><strong id="edge-shape-transform">Per-layer dimensions</strong><span aria-hidden="true">↓</span><span id="edge-shape-output">Graph construction</span></div>
+              </div>
+              <p class="edge-architecture-note">Pipeline overview from the project report. Built on LLM-Pruner, SmoothQuant, and llama.cpp.</p>
+            </section>
+
+            <section class="edge-explorer" aria-labelledby="edge-results-title">
+              <div class="edge-section-heading"><div><p class="edge-eyebrow">The tradeoffs</p><h4 id="edge-results-title">Smaller models, different costs.</h4></div><span class="edge-data-tag">Reported measurements</span></div>
+              <p class="edge-explorer-intro">Compare each configuration with the FP16 baseline. Memory savings, speed, and language-model quality do not move together.</p>
+              <div class="edge-configs edge-enhanced" role="group" aria-label="Choose a measured model configuration" hidden>
+                <button type="button" data-config="0" aria-pressed="false">FP16 <span>baseline</span></button>
+                <button type="button" data-config="1" aria-pressed="false">Pruned <span>30% target</span></button>
+                <button type="button" data-config="2" aria-pressed="false">Q8_0</button>
+                <button type="button" data-config="3" aria-pressed="true" class="is-active">Q4_K_M</button>
+                <button type="button" data-config="4" aria-pressed="false">Q2_K</button>
+              </div>
+              <div class="edge-verdict" aria-live="polite" aria-atomic="true"><strong id="edge-config-title">Q4_K_M</strong><p id="edge-config-note">A smaller footprint, with a speed tradeoff: 86.4% less storage and 75.0% less peak memory, but 13.3% lower throughput than FP16. Perplexity rises from 7.18 to 8.52.</p></div>
+              <div class="edge-measures">
+                <div class="edge-measure" data-metric="size">
+                  <div class="edge-measure-heading"><h5>Artifact size</h5><span>Lower is better</span></div>
+                  <p class="edge-reading"><strong data-value>3.41</strong> <span>GB</span></p>
+                  <p class="edge-delta" data-delta>86.4% smaller</p>
+                  <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:100%"></i></span><span>25.10 GB</span></div>
+                  <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:13.59%"></i></span><span data-bar-value>3.41 GB</span></div>
+                </div>
+                <div class="edge-measure" data-metric="memory">
+                  <div class="edge-measure-heading"><h5>Peak memory</h5><span>Lower is better</span></div>
+                  <p class="edge-reading"><strong data-value>3.75</strong> <span>GB</span></p>
+                  <p class="edge-delta" data-delta>75.0% less memory</p>
+                  <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:100%"></i></span><span>14.99 GB</span></div>
+                  <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:25.02%"></i></span><span data-bar-value>3.75 GB</span></div>
+                </div>
+                <div class="edge-measure" data-metric="speed">
+                  <div class="edge-measure-heading"><h5>CPU throughput</h5><span>Higher is better</span></div>
+                  <p class="edge-reading"><strong data-value>31.9</strong> <span>tok/s</span></p>
+                  <p class="edge-delta" data-delta>13.3% slower</p>
+                  <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:80.17%"></i></span><span>36.8 tok/s</span></div>
+                  <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:69.50%"></i></span><span data-bar-value>31.9 tok/s</span></div>
+                </div>
+                <div class="edge-measure" data-metric="ppl">
+                  <div class="edge-measure-heading"><h5>WikiText-2 perplexity</h5><span>Lower is better</span></div>
+                  <p class="edge-reading"><strong data-value>8.52</strong> <span></span></p>
+                  <p class="edge-delta" data-delta>+1.34 perplexity</p>
+                  <div class="edge-bar-row"><span>FP16</span><span class="edge-track"><i class="edge-bar edge-bar-base" style="width:69.17%"></i></span><span>7.18</span></div>
+                  <div class="edge-bar-row"><span data-bar-name>Q4_K_M</span><span class="edge-track"><i class="edge-bar" data-bar style="width:82.08%"></i></span><span data-bar-value>8.52</span></div>
+                </div>
+              </div>
+              <p class="edge-chart-note"><span class="edge-legend-base" aria-hidden="true"></span>FP16 baseline <span class="edge-legend-selected" aria-hidden="true"></span>Selected configuration <span>· Each metric uses its own scale.</span></p>
+            </section>
+
+            <details class="edge-benchmarks">
+              <summary>Full results &amp; measurement notes</summary>
+              <div class="edge-table-wrap" role="region" aria-label="Compression benchmark table, horizontally scrollable on small screens" tabindex="0">
+                <table class="edge-table">
+                  <caption>LLaMA-2-7B · Project report, Table 1. Lower perplexity, memory, and size are better; higher throughput is better.</caption>
+                  <thead><tr><th scope="col">Configuration</th><th scope="col">Perplexity<span>WikiText-2 ↓</span></th><th scope="col">Throughput<span>tok/s ↑</span></th><th scope="col">Peak memory<span>GB ↓</span></th><th scope="col">Artifact size<span>GB ↓</span></th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Base FP16</th><td>7.18</td><td>36.8</td><td>14.99</td><td>25.10</td></tr>
+                    <tr><th scope="row">Pruned (30%)</th><td>7.92</td><td>45.9</td><td>12.09</td><td>20.21</td></tr>
+                    <tr><th scope="row">GGUF Q8_0</th><td>8.31</td><td>24.5</td><td>6.00</td><td>5.61</td></tr>
+                    <tr><th scope="row">GGUF Q4_K_M</th><td>8.52</td><td>31.9</td><td>3.75</td><td>3.41</td></tr>
+                    <tr><th scope="row">GGUF Q2_K</th><td>10.38</td><td>39.4</td><td>2.43</td><td>2.10</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="edge-note">Results are reproduced from the <a href="assets/reports/llm-compression-report.pdf#page=5">project report, Table 1</a>. The report describes CPU inference but does not specify the CPU model or full benchmark settings; these figures should not be read as Raspberry Pi-specific measurements. Q4_K_M trades lower throughput than the baseline for memory and storage savings.</p>
+              <p class="edge-note">Built on LLM-Pruner, SmoothQuant, and llama.cpp. The course award is separate from these reported configurations.</p>
+            </details>
+          </div>
+        </details>
+      </article>
+
+      <article class="project-entry" id="llm-twin" aria-labelledby="twin-title">
+        <h3 id="twin-title">LLM Twin</h3>
+        <p>A writing assistant needs to adapt to a person's voice and keep up as their writing changes. I built a pipeline that combines retrieval from a personal corpus, model fine-tuning, and monitoring for drift.</p>
+        <p><strong>Why it matters</strong> The pipeline provides a way to study how retrieval and fine-tuning affect personalization as the source material changes. It also raises questions about how people can control when and how tools represent their voice.</p>
+        <details class="project-details">
+          <summary>Interactive pipeline</summary>
+          <div class="project-detail-body">
+            <div class="twin-rig" id="twin-rig">
+              <div class="twin-rail" role="list">
+                <div class="twin-wire" aria-hidden="true"><span class="packet"></span><span class="packet b"></span></div>
+
+                <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-0" aria-controls="twin-panel-0">
+                  <span class="twin-dot"><span class="twin-num">01</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+                  </span>
+                  <span class="twin-label">Data</span><span class="twin-sub">ETL · CDC</span>
+                </button>
+
+                <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-1" aria-controls="twin-panel-1">
+                  <span class="twin-dot"><span class="twin-num">02</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+                  </span>
+                  <span class="twin-label">Feature</span><span class="twin-sub">RAG · Qdrant</span>
+                </button>
+
+                <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-2" aria-controls="twin-panel-2">
+                  <span class="twin-dot"><span class="twin-num">03</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2"/></svg>
+                  </span>
+                  <span class="twin-label">Training</span><span class="twin-sub">QLoRA · DPO</span>
+                </button>
+
+                <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-3" aria-controls="twin-panel-3">
+                  <span class="twin-dot"><span class="twin-num">04</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m13 2-9 12h7l-2 8 9-12h-7l2-8Z"/></svg>
+                  </span>
+                  <span class="twin-label">Inference</span><span class="twin-sub">vLLM · SageMaker</span>
+                </button>
+
+                <button type="button" class="twin-stage" role="listitem" aria-expanded="false" id="twin-btn-4" aria-controls="twin-panel-4">
+                  <span class="twin-dot"><span class="twin-num">05</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v4h-4"/></svg>
+                  </span>
+                  <span class="twin-label">MLOps</span><span class="twin-sub">ZenML · CI/CD</span>
+                </button>
+              </div>
+
+              <div class="twin-detail-wrap">
+                <p class="twin-hint" id="twin-hint">Select a pipeline stage to expand</p>
+                <div class="twin-detail" id="twin-panel-0" role="region" aria-labelledby="twin-btn-0">
+                  <b>Data.</b> A multi-source ETL crawler pulls every digital trace (GitHub, Medium, personal sites) into a MongoDB warehouse. A Change-Data-Capture layer and a Bytewax streaming pipeline keep the twin's memory continuously fresh.
+                </div>
+                <div class="twin-detail" id="twin-panel-1" role="region" aria-labelledby="twin-btn-1">
+                  <b>Feature.</b> Text is cleaned, chunked, and embedded into a Qdrant vector database. The RAG layer uses query expansion, self-querying metadata filters, hybrid search, and a cross-encoder reranker.
+                </div>
+                <div class="twin-detail" id="twin-panel-2" role="region" aria-labelledby="twin-btn-2">
+                  <b>Training.</b> Llama 3.1 8B fine-tuned with QLoRA/LoRA (TRL + Unsloth) on an instruction dataset, then aligned with DPO/RLHF. Runs are tracked and evaluated with LLM-as-a-judge and RAGAS in Comet ML.
+                </div>
+                <div class="twin-detail" id="twin-panel-3" role="region" aria-labelledby="twin-btn-3">
+                  <b>Inference.</b> Served as a real-time AWS SageMaker endpoint behind a FastAPI microservice with a LangGraph agentic-RAG brain. Optimized with quantization (GPTQ/AWQ/GGUF), speculative decoding, Flash Attention, KV-cache, and continuous batching; benchmarked across vLLM, TGI, and TensorRT-LLM.
+                </div>
+                <div class="twin-detail" id="twin-panel-4" role="region" aria-labelledby="twin-btn-4">
+                  <b>MLOps.</b> Built on the Feature/Training/Inference (FTI) pattern, orchestrated by ZenML into deployable microservices, with CI/CD/CT via GitHub Actions, Opik observability, and drift detection that triggers automatic retraining.
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <article class="project-entry" id="synq" aria-labelledby="synq-title">
+        <h3 id="synq-title">SYNQ</h3>
+        <p>Profiles offer limited evidence about how people might interact. SYNQ is an early-stage prototype that simulates conversations between personal agents and uses those interactions to suggest possible connections.</p>
+        <p><strong>Why it matters</strong> The prototype asks whether simulated interactions can help people discover mentors or collaborators. Its relevance depends on how well predictions agree with participants' own judgments and whether participants control what they share.</p>
+        <p class="project-links"><a href="https://shawalkhan418--synq-campus-web.modal.run/" target="_blank" rel="noopener">Live demo</a></p>
+        <details class="project-details" id="synq-simulation">
+          <summary>Campus simulation</summary>
+          <div class="project-detail-body">
+            <div class="synq-viz" id="synq-viz">
+              <canvas class="agent-sim" id="agent-sim" aria-hidden="true"></canvas>
+              <div class="synq-legend" aria-hidden="true">
+                <span><i class="lg lg-you"></i>your clone</span>
+                <span><i class="lg lg-a"></i>agents</span>
+                <span><i class="lg lg-link"></i>emergent connection</span>
+              </div>
+              <div class="sim-hud" id="sim-hud" aria-hidden="true">06:00 · Summer</div>
+              <div class="synq-caption" aria-hidden="true">a generative-agent campus — daily routines, conversations, seasons &amp; events</div>
+            </div>
+            <div class="sim-controls" role="group" aria-label="Simulation controls">
+              <button type="button" class="sim-btn" id="sim-time"><span class="ic">☾</span> Night</button>
+              <button type="button" class="sim-btn" id="sim-season"><span class="ic">❄</span> Winter</button>
+              <button type="button" class="sim-btn" id="sim-event"><span class="ic">⚡</span> Trigger event</button>
+              <button type="button" class="sim-btn" id="sim-pause"><span class="ic">⏸</span> Pause</button>
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <article class="project-entry">
+        <h3>NBA-3D &amp; Basketball-RL</h3>
+        <p>Video and tracking data offer different views of player movement. I built a differentiable renderer for 3D reconstruction from multiple camera views and a separate 2D simulator trained on NBA behavior and fine-tuned with rewards.</p>
+        <p><strong>Why it matters</strong> The tools support research on motion reconstruction and imitation learning. A simulator could also make tactical experiments more accessible to students and coaches.</p>
+      </article>
+
+      <article class="project-entry">
+        <h3>Audio Source Separation</h3>
+        <p>Background noise can obscure useful audio. I trained a U-Net on spectrograms with an adversarial loss to separate clean audio from noise.</p>
+        <p><strong>Why it matters</strong> The prototype explores adversarial training for audio separation, with potential applications in clearer recordings and more accessible audio.</p>
+      </article>
+
+      <article class="project-entry">
+        <h3>Reimplementing Learning Algorithms</h3>
+        <p>Library abstractions can hide how different learning algorithms make decisions. I implemented AlphaZero for Connect 4, a neural network with backpropagation for MNIST, and NEAT for CartPole and Flappy Bird.</p>
+        <p><strong>Why it matters</strong> The implementations give learners concrete examples of search, gradient-based learning, and neuroevolution they can inspect and modify.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="honors" aria-labelledby="honors-title">
+    <div class="section-band">
+      <h2 class="container" id="honors-title">Honors &amp; Service</h2>
+    </div>
+    <div class="container section-body">
+      <div class="honor-grid">
+        <div class="honor">
+          <b>Top 5% of Batch</b><span>ECE Department, COMSATS — first year.</span>
+        </div>
+        <div class="honor">
+          <b>Battle of Thetas — Winner</b><span>First place, PION '18 national engineering competition.</span>
+        </div>
+        <div class="honor">
+          <b>1,000,000 PKR raised for charity</b><span>Led campaigns for the Abda Foundation.</span>
+        </div>
+        <div class="honor">
+          <b>Featured on National Television</b><span>Recognized for community and social-impact work.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="physics" aria-labelledby="physics-title">
     <div class="section-band">
-      <h2 class="container" id="physics-title">Mathematics &amp; Physics</h2>
+      <h2 class="container" id="physics-title">Mathematics, Physics &amp; Astronomy</h2>
     </div>
     <div class="container section-body">
       <p class="phys-lead">Long before AI, it was <em>mathematics and physics</em> that drew me in — and they still anchor how I think. I have a deep knack for both: from the symmetry of Maxwell's equations rewritten across integral, vector, covariant, and differential-form formulations, to the tensor calculus of general relativity and the curvature of spacetime. The same instinct — to find structure, symmetry, and beauty inside complex systems — is what later pulled me toward AI.</p>
@@ -520,24 +471,37 @@
     </div>
   </section>
 
-  <section id="honors" aria-labelledby="honors-title">
+  <section id="contact" aria-labelledby="contact-title">
     <div class="section-band">
-      <h2 class="container" id="honors-title">Honors &amp; Service</h2>
+      <h2 class="container" id="contact-title">Contact</h2>
     </div>
     <div class="container section-body">
-      <div class="honor-grid">
-        <div class="honor">
-          <b>Top 5% of Batch</b><span>ECE Department, COMSATS — first year.</span>
-        </div>
-        <div class="honor">
-          <b>Battle of Thetas — Winner</b><span>First place, PION '18 national engineering competition.</span>
-        </div>
-        <div class="honor">
-          <b>1,000,000 PKR raised for charity</b><span>Led campaigns for the Abda Foundation.</span>
-        </div>
-        <div class="honor">
-          <b>Featured on National Television</b><span>Recognized for community and social-impact work.</span>
-        </div>
+      <p>For research collaboration or questions about efficient AI, human–AI interaction, or AI for healthcare, email me at <a href="mailto:24280068@lums.edu.pk">24280068@lums.edu.pk</a>. You can also find my work on <a href="https://github.com/shawalkhan1" target="_blank" rel="noopener">GitHub</a>.</p>
+    </div>
+  </section>
+
+  <section id="publications" aria-labelledby="publications-title">
+    <div class="section-band">
+      <h2 class="container" id="publications-title">Selected Papers</h2>
+    </div>
+    <div class="container section-body papers">
+      <p>For more about my research and experience, see my <a href="Shawal_Latif_CV.pdf">CV</a>.</p>
+      <div class="paper-list">
+        <article class="paper" id="benchmaterna">
+          <h3>BenchMaterna: A Clinician-Validated Benchmark for Evaluating LLMs on Maternal Healthcare in the Global South</h3>
+          <p><b>Shawal Latif</b>, M. Mustafa, <i>et al.</i><br>In submission · Target venue: ACL 2027</p>
+          <p>The first large-scale, clinician-validated benchmark evaluating 30+ LLMs on maternal healthcare for Global South women — co-built with 30 clinical experts across regional languages and scored on six dimensions.</p>
+        </article>
+        <article class="paper" id="awaaz-paper">
+          <h3>Awaaz-e-Sehat: A Voice-First LLM Assistant for Maternal Health among Low-Literacy Women</h3>
+          <p><b>Shawal Latif</b>, M. Mustafa, <i>et al.</i><br>In submission · Target venue: CHI 2027</p>
+          <p>System architecture, clinicians-in-the-loop design, and longitudinal deployment with rural women — examining trust calibration and over-reliance among first-time AI users making high-stakes clinical decisions.</p>
+        </article>
+        <article class="paper" id="fairness-audit">
+          <h3>Clinical Fairness Auditing of Frontier LLMs</h3>
+          <p><b>Shawal Latif</b>, M. Mustafa, <i>et al.</i><br>In submission · Target venue: FAccT 2027</p>
+          <p>Perturbation benchmarks across Roman Urdu, code-mixed language, and intersectional profiles, with new fairness metrics — Reduced Care Rate, Reduced Care Error Rate, and Triage Threshold Shift.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -1894,6 +1858,17 @@
     function frame(){ update(); renderScene(); raf = requestAnimationFrame(frame); }
 
     // ---------- boot ----------
+    var disclosure = document.getElementById("synq-simulation");
+    disclosure.addEventListener("toggle", function(){
+      if(disclosure.open){
+        size();
+        renderScene();
+        if(!reduceMotion && !paused && !raf) raf = requestAnimationFrame(frame);
+      } else if(raf){
+        cancelAnimationFrame(raf);
+        raf = null;
+      }
+    });
     size(); build(); assignDaily(); computeLight();
 
     if(reduceMotion){
@@ -1923,14 +1898,14 @@
     if("IntersectionObserver" in window){
       var aio = new IntersectionObserver(function(entries){
         entries.forEach(function(e){
-          if(e.isIntersecting){ if(!raf && !paused){ raf = requestAnimationFrame(frame); } }
+          if(e.isIntersecting && disclosure.open){ if(!raf && !paused){ raf = requestAnimationFrame(frame); } }
           else { if(raf){ cancelAnimationFrame(raf); raf = null; } }
         });
       }, {threshold:0});
       aio.observe(canvas);
     }
     bindControls();
-    raf = requestAnimationFrame(frame);
+    if(disclosure.open) raf = requestAnimationFrame(frame);
 
     function setBtn(el, icon, label, on){ if(!el) return; el.innerHTML = '<span class="ic">'+icon+'</span> '+label; el.classList.toggle("on", !!on); }
     function bindControls(){
