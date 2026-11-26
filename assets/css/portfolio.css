@@ -86,9 +86,9 @@ img { max-width: 100%; }
 
 .profile {
   display: grid;
-  grid-template-columns: minmax(0, 32.7fr) minmax(0, 67.3fr);
+  grid-template-columns: minmax(0, 40fr) minmax(0, 60fr);
   align-items: center;
-  gap: 4rem;
+  gap: 3rem;
   padding-top: 43px;
   padding-bottom: 30px;
   color: var(--faint);
@@ -97,10 +97,9 @@ img { max-width: 100%; }
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1.12;
+  aspect-ratio: 1;
   object-fit: cover;
-  object-position: center 3%;
-  filter: grayscale(1);
+  object-position: center 30%;
 }
 .profile-photo p { margin: 1rem 0 0; overflow-wrap: anywhere; }
 .profile-bio h1 {
