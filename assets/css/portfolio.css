@@ -86,9 +86,9 @@ img { max-width: 100%; }
 
 .profile {
   display: grid;
-  grid-template-columns: minmax(0, 32.7fr) minmax(0, 67.3fr);
+  grid-template-columns: minmax(0, 40fr) minmax(0, 60fr);
   align-items: center;
-  gap: 4rem;
+  gap: 3rem;
   padding-top: 43px;
   padding-bottom: 30px;
   color: var(--faint);
@@ -97,10 +97,9 @@ img { max-width: 100%; }
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1.12;
+  aspect-ratio: 1;
   object-fit: cover;
-  object-position: center 3%;
-  filter: grayscale(1);
+  object-position: center 30%;
 }
 .profile-photo p { margin: 1rem 0 0; overflow-wrap: anywhere; }
 .profile-bio h1 {
@@ -165,11 +164,45 @@ img { max-width: 100%; }
 .entry-when, .entry-meta, .ps { color: var(--faint); }
 .entry-meta { margin: .35rem 0; }
 .entry-left { display: inline-flex; align-items: center; gap: .6rem; }
-.edu-logo { width: 38px; height: 38px; object-fit: contain; }
-.logos { display: flex; flex-wrap: wrap; align-items: start; gap: .7rem 1.3rem; margin-block: 1rem; }
-.logo { display: grid; gap: .3rem; justify-items: center; }
-.logo img { width: 60px; height: 36px; object-fit: contain; }
-.logo small { color: var(--faint); font-size: .8rem; }
+.edu-logo {
+  display: block;
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  padding: 9px;
+  object-fit: contain;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: #fff;
+}
+.entry-left { gap: 1rem; }
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 1rem;
+  margin-block: 1.2rem;
+}
+.logo {
+  display: grid;
+  width: 128px;
+  min-height: 116px;
+  gap: .55rem;
+  align-content: start;
+  justify-items: center;
+  padding: .8rem .6rem .65rem;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+}
+.logo img {
+  display: block;
+  width: 88px;
+  height: 64px;
+  object-fit: contain;
+}
+.logo small { color: var(--faint); font-size: .8rem; line-height: 1.35; }
 .proj-list { margin: 0; padding-left: 1.5rem; }
 .proj-list li + li { margin-top: .6rem; }
 .pt { font-weight: 600; }
