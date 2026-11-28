@@ -94,6 +94,7 @@
       <p>Some research directions I'm currently excited about include (but are not limited to):</p>
       <p>1) <strong>Building AI for human interaction.</strong> How do humans interact with generative AI in the real world, particularly in high-stakes contexts, and how do we incorporate human perspectives into AI evaluation and development? How do we adapt AI to understand individuals' diverse values, needs, and cultural contexts, and to respond safely and appropriately, especially for underserved communities?</p>
       <p>2) <strong>Simulating behaviors with generative AI</strong>: How do we build realistic, diverse, and scalable simulations that capture both individual human behavior and the complex interactions that shape entire populations? How do we validate AI simulations and safely integrate them into real-world pipelines?</p>
+      <p>3) <strong>Post-AGI Interaction Research.</strong> How might people interact with increasingly capable and potentially AGI-level systems across everyday and high-stakes settings, and how can we design interaction paradigms that help people express their intentions, understand and direct system behavior, and meaningfully evaluate its outcomes? How can we develop rigorous, human-centered methods, benchmarks, and ethical data practices, including synthetic-user evaluations validated against real human studies, to understand these interactions across diverse abilities, languages, cultural contexts, and underserved communities? How do we ensure that advanced AI augments human agency and well-being while mitigating overreliance, privacy risks, exclusion, and broader societal harms?</p>
     </div>
   </section>
 
@@ -168,28 +169,81 @@
     </div>
     <div class="container section-body">
       <div class="skills-group">
-        <div class="skills-cat">Languages</div>
-        <div class="skills-chips"><span>Python</span><span>SQL</span><span>C</span><span>JavaScript</span><span>MATLAB</span></div>
+        <div class="skills-cat">Programming &amp; Data</div>
+        <div class="skills-chips">
+          <span>Python</span>
+          <span>SQL</span>
+          <span>JavaScript</span>
+          <span>HTML &amp; CSS</span>
+          <span>MATLAB</span>
+          <span>pandas</span>
+          <span>NumPy</span>
+        </div>
       </div>
       <div class="skills-group">
-        <div class="skills-cat">ML &amp; LLM</div>
-        <div class="skills-chips"><span>PyTorch</span><span>TensorFlow</span><span>Hugging Face</span><span>scikit-learn</span><span>TRL</span><span>Unsloth</span><span>LangChain</span><span>LangGraph</span></div>
+        <div class="skills-cat">ML &amp; LLM Post-Training</div>
+        <div class="skills-chips">
+          <span>PyTorch</span>
+          <span>scikit-learn</span>
+          <span>Hugging Face Transformers</span>
+          <span>PEFT, TRL &amp; Unsloth</span>
+          <span>Supervised Fine-Tuning (SFT)</span>
+          <span>LoRA / QLoRA</span>
+          <span>DPO</span>
+        </div>
       </div>
       <div class="skills-group">
-        <div class="skills-cat">LLM Techniques</div>
-        <div class="skills-chips"><span>RAG</span><span>Fine-tuning (QLoRA/LoRA)</span><span>DPO/RLHF</span><span>Quantization</span><span>Prompt Engineering</span><span>LLM Evaluation</span></div>
+        <div class="skills-cat">Agents &amp; Retrieval</div>
+        <div class="skills-chips">
+          <span>RAG</span>
+          <span>Agent Orchestration (LangGraph, LangChain)</span>
+          <span>Qdrant</span>
+          <span>Hybrid Search</span>
+          <span>Cross-Encoder Reranking</span>
+          <span>Prompt Engineering</span>
+          <span>Multilingual Voice AI</span>
+        </div>
       </div>
       <div class="skills-group">
-        <div class="skills-cat">Serving &amp; MLOps</div>
-        <div class="skills-chips"><span>vLLM</span><span>TGI</span><span>TensorRT-LLM</span><span>FastAPI</span><span>ZenML</span><span>Docker</span><span>GitHub Actions</span><span>Comet ML</span></div>
+        <div class="skills-cat">Efficient Inference</div>
+        <div class="skills-chips">
+          <span>Structured Pruning</span>
+          <span>Mixed Precision</span>
+          <span>Quantization (SmoothQuant, GPTQ, AWQ, GGUF)</span>
+          <span>llama.cpp</span>
+          <span>vLLM</span>
+          <span>Speculative Decoding</span>
+          <span>FlashAttention</span>
+          <span>KV-Cache Optimization</span>
+          <span>Continuous Batching</span>
+          <span>CPU &amp; Edge Benchmarking</span>
+        </div>
       </div>
       <div class="skills-group">
-        <div class="skills-cat">Cloud &amp; Data</div>
-        <div class="skills-chips"><span>AWS SageMaker</span><span>Qdrant</span><span>MongoDB</span><span>Bytewax</span><span>ETL / CDC</span></div>
+        <div class="skills-cat">Evaluation, Safety &amp; MLOps</div>
+        <div class="skills-chips">
+          <span>LLM &amp; Agent Evals</span>
+          <span>LLM-as-a-Judge &amp; RAGAS</span>
+          <span>Benchmark Design</span>
+          <span>Multilingual Safety &amp; Fairness Audits</span>
+          <span>Guardrails</span>
+          <span>Observability &amp; Prompt Monitoring (Opik)</span>
+          <span>Experiment Tracking (Comet ML)</span>
+          <span>ZenML</span>
+          <span>CI/CD &amp; Automated Retraining (GitHub Actions)</span>
+          <span>Drift Detection</span>
+        </div>
       </div>
       <div class="skills-group">
-        <div class="skills-cat">Analytics</div>
-        <div class="skills-chips"><span>Power BI</span><span>Tableau</span><span>Pandas</span><span>NumPy</span></div>
+        <div class="skills-cat">Cloud, Backend &amp; Data Engineering</div>
+        <div class="skills-chips">
+          <span>AWS (SageMaker, ECR, S3, IAM)</span>
+          <span>Docker</span>
+          <span>FastAPI &amp; Pydantic</span>
+          <span>REST APIs &amp; Microservices</span>
+          <span>MongoDB</span>
+          <span>ETL, Streaming &amp; Change Data Capture (Bytewax)</span>
+        </div>
       </div>
     </div>
   </section>
@@ -200,9 +254,10 @@
     </div>
     <div class="container section-body">
       <article class="project-entry" id="llm-compression" aria-labelledby="edge-title">
-        <h3 id="edge-title">Compressing LLaMA-2 for CPU inference</h3>
-        <p>Large model files and high memory requirements constrain local inference. I combined pruning, LoRA fine-tuning, and quantization, then extended llama.cpp to run models with unevenly pruned layers.</p>
-        <p><strong>Why it matters</strong> The Q2_K model file shrank from 25.10 GB to 2.10 GB, while WikiText-2 perplexity rose from 7.18 to 10.38. Measuring that trade-off helps assess which models could be useful on lower-cost hardware or where internet access is unreliable.</p>
+        <h3 id="edge-title">Compressing LLaMA-2 for offline AI access</h3>
+        <p>Cloud-based AI assumes a reliable internet connection. That requirement can deepen the digital divide in Pakistan and other parts of the Global South, where many communities have limited or unreliable access. In Pakistan, 57.3% of the population used the internet in 2024. <a href="https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=PK">ITU internet use data for Pakistan</a></p>
+        <p><strong>Research question.</strong> How far can we compress a language model so it runs locally on affordable edge devices, and what do we give up in speed and model quality? We combined structured pruning, LoRA fine-tuning, and quantization, then adapted llama.cpp to support layers of different sizes. We compared model size, peak memory, CPU throughput, and WikiText-2 perplexity against the FP16 baseline.</p>
+        <p><strong>Findings.</strong> The 4-bit model cut storage from 25.10 GB to 3.41 GB and peak memory from 14.99 GB to 3.75 GB. CPU throughput fell from 36.8 to 31.9 tokens per second, and perplexity rose from 7.18 to 8.52. These CPU benchmarks identify a configuration worth testing on low-cost devices, where local inference could make AI tools available to underserved communities even when connectivity drops. Whether compressed models can support the tasks and languages those communities need remains an open research question.</p>
         <p class="project-links"><a href="assets/reports/llm-compression-report.pdf">Technical report</a> <a href="https://github.com/shawalkhan1/AI-624-LLM-Compression-Project" target="_blank" rel="noopener">Source code</a> <span>Best Project Award</span></p>
         <details class="project-details">
           <summary>Compression pipeline and CPU benchmarks</summary>
@@ -364,7 +419,7 @@
         <p>Profiles offer limited evidence about how people might interact. SYNQ is an early-stage prototype that simulates conversations between personal agents and uses those interactions to suggest possible connections.</p>
         <p><strong>Why it matters</strong> The prototype asks whether simulated interactions can help people discover mentors or collaborators. Its relevance depends on how well predictions agree with participants' own judgments and whether participants control what they share.</p>
         <p class="project-links"><a href="https://shawalkhan418--synq-campus-web.modal.run/" target="_blank" rel="noopener">Live demo</a></p>
-        <details class="project-details" id="synq-simulation">
+        <details class="project-details" id="synq-simulation" open>
           <summary>Campus simulation</summary>
           <div class="project-detail-body">
             <div class="synq-viz" id="synq-viz">
@@ -387,23 +442,6 @@
         </details>
       </article>
 
-      <article class="project-entry">
-        <h3>NBA-3D &amp; Basketball-RL</h3>
-        <p>Video and tracking data offer different views of player movement. I built a differentiable renderer for 3D reconstruction from multiple camera views and a separate 2D simulator trained on NBA behavior and fine-tuned with rewards.</p>
-        <p><strong>Why it matters</strong> The tools support research on motion reconstruction and imitation learning. A simulator could also make tactical experiments more accessible to students and coaches.</p>
-      </article>
-
-      <article class="project-entry">
-        <h3>Audio Source Separation</h3>
-        <p>Background noise can obscure useful audio. I trained a U-Net on spectrograms with an adversarial loss to separate clean audio from noise.</p>
-        <p><strong>Why it matters</strong> The prototype explores adversarial training for audio separation, with potential applications in clearer recordings and more accessible audio.</p>
-      </article>
-
-      <article class="project-entry">
-        <h3>Reimplementing Learning Algorithms</h3>
-        <p>Library abstractions can hide how different learning algorithms make decisions. I implemented AlphaZero for Connect 4, a neural network with backpropagation for MNIST, and NEAT for CartPole and Flappy Bird.</p>
-        <p><strong>Why it matters</strong> The implementations give learners concrete examples of search, gradient-based learning, and neuroevolution they can inspect and modify.</p>
-      </article>
     </div>
   </section>
 
@@ -1970,7 +2008,7 @@
     {id:"fairness",tags:"fairness bias equity auditing rcr rcer triage roman urdu code-mixed demographic intersectional safety", text:"I audit the clinical fairness of frontier LLMs using perturbation benchmarks across Roman Urdu, code-mixed language, and intersectional demographics, and developed metrics like Reduced Care Rate, Reduced Care Error Rate, and Triage Threshold Shift."},
     {id:"edu",     tags:"education degree study masters ms ai lums comsats electrical engineering background", text:"I hold an M.S. in Artificial Intelligence from LUMS and a B.S. in Electrical Engineering from COMSATS University Islamabad."},
     {id:"teaching",tags:"teaching teach ta assistant course courses mathematics for ai big data analytics applied probability calculus II calculus 2 award best", text:"I have been a Teaching Assistant in the LUMS Department of Computer Science for Mathematics for AI, Big Data Analytics, Applied Probability, and Calculus II. I received the Best TA Award for Mathematics for AI."},
-    {id:"projects",tags:"projects portfolio nba basketball gan audio rocky bot text-to-sql alphazero neat side build", text:"My projects span 3D NBA reconstruction, a differentiable basketball RL environment, GAN audio source separation, a LangChain news bot, a text-to-SQL system, and from-scratch reimplementations of AlphaZero and NEAT."},
+    {id:"projects",tags:"projects portfolio compression offline edge devices connectivity pakistan global south llama twin synq campus simulation", text:"My featured projects include a LLaMA-2 compression study for offline AI access, LLM Twin for personalized writing, and SYNQ, a prototype with an interactive campus simulation. In the compression study, we measured how pruning and quantization affect storage, memory, CPU throughput, and language modeling quality to assess options for low-cost devices in communities with limited internet access."},
     {id:"stack",   tags:"skills stack tools languages python pytorch frameworks technologies use know", text:"My core stack is Python and PyTorch with the Hugging Face ecosystem, LangChain/LangGraph, Qdrant, ZenML, Docker, FastAPI, and AWS, plus SQL, MongoDB, and streaming tools for data."},
     {id:"synq",    tags:"synq startup venture founder company building compatibility dating matching social product idea business clone agent orchestrator funding investor seed", text:"I am the founder of SYNQ, an AI compatibility and relationship-orchestration platform. Each user trains a high-fidelity AI Clone whose autonomous agents meet and probe values across the network, while an Orchestrator scores compatibility and surfaces high-probability connections before humans ever talk."}
   ];
